@@ -35,4 +35,8 @@ IDEAS / MAYBE LATER
 -------------------
 - Switch from PR review to auto-publish once output quality is trusted
 - Highlight rare outcomes on the results page (e.g. "only 4% get this")
-- Shareable result cards
+- Shareable result cards (image to post)
+- RSS feed so readers get new quizzes automatically
+- "Your past results" saved in the reader's own browser (no backend)
+- Aggregate stats ("12% of readers got Matcha") - needs a backend; privacy to design
+- Let the agent write fully custom HTML layouts, guarded by the playtest

@@ -1,0 +1,266 @@
+{
+  "week": "2026-W41",
+  "title": "Which coffee order are you?",
+  "topic": "Which coffee order are you",
+  "category": "food",
+  "emoji": "☕",
+  "intro": "Six questions about mornings, weekends and small rituals. We'll pour you the drink that matches your personality.",
+  "start_label": "Brew my result",
+  "result_label": "Your coffee order is",
+  "scoring": "winner",
+  "theme": {
+    "bg": "#f6efe6",
+    "fg": "#2b1d14",
+    "card": "#fffaf4",
+    "accent": "#7a4a2a",
+    "accent_fg": "#ffffff"
+  },
+  "outcomes": [
+    {
+      "id": "espresso",
+      "name": "Espresso",
+      "emoji": "⚡",
+      "color": "#5a2e12",
+      "tagline": "Short, intense, already halfway through the to-do list.",
+      "description": "You know what you want and you don't waste time getting it. People admire your focus, even if they occasionally wish you'd sit down for a second. You'd rather do one thing brilliantly than five things fine.",
+      "traits": [
+        "decisive",
+        "driven",
+        "no-nonsense"
+      ]
+    },
+    {
+      "id": "oat-latte",
+      "name": "Oat Latte",
+      "emoji": "🥛",
+      "color": "#a0764f",
+      "tagline": "Warm, easygoing and everyone's favourite company.",
+      "description": "You make every room a little cosier. You remember birthdays, you bring snacks, and you're happy to go with the flow as long as the flow involves good conversation and a comfy chair.",
+      "traits": [
+        "warm",
+        "sociable",
+        "comforting"
+      ]
+    },
+    {
+      "id": "cold-brew",
+      "name": "Cold Brew",
+      "emoji": "🧊",
+      "color": "#2f4858",
+      "tagline": "Cool under pressure, quietly strong.",
+      "description": "You take your time and it shows: steady, unflappable and surprisingly powerful once you get going. You're the friend people call in a crisis because nothing seems to rattle you.",
+      "traits": [
+        "calm",
+        "patient",
+        "steady"
+      ]
+    },
+    {
+      "id": "matcha",
+      "name": "Matcha",
+      "emoji": "🍵",
+      "color": "#4f7a3a",
+      "tagline": "Curious, particular, and proudly a little different.",
+      "description": "Technically not coffee, and that's exactly the point. You like rituals, details and things with a story behind them. You'd rather find something special than follow the crowd.",
+      "traits": [
+        "curious",
+        "thoughtful",
+        "original"
+      ]
+    },
+    {
+      "id": "pumpkin-spice",
+      "name": "Pumpkin Spice",
+      "emoji": "🎃",
+      "color": "#c2561a",
+      "tagline": "Unapologetically joyful, all year round.",
+      "description": "You go all in on whatever makes you happy and you don't care who's rolling their eyes. Seasonal decorations, theme parties, matching outfits: life is more fun with a bit of extra.",
+      "traits": [
+        "playful",
+        "enthusiastic",
+        "festive"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "text": "Your alarm goes off. What happens next?",
+      "answers": [
+        {
+          "text": "Up immediately. The day has started.",
+          "scores": {
+            "espresso": 2
+          }
+        },
+        {
+          "text": "Snooze once, then a slow stretch.",
+          "scores": {
+            "oat-latte": 2
+          }
+        },
+        {
+          "text": "I woke up before it anyway.",
+          "scores": {
+            "cold-brew": 2
+          }
+        },
+        {
+          "text": "I put on a playlist that matches my mood.",
+          "scores": {
+            "pumpkin-spice": 1,
+            "matcha": 1
+          }
+        }
+      ]
+    },
+    {
+      "text": "Pick a perfect Saturday.",
+      "answers": [
+        {
+          "text": "Brunch with the whole group chat",
+          "scores": {
+            "oat-latte": 2,
+            "pumpkin-spice": 1
+          }
+        },
+        {
+          "text": "A long walk somewhere I've never been",
+          "scores": {
+            "matcha": 2
+          }
+        },
+        {
+          "text": "Finally finishing a big project",
+          "scores": {
+            "espresso": 2
+          }
+        },
+        {
+          "text": "Doing absolutely nothing, gloriously",
+          "scores": {
+            "cold-brew": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "A friend is having a rough day. You…",
+      "answers": [
+        {
+          "text": "Turn up with snacks and a blanket",
+          "scores": {
+            "oat-latte": 2
+          }
+        },
+        {
+          "text": "Make a plan to fix the problem",
+          "scores": {
+            "espresso": 2
+          }
+        },
+        {
+          "text": "Listen, and stay calm for both of you",
+          "scores": {
+            "cold-brew": 2
+          }
+        },
+        {
+          "text": "Drag them out for something silly and fun",
+          "scores": {
+            "pumpkin-spice": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Which shop could you spend an hour in?",
+      "answers": [
+        {
+          "text": "A tiny independent stationery shop",
+          "scores": {
+            "matcha": 2
+          }
+        },
+        {
+          "text": "A seasonal pop-up full of decorations",
+          "scores": {
+            "pumpkin-spice": 2
+          }
+        },
+        {
+          "text": "A bookshop with armchairs",
+          "scores": {
+            "oat-latte": 1,
+            "cold-brew": 1
+          }
+        },
+        {
+          "text": "None. I'm in and out in five minutes.",
+          "scores": {
+            "espresso": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Your desk looks like…",
+      "answers": [
+        {
+          "text": "Spotless, except for the current task",
+          "scores": {
+            "espresso": 1,
+            "cold-brew": 1
+          }
+        },
+        {
+          "text": "Plants, a candle and a nice notebook",
+          "scores": {
+            "matcha": 2
+          }
+        },
+        {
+          "text": "Covered in stickers and little figurines",
+          "scores": {
+            "pumpkin-spice": 2
+          }
+        },
+        {
+          "text": "A mug, a cardigan and three half-read books",
+          "scores": {
+            "oat-latte": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Someone recommends a new café. You…",
+      "answers": [
+        {
+          "text": "Go tomorrow and order the weirdest thing on the menu",
+          "scores": {
+            "matcha": 2
+          }
+        },
+        {
+          "text": "Go if it's on the way and it's quick",
+          "scores": {
+            "espresso": 1
+          }
+        },
+        {
+          "text": "Invite three friends and make an afternoon of it",
+          "scores": {
+            "oat-latte": 1,
+            "pumpkin-spice": 1
+          }
+        },
+        {
+          "text": "Add it to the list. I'll get there eventually.",
+          "scores": {
+            "cold-brew": 2
+          }
+        }
+      ]
+    }
+  ]
+}

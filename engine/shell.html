@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>__TITLE__</title>
+<meta name="description" content="__DESCRIPTION__">
+<meta property="og:title" content="__TITLE__">
+<meta property="og:description" content="__DESCRIPTION__">
+<style>
+/* ---- Base styles (engine). Each quiz's style.css below overrides these. ---- */
+:root {
+  --bg: #faf7f2;
+  --fg: #1f1d1a;
+  --muted: #6b665e;
+  --accent: #c2410c;
+  --accent-fg: #ffffff;
+  --card: #ffffff;
+  --card-fg: var(--fg);
+  --border: #e6e0d6;
+  --radius: 14px;
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: var(--font-body);
+  --outcome-color: var(--accent);
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+}
+.preview-banner {
+  background: #111; color: #fff; text-align: center;
+  font: 600 13px/1.4 system-ui, sans-serif; letter-spacing: .08em;
+  padding: 6px 16px;
+}
+.site-header, .quiz-nav {
+  width: 100%; max-width: 640px; margin: 0 auto; padding: 14px 16px;
+  display: flex; gap: 12px; justify-content: space-between; align-items: center;
+  font-size: 14px; color: var(--muted);
+}
+.site-header a, .quiz-nav a { color: inherit; }
+.quiz-nav { margin-top: auto; flex-wrap: wrap; }
+#app { width: 100%; max-width: 640px; margin: 0 auto; padding: 8px 16px 32px; }
+.screen { display: flex; flex-direction: column; gap: 16px; }
+.intro { text-align: center; align-items: center; padding-top: 6vh; }
+.quiz-emoji { font-size: 64px; line-height: 1; }
+.quiz-title { font-family: var(--font-display); font-size: clamp(28px, 7vw, 42px); line-height: 1.15; margin: 0; }
+.quiz-intro { margin: 0; max-width: 34em; }
+.quiz-meta { margin: 0; color: var(--muted); font-size: 14px; }
+.btn {
+  font: inherit; font-weight: 600; cursor: pointer;
+  border: 1.5px solid var(--border); background: var(--card); color: var(--card-fg);
+  border-radius: 999px; padding: 10px 20px;
+}
+.btn-primary { background: var(--accent); color: var(--accent-fg); border-color: var(--accent); }
+.btn-back { align-self: flex-start; border: 0; background: none; color: var(--muted); padding: 6px 0; font-weight: 500; }
+.btn:focus-visible, .answer:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.progress { height: 8px; background: var(--border); border-radius: 999px; overflow: hidden; }
+.progress-bar { height: 100%; background: var(--accent); transition: width .25s ease; }
+.question-count { margin: 0; color: var(--muted); font-size: 14px; }
+.question-text { font-family: var(--font-display); font-size: clamp(22px, 5vw, 28px); line-height: 1.25; margin: 0; outline: none; }
+.answers { display: flex; flex-direction: column; gap: 10px; }
+.answer {
+  font: inherit; text-align: left; cursor: pointer;
+  background: var(--card); color: var(--card-fg);
+  border: 1.5px solid var(--border); border-radius: var(--radius);
+  padding: 14px 16px;
+  transition: transform .1s ease, border-color .1s ease;
+}
+.answer:hover { border-color: var(--accent); transform: translateY(-1px); }
+.result-card {
+  background: var(--card); color: var(--card-fg);
+  border: 2px solid var(--outcome-color); border-radius: calc(var(--radius) + 6px);
+  padding: 24px 20px; text-align: center;
+  display: flex; flex-direction: column; gap: 10px; align-items: center;
+}
+.result-label { margin: 0; text-transform: uppercase; letter-spacing: .1em; font-size: 13px; color: var(--muted); }
+.result-emoji { font-size: 56px; line-height: 1; }
+.result-name { font-family: var(--font-display); font-size: clamp(28px, 7vw, 40px); margin: 0; color: var(--outcome-color); outline: none; }
+.result-tagline { margin: 0; font-weight: 600; }
+.result-description { margin: 0; text-align: left; }
+.result-traits { list-style: none; padding: 0; margin: 4px 0 0; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.result-traits li { border: 1.5px solid var(--outcome-color); border-radius: 999px; padding: 3px 12px; font-size: 14px; }
+.blend { width: 100%; display: flex; flex-direction: column; gap: 6px; margin-top: 8px; text-align: left; }
+.blend-label { margin: 0; font-size: 13px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
+.blend-row { display: grid; grid-template-columns: minmax(0, 9em) 1fr 3em; gap: 10px; align-items: center; font-size: 14px; }
+.blend-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.blend-bar { height: 8px; background: var(--border); border-radius: 999px; overflow: hidden; }
+.blend-fill { display: block; height: 100%; background: var(--outcome-color); }
+.blend-pct { text-align: right; font-variant-numeric: tabular-nums; }
+.result-actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.all-outcomes { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 10px; }
+.outcome-mini {
+  background: var(--card); color: var(--card-fg);
+  border: 1.5px solid var(--border); border-left: 6px solid var(--outcome-color);
+  border-radius: var(--radius); padding: 12px 14px;
+}
+.outcome-mini.is-yours { border-color: var(--outcome-color); }
+.outcome-mini .result-emoji { font-size: 28px; }
+.outcome-mini-name { margin: 4px 0 2px; font-size: 16px; }
+.outcome-mini-tagline { margin: 0; font-size: 14px; color: var(--muted); }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+<style>
+/* ---- Quiz theme (agent-written style.css) ---- */
+__QUIZ_CSS__
+</style>
+</head>
+<body class="quiz-page" data-quiz="__WEEK__">
+__PREVIEW_BANNER__
+<header class="site-header">
+  <a class="home-link" href="__HOME_HREF__">← All quizzes</a>
+  <span class="quiz-week">__WEEK__</span>
+</header>
+<main id="app" class="quiz" aria-live="polite"></main>
+<footer class="quiz-nav" id="quiz-nav"></footer>
+<noscript><p style="text-align:center">This quiz needs JavaScript to run.</p></noscript>
+<script type="application/json" id="quiz-data">__QUIZ_JSON__</script>
+<script type="application/json" id="nav-data">__NAV_JSON__</script>
+<script>
+__ENGINE_JS__
+</script>
+</body>
+</html>

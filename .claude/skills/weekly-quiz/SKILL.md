@@ -5,7 +5,7 @@ description: Generate this week's personality quiz (content + theme), check it, 
 
 # Weekly quiz
 
-You are making one personality quiz for the site at `https://am3lia-low.github.io/fuzzy-barnacle/`.
+You are making one personality quiz for the site at `https://am3lia-low.github.io/quizzle-2.0/`.
 The output is a pull request that a human reviews, plays and merges. Merging publishes it.
 
 You only ever **write data**: a `quiz.json`, a `style.css`, a report, and the shortened topic list.
@@ -126,7 +126,7 @@ Never type the numbers yourself.
    - Title: `Quiz WEEK: <topic>` (exactly this form; step 2 relies on it).
    - Body: the title and emoji, one line about the theme, the outcome split table (copy it from
      `reports/WEEK.md`), a link to the report file on the branch, and:
-     "Preview: https://am3lia-low.github.io/fuzzy-barnacle/preview/ (ready a minute or two after the PR opens)".
+     "Preview: https://am3lia-low.github.io/quizzle-2.0/preview/ (ready a minute or two after the PR opens)".
 4. Finish with a short summary: the title, the PR link, the preview link, and anything from "Uncertainties".
 
 ## Things that are not your job

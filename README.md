@@ -3,7 +3,7 @@
 A Claude Code agent writes a new personality quiz every week. You review it as a pull request,
 play the preview, and merge to publish it on GitHub Pages.
 
-Site: https://am3lia-low.github.io/fuzzy-barnacle/
+Site: https://am3lia-low.github.io/quizzle-2.0/
 
 ## How a week works
 
@@ -12,7 +12,7 @@ Site: https://am3lia-low.github.io/fuzzy-barnacle/
    scoring) and `quizzes/<week>/style.css` (that quiz's theme).
 3. It runs the checks (`scripts/check_quiz.sh <week>`), gets a second opinion from a critic subagent,
    writes `reports/<week>.md`, and opens a PR titled `Quiz <week>: <topic>`.
-4. The PR triggers a preview at https://am3lia-low.github.io/fuzzy-barnacle/preview/
+4. The PR triggers a preview at https://am3lia-low.github.io/quizzle-2.0/preview/
 5. You get an email when the run finishes. Play the preview, read the report, then merge (publish) or
    close (reject; the topic goes back in the queue).
 

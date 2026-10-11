@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;600&display=swap");
+
+:root {
+  --border: #d7dfc6;
+  --muted: #5f6b55;
+  --radius: 22px;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-display: "Fraunces", Georgia, serif;
+}
+body {
+  background:
+    radial-gradient(circle at 12% 8%, #e3ebd0 0 110px, transparent 111px),
+    radial-gradient(circle at 92% 88%, #e8e2c8 0 150px, transparent 151px),
+    var(--bg);
+}
+.answer { box-shadow: 0 2px 0 var(--border); transition: transform .15s ease; }
+.answer:hover { background: #f0f5e4; transform: translateY(-1px); }
+.result-card { box-shadow: 0 10px 30px -12px rgba(37, 48, 31, .35); border-top: 6px solid var(--outcome-color); }
+@media (prefers-reduced-motion: reduce) { .answer { transition: none; } .answer:hover { transform: none; } }

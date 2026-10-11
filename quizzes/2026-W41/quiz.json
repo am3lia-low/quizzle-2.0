@@ -1,0 +1,341 @@
+{
+  "week": "2026-W41",
+  "title": "Which tea are you?",
+  "topic": "Which tea are you",
+  "category": "food",
+  "emoji": "🍵",
+  "intro": "Seven questions about evenings, weather and small joys. We'll steep the tea that matches your personality.",
+  "start_label": "Start steeping",
+  "result_label": "Your tea is",
+  "scoring": "winner",
+  "theme": {
+    "bg": "#f3efe2",
+    "fg": "#25301f",
+    "card": "#fffdf6",
+    "accent": "#3f6b3a",
+    "accent_fg": "#ffffff"
+  },
+  "outcomes": [
+    {
+      "id": "masala-chai",
+      "name": "Masala Chai",
+      "emoji": "🫖",
+      "color": "#a4501c",
+      "tagline": "Bold, spiced and the heart of every gathering.",
+      "description": "You bring warmth, a little kick and a lot of stories. Friends gravitate to your kitchen because something is always simmering and the conversation is always good. You are generous with your time and unafraid of strong flavours.",
+      "traits": [
+        "spirited",
+        "generous",
+        "lively"
+      ],
+      "image": null
+    },
+    {
+      "id": "jasmine-green",
+      "name": "Jasmine Green",
+      "emoji": "🌼",
+      "color": "#4d7f4a",
+      "tagline": "Fresh, graceful and quietly uplifting.",
+      "description": "You have a gentle way of making a day feel lighter. You notice small beauties, keep your calm and leave a lovely impression wherever you go. People feel more like themselves around you.",
+      "traits": [
+        "graceful",
+        "fresh",
+        "gentle"
+      ],
+      "image": null
+    },
+    {
+      "id": "earl-grey",
+      "name": "Earl Grey",
+      "emoji": "🎩",
+      "color": "#3d4f73",
+      "tagline": "Classic, polished and effortlessly put together.",
+      "description": "You like things done properly, with a twist of something unexpected. Reliable, well read and good with a dry joke, you are the person everyone trusts to know the right thing to say.",
+      "traits": [
+        "refined",
+        "dependable",
+        "witty"
+      ],
+      "image": null
+    },
+    {
+      "id": "chamomile",
+      "name": "Chamomile",
+      "emoji": "🌙",
+      "color": "#9a7b2f",
+      "tagline": "Soft, soothing and exactly what everyone needs.",
+      "description": "You are the exhale at the end of a long day. You listen well, you never rush anyone and your home has the best blankets. Your calm is a gift that others lean on more than you know.",
+      "traits": [
+        "soothing",
+        "patient",
+        "caring"
+      ],
+      "image": null
+    },
+    {
+      "id": "bubble-tea",
+      "name": "Bubble Tea",
+      "emoji": "🧋",
+      "color": "#b5528a",
+      "tagline": "Playful, colourful and always up for an adventure.",
+      "description": "You turn errands into outings and outings into stories. Curious, sociable and full of ideas, you always have a new favourite thing to share, and extra toppings are non-negotiable.",
+      "traits": [
+        "playful",
+        "adventurous",
+        "sociable"
+      ],
+      "image": null
+    }
+  ],
+  "questions": [
+    {
+      "text": "It's a free evening. What are you doing?",
+      "answers": [
+        {
+          "text": "Hosting dinner for way too many people",
+          "scores": {
+            "masala-chai": 2,
+            "earl-grey": 1
+          }
+        },
+        {
+          "text": "Reading by the window with the lights low",
+          "scores": {
+            "chamomile": 2
+          }
+        },
+        {
+          "text": "Heading to a new place a friend posted about",
+          "scores": {
+            "bubble-tea": 2
+          }
+        },
+        {
+          "text": "Going for a quiet walk as the sun sets",
+          "scores": {
+            "jasmine-green": 2
+          }
+        },
+        {
+          "text": "Tidying up a project till it's just right",
+          "scores": {
+            "earl-grey": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Pick a weather.",
+      "answers": [
+        {
+          "text": "Rainy and cosy",
+          "scores": {
+            "chamomile": 2
+          }
+        },
+        {
+          "text": "Crisp spring morning",
+          "scores": {
+            "jasmine-green": 2
+          }
+        },
+        {
+          "text": "Warm, golden afternoon",
+          "scores": {
+            "masala-chai": 2,
+            "bubble-tea": 1
+          }
+        },
+        {
+          "text": "Overcast with a good book",
+          "scores": {
+            "earl-grey": 2
+          }
+        },
+        {
+          "text": "Festival-weather sunshine",
+          "scores": {
+            "bubble-tea": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Your friends would say you're…",
+      "answers": [
+        {
+          "text": "The one who always has snacks",
+          "scores": {
+            "masala-chai": 2
+          }
+        },
+        {
+          "text": "The one with the great taste",
+          "scores": {
+            "earl-grey": 2
+          }
+        },
+        {
+          "text": "The one who is calm in a crisis",
+          "scores": {
+            "chamomile": 2
+          }
+        },
+        {
+          "text": "The one with the wild plans",
+          "scores": {
+            "bubble-tea": 2,
+            "masala-chai": 1
+          }
+        },
+        {
+          "text": "The one who makes everything feel kind",
+          "scores": {
+            "jasmine-green": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Choose a soundtrack.",
+      "answers": [
+        {
+          "text": "Classic jazz",
+          "scores": {
+            "earl-grey": 2
+          }
+        },
+        {
+          "text": "Acoustic and airy",
+          "scores": {
+            "jasmine-green": 2,
+            "chamomile": 1
+          }
+        },
+        {
+          "text": "Upbeat pop with big hooks",
+          "scores": {
+            "bubble-tea": 2
+          }
+        },
+        {
+          "text": "Lo-fi and gentle",
+          "scores": {
+            "chamomile": 2
+          }
+        },
+        {
+          "text": "A big singalong ballad",
+          "scores": {
+            "masala-chai": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "How do you handle a surprise change of plans?",
+      "answers": [
+        {
+          "text": "Roll with it and make it a story",
+          "scores": {
+            "bubble-tea": 2
+          }
+        },
+        {
+          "text": "Take a breath and adapt gracefully",
+          "scores": {
+            "jasmine-green": 2
+          }
+        },
+        {
+          "text": "Quickly redo the plan so it's neat again",
+          "scores": {
+            "earl-grey": 2
+          }
+        },
+        {
+          "text": "Make everyone a hot drink first",
+          "scores": {
+            "chamomile": 2
+          }
+        },
+        {
+          "text": "Invite more people along",
+          "scores": {
+            "masala-chai": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Pick a souvenir.",
+      "answers": [
+        {
+          "text": "A tiny jar of spices",
+          "scores": {
+            "masala-chai": 2
+          }
+        },
+        {
+          "text": "A pressed flower in a notebook",
+          "scores": {
+            "jasmine-green": 2
+          }
+        },
+        {
+          "text": "A fun, odd little trinket",
+          "scores": {
+            "bubble-tea": 2
+          }
+        },
+        {
+          "text": "A beautiful old teacup",
+          "scores": {
+            "earl-grey": 2
+          }
+        },
+        {
+          "text": "A soft woollen scarf",
+          "scores": {
+            "chamomile": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Your ideal weekend morning starts with…",
+      "answers": [
+        {
+          "text": "Pottering in the kitchen, radio on",
+          "scores": {
+            "masala-chai": 2
+          }
+        },
+        {
+          "text": "Opening the windows to fresh air",
+          "scores": {
+            "jasmine-green": 2
+          }
+        },
+        {
+          "text": "A long, slow sleep-in",
+          "scores": {
+            "chamomile": 2
+          }
+        },
+        {
+          "text": "Brunch with fancy tableware",
+          "scores": {
+            "earl-grey": 2
+          }
+        },
+        {
+          "text": "A spontaneous trip somewhere",
+          "scores": {
+            "bubble-tea": 2
+          }
+        }
+      ]
+    }
+  ]
+}

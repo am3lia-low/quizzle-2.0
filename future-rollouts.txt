@@ -1,0 +1,42 @@
+WEEKLY PERSONALITY QUIZ - FUTURE ROLLOUTS
+==========================================
+
+PHASE 1 (current): Weekly quiz agent
+-------------------------------------
+- Weekly cloud Routine runs a Claude Code session with a repo skill
+- Pops the next topic from a pre-shuffled list of 100 topics (topics.json)
+- Variable outcomes per quiz; 5-12 questions per quiz
+- Validator + 10k random-playthrough simulator
+  - Hard rule: every outcome must be reachable
+  - Imbalance is allowed; outcome % split is reported, not forced
+- Critic subagent pass
+- Opens a PR with: quiz JSON, .md report (incl. outcome % split), updated topics.json
+- PR preview on github.io /preview/ page
+- Email notification on run finish (success or failure)
+- Merge = publish to GitHub Pages
+
+PHASE 2: Quarterly topic refresh
+--------------------------------
+- Second Routine, every 3 months
+- Agent generates 100 new topics across categories
+  (food, travel, whimsical things, music, psychology archetypes,
+   fictional characters, etc.)
+- Each topic can carry preset settings (outcome count, scoring mode)
+- Opens a PR; manually review and remove unwanted topics, then merge
+- Shuffle so the same category doesn't come up twice in a row
+
+PHASE 3: Visual polish
+----------------------
+- Beautify the quiz page and the outcomes/results page
+- Add pictures for outcomes (schema already reserves an optional `image` field)
+- Decide image source (generated, illustrated, or sourced with proper rights)
+
+IDEAS / MAYBE LATER
+-------------------
+- Switch from PR review to auto-publish once output quality is trusted
+- Highlight rare outcomes on the results page (e.g. "only 4% get this")
+- Shareable result cards (image to post)
+- RSS feed so readers get new quizzes automatically
+- "Your past results" saved in the reader's own browser (no backend)
+- Aggregate stats ("12% of readers got Matcha") - needs a backend; privacy to design
+- Let the agent write fully custom HTML layouts, guarded by the playtest

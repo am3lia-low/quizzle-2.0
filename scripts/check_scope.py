@@ -1,0 +1,47 @@
+"""Guardrail: fail if the agent changed anything outside this week's quiz files.
+
+Usage: python3 scripts/check_scope.py 2026-W42 [--base origin/main]
+Looks at committed, staged, unstaged and untracked changes compared with the base.
+"""
+
+import argparse
+import subprocess
+import sys
+
+import quizlib
+
+
+def git(*args: str) -> list[str]:
+    out = subprocess.run(["git", *args], cwd=quizlib.ROOT, check=True, capture_output=True, text=True).stdout
+    return [line for line in out.splitlines() if line.strip()]
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("week")
+    parser.add_argument("--base", default="origin/main")
+    args = parser.parse_args()
+    week = args.week
+
+    changed = set(git("diff", "--name-only", f"{args.base}...HEAD"))
+    changed |= set(git("diff", "--name-only", "HEAD"))
+    changed |= set(git("ls-files", "--others", "--exclude-standard"))
+
+    allowed = {f"quizzes/{week}/quiz.json", f"quizzes/{week}/style.css", f"reports/{week}.md", "topics.json"}
+    required = allowed - {"topics.json"}
+
+    outside = sorted(changed - allowed)
+    missing = sorted(required - changed)
+    for path in outside:
+        print(f"not allowed to change: {path}")
+    for path in missing:
+        print(f"expected a change to: {path}")
+    if outside or missing:
+        print("FAIL: scope check")
+        return 1
+    print(f"OK: only {week}'s files changed ({len(changed)} file(s))")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

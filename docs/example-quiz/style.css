@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;600&display=swap");
+
+:root {
+  --border: #e7d8c6;
+  --muted: #7b6656;
+  --radius: 18px;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-display: "Fraunces", Georgia, serif;
+}
+body {
+  background:
+    radial-gradient(circle at 15% 10%, #efe0cc 0 120px, transparent 121px),
+    radial-gradient(circle at 90% 85%, #ecdcc6 0 160px, transparent 161px),
+    var(--bg);
+}
+.answer { box-shadow: 0 2px 0 var(--border); }
+.answer:hover { background: #fdf3e7; }
+.result-card { box-shadow: 0 10px 30px -12px rgba(43, 29, 20, .35); }

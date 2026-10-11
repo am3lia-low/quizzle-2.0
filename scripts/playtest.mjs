@@ -27,7 +27,8 @@ try {
   for (const outcome of quiz.outcomes) {
     const path = sim.witnesses[outcome.id];
     if (!path) { failures.push(`${outcome.id}: no example path (unreachable)`); continue; }
-    const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
+    // Path checks run with reduced motion (instant transitions); the motion pass below covers animations.
+    const page = await browser.newPage({ viewport: { width: 390, height: 844 }, reducedMotion: "reduce" });
     const errors = [];
     page.on("pageerror", (e) => errors.push(e.message));
     page.on("console", (m) => { if (m.type() === "error") errors.push(m.text()); });
@@ -49,7 +50,7 @@ try {
     await page.close();
   }
   // Random paths: the browser must agree with the Python scorer (catches drift between the two).
-  const page = await browser.newPage();
+  const page = await browser.newPage({ reducedMotion: "reduce" });
   page.on("pageerror", (e) => failures.push(`JS error: ${e.message}`));
   await page.goto(pathToFileURL(page_path).href);
   for (const { picks, winner } of sim.samples) {
@@ -60,6 +61,20 @@ try {
     await page.click('[data-testid="restart"]');
   }
   await page.close();
+
+  // Motion on: the picked answer highlights, then the next question animates in.
+  {
+    const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
+    page.on("pageerror", (e) => failures.push(`motion: JS error: ${e.message}`));
+    await page.goto(pathToFileURL(page_path).href);
+    await page.click('[data-testid="start"]');
+    await page.click('[data-testid="answer-0"]');
+    if (!(await page.locator(".answer.is-picked").count())) failures.push("motion: picked answer is not highlighted");
+    await page.waitForSelector('.screen.question[data-question="1"]');
+    const animation = await page.locator(".screen.question").evaluate((n) => getComputedStyle(n).animationName);
+    if (!animation || animation === "none") failures.push("motion: next question has no enter animation");
+    await page.close();
+  }
 } finally {
   await browser.close();
 }

@@ -57,6 +57,22 @@ Read `docs/example-quiz/quiz.json` and `style.css` for the exact format, then wr
 
 Writing guidelines:
 - Fun, warm and a bit witty. Answers should be things people actually pick, not obviously "the right one".
+
+Question logic (the most common failure, so check every question against these):
+- **Answers must answer the question.** "Pick a weather" takes weathers ("Thunderstorm", "Drizzle",
+  "Blazing heat"), not activities ("Overcast with a good book") or other categories ("Festival-weather sunshine").
+- **Answers are parallel:** the same kind of thing, the same grammatical shape and roughly the same length.
+  If one answer is a place, they're all places; if one is a sentence, they all are.
+- **One idea per answer.** Don't bolt a second idea onto an answer to steer it to an outcome
+  ("Rainy and cosy" smuggles in a mood). Pick a cleaner answer instead.
+- **Distinct options:** no two answers in a question should feel interchangeable or overlap.
+- **The link to the outcome should make sense on reflection** (a reader who sees the scoring nods),
+  but shouldn't be spelled out in the answer. Don't name the outcomes or echo the topic in answers
+  (no "a cup of tea" answers in a tea quiz).
+- **Vary the questions:** mix scenarios ("Your friend cancels plans. You…"), preferences ("Pick a…"),
+  and either/or style picks. No two questions should test the same thing.
+- Before moving on, read each question with its answers aloud in your head. If any answer sounds odd after
+  the question, rewrite it.
 - Every outcome should feel like a result someone would be happy to get. No negative or mean outcomes.
 - Lopsided results are allowed and can be fun (a rare 🦄 result is good), but every outcome must be reachable.
 - No stereotypes about real groups of people, nothing about health, weight, religion or politics.
@@ -99,12 +115,17 @@ obviously isn't what you intended, adjust the scores and re-run (this counts as 
 
 Start a subagent (Agent tool) with this brief, passing it the path to `quiz.json` and the simulate output:
 
-> You are reviewing a personality quiz before it's published. Read quizzes/WEEK/quiz.json.
-> Report BLOCKING issues (offensive or stereotyping content, factual errors about real/fictional things,
-> confusing or broken questions, an outcome that would feel insulting, answers that obviously point at one
-> result) and NON-BLOCKING notes (tone, weak questions, ideas). Be specific: quote the text. Don't rewrite the quiz.
+> You are reviewing a personality quiz before it's published. Read quizzes/WEEK/quiz.json, then
+> .claude/skills/weekly-quiz/SKILL.md section 4 ("Question logic").
+> Go through EVERY question one by one and check each answer against those rules: does it actually answer
+> the question, is it the same kind of thing as the other answers, is it one idea, is it distinct?
+> Report BLOCKING issues: any answer that breaks a question-logic rule; offensive or stereotyping content;
+> factual errors about real or fictional things; confusing questions; an outcome that would feel insulting;
+> answers that obviously point at one result. Report NON-BLOCKING notes (tone, weaker questions, ideas).
+> Quote the exact text for every issue. Don't rewrite the quiz.
 
-Fix every blocking issue, then run `scripts/check_quiz.sh WEEK` again (must pass).
+Fix every blocking issue, then run `scripts/check_quiz.sh WEEK` again (must pass). If you changed more than a
+couple of answers, run the critic once more on the new version.
 
 ## 8. Report
 

@@ -24,6 +24,8 @@
   --outcome-color: var(--accent);
 }
 *, *::before, *::after { box-sizing: border-box; }
+/* Keeps the hidden attribute working even when a rule (or a quiz theme) sets display. */
+[hidden] { display: none !important; }
 html { -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;

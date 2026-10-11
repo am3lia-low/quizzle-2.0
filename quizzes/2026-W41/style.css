@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Nunito+Sans:wght@400;600;700&display=swap");
+
+:root {
+  --border: #d9d0b4;
+  --muted: #5d6656;
+  --radius: 22px;
+  --font-body: "Nunito Sans", system-ui, sans-serif;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+}
+
+/* Paper background with a faint scatter of tea leaves */
+body {
+  background:
+    radial-gradient(ellipse 14px 6px at 20% 30%, rgba(63, 107, 58, .10) 98%, transparent 100%),
+    radial-gradient(ellipse 6px 14px at 70% 75%, rgba(63, 107, 58, .08) 98%, transparent 100%),
+    radial-gradient(ellipse 10px 5px at 85% 20%, rgba(153, 70, 27, .07) 98%, transparent 100%),
+    radial-gradient(circle at 0% 100%, #e6dfc8 0 220px, transparent 221px),
+    var(--bg);
+  background-size: 140px 140px, 180px 180px, 160px 160px, auto, auto;
+}
+
+.site-header { border-bottom: 1px dashed var(--border); }
+
+/* Rising steam above the teapot on the intro */
+.screen.intro .quiz-emoji {
+  position: relative;
+  display: inline-block;
+}
+.screen.intro .quiz-emoji::before,
+.screen.intro .quiz-emoji::after {
+  content: "";
+  position: absolute;
+  top: -18px;
+  width: 6px;
+  height: 22px;
+  border-radius: 6px;
+  background: linear-gradient(to top, rgba(93, 102, 86, .35), transparent);
+  animation: steam 2.8s ease-in-out infinite;
+}
+.screen.intro .quiz-emoji::before { left: 35%; }
+.screen.intro .quiz-emoji::after { left: 58%; animation-delay: 1.4s; }
+
+@keyframes steam {
+  0%   { transform: translateY(6px) scaleY(.6); opacity: 0; }
+  40%  { opacity: 1; }
+  100% { transform: translateY(-14px) scaleY(1.1) skewX(-12deg); opacity: 0; }
+}
+
+.quiz-title, .question-text, .result-name {
+  letter-spacing: .01em;
+}
+
+/* Progress bar fills like tea poured into a cup */
+.progress { background: #e8e1ca; border-radius: 999px; }
+.progress-bar {
+  background: linear-gradient(90deg, #c99a3b, #99461b);
+  border-radius: 999px;
+}
+
+.answer {
+  border: 1.5px solid var(--border);
+  box-shadow: 0 3px 0 #e4dbc0;
+  transition: transform .15s ease, background-color .15s ease, border-color .15s ease;
+}
+.answer:hover, .answer:focus-visible {
+  background: #f5f9ef;
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.btn.btn-primary { border-radius: 999px; }
+
+/* Result card: a saucer-like ring in the outcome's colour */
+.result-card {
+  border-top: 8px solid var(--outcome-color);
+  box-shadow: 0 0 0 6px #fffdf5, 0 0 0 7px var(--border), 0 18px 36px -18px rgba(31, 42, 31, .45);
+}
+.result-traits li {
+  border: 1px solid var(--outcome-color);
+  color: var(--fg);
+  border-radius: 999px;
+}
+.outcome-mini.is-yours { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .screen.intro .quiz-emoji::before,
+  .screen.intro .quiz-emoji::after { animation: none; opacity: .5; }
+  .answer { transition: none; }
+  .answer:hover, .answer:focus-visible { transform: none; }
+}

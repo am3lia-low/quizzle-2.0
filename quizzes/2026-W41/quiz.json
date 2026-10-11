@@ -1,0 +1,441 @@
+{
+  "week": "2026-W41",
+  "title": "Which tea are you?",
+  "topic": "Which tea are you",
+  "category": "food",
+  "emoji": "🫖",
+  "intro": "Nine questions about weather, parties and how you spend a free evening. Let it steep, and we'll pour out the tea that matches your personality.",
+  "start_label": "Put the kettle on",
+  "result_label": "Your tea is",
+  "scoring": "winner",
+  "theme": {
+    "bg": "#f1ecdc",
+    "fg": "#1f2a1f",
+    "card": "#fffdf5",
+    "accent": "#3f6b3a",
+    "accent_fg": "#ffffff"
+  },
+  "outcomes": [
+    {
+      "id": "earl-grey",
+      "name": "Earl Grey",
+      "emoji": "🎩",
+      "color": "#44497f",
+      "tagline": "Classic, quick-witted and quietly a little bit fancy.",
+      "description": "You have excellent taste and you know it, but you wear it lightly. You notice the detail everyone else missed, you love a good story with some history behind it, and your dry one-liners land every time. You're proof that the classics are classics for a reason.",
+      "traits": [
+        "sharp",
+        "elegant",
+        "observant"
+      ]
+    },
+    {
+      "id": "chamomile",
+      "name": "Chamomile",
+      "emoji": "🌼",
+      "color": "#8a6212",
+      "tagline": "Gentle, unhurried and the calmest person in any room.",
+      "description": "You have a gift for slowing things down. People feel at ease around you without quite knowing why. You'd pick a quiet corner over a crowd, a soft blanket over a big night out, and you're the one everyone texts when they need someone to just listen.",
+      "traits": [
+        "calm",
+        "kind",
+        "grounded"
+      ]
+    },
+    {
+      "id": "masala-chai",
+      "name": "Masala Chai",
+      "emoji": "🫚",
+      "color": "#99461b",
+      "tagline": "Warm, generous and always making enough for everyone.",
+      "description": "You're the heart of every gathering. Your door is always open, there's always food on the stove, and nobody leaves your company without feeling looked after. You bring the spice, the warmth and the second helping.",
+      "traits": [
+        "warm",
+        "generous",
+        "sociable"
+      ]
+    },
+    {
+      "id": "sencha",
+      "name": "Sencha",
+      "emoji": "🍃",
+      "color": "#3f6b3a",
+      "tagline": "Fresh, focused and wonderfully precise.",
+      "description": "You like things done properly, and you have the patience to do them that way. Clear plans, tidy spaces and crisp mornings are your happy place. People rely on you because when you say you'll do something, it's already half done.",
+      "traits": [
+        "focused",
+        "reliable",
+        "clear-headed"
+      ]
+    },
+    {
+      "id": "bubble-tea",
+      "name": "Bubble Tea",
+      "emoji": "🧋",
+      "color": "#ad2f68",
+      "tagline": "Playful, colourful and impossible not to smile at.",
+      "description": "You turn ordinary days into something fun. You've got a new hobby every month, a playlist for every mood and a joke for every awkward silence. Life is more interesting with a few surprises at the bottom of the cup.",
+      "traits": [
+        "playful",
+        "upbeat",
+        "spontaneous"
+      ]
+    },
+    {
+      "id": "lapsang-souchong",
+      "name": "Lapsang Souchong",
+      "emoji": "🔥",
+      "color": "#3a3530",
+      "tagline": "Bold, smoky and gloriously unforgettable.",
+      "description": "You're an acquired taste and proud of it. You chase adventures other people only daydream about, you'd rather have a wild story than a safe evening, and the people who get you really get you. Nobody forgets meeting you.",
+      "traits": [
+        "bold",
+        "adventurous",
+        "independent"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "text": "Your friend cancels plans at the last minute. You…",
+      "answers": [
+        {
+          "text": "Run a long hot bath",
+          "scores": {
+            "chamomile": 2
+          }
+        },
+        {
+          "text": "Invite someone else over instead",
+          "scores": {
+            "masala-chai": 2
+          }
+        },
+        {
+          "text": "Finally finish the weekend crossword",
+          "scores": {
+            "earl-grey": 2
+          }
+        },
+        {
+          "text": "Tackle the jobs you've been putting off",
+          "scores": {
+            "sencha": 2
+          }
+        },
+        {
+          "text": "Start a video game marathon",
+          "scores": {
+            "bubble-tea": 2
+          }
+        },
+        {
+          "text": "Book a last-minute train somewhere",
+          "scores": {
+            "lapsang-souchong": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Pick a weather.",
+      "answers": [
+        {
+          "text": "Thunderstorm",
+          "scores": {
+            "lapsang-souchong": 2
+          }
+        },
+        {
+          "text": "Drizzle",
+          "scores": {
+            "chamomile": 2
+          }
+        },
+        {
+          "text": "Crisp frost",
+          "scores": {
+            "sencha": 2
+          }
+        },
+        {
+          "text": "Blazing sunshine",
+          "scores": {
+            "bubble-tea": 2
+          }
+        },
+        {
+          "text": "Thick fog",
+          "scores": {
+            "earl-grey": 2
+          }
+        },
+        {
+          "text": "Snowfall",
+          "scores": {
+            "masala-chai": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Pick a superpower.",
+      "answers": [
+        {
+          "text": "Teleportation",
+          "scores": {
+            "lapsang-souchong": 2
+          }
+        },
+        {
+          "text": "Time travel",
+          "scores": {
+            "earl-grey": 2
+          }
+        },
+        {
+          "text": "Talking to animals",
+          "scores": {
+            "chamomile": 2
+          }
+        },
+        {
+          "text": "Perfect memory",
+          "scores": {
+            "sencha": 2
+          }
+        },
+        {
+          "text": "Shape-shifting",
+          "scores": {
+            "bubble-tea": 2
+          }
+        },
+        {
+          "text": "Cloning",
+          "scores": {
+            "masala-chai": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Exploring a new city, you'd rather…",
+      "answers": [
+        {
+          "text": "Follow a planned route",
+          "scores": {
+            "sencha": 2,
+            "earl-grey": 1
+          }
+        },
+        {
+          "text": "Wander with no plan",
+          "scores": {
+            "lapsang-souchong": 2,
+            "bubble-tea": 1
+          }
+        }
+      ]
+    },
+    {
+      "text": "Which part of a house party is yours?",
+      "answers": [
+        {
+          "text": "The kitchen",
+          "scores": {
+            "masala-chai": 2
+          }
+        },
+        {
+          "text": "The dance floor",
+          "scores": {
+            "bubble-tea": 2
+          }
+        },
+        {
+          "text": "The balcony",
+          "scores": {
+            "chamomile": 2
+          }
+        },
+        {
+          "text": "The study",
+          "scores": {
+            "earl-grey": 2
+          }
+        },
+        {
+          "text": "The fire pit",
+          "scores": {
+            "lapsang-souchong": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Pick a new hobby to take up.",
+      "answers": [
+        {
+          "text": "Pottery",
+          "scores": {
+            "chamomile": 2
+          }
+        },
+        {
+          "text": "Rock climbing",
+          "scores": {
+            "lapsang-souchong": 2
+          }
+        },
+        {
+          "text": "Woodworking",
+          "scores": {
+            "sencha": 2
+          }
+        },
+        {
+          "text": "Fencing",
+          "scores": {
+            "earl-grey": 2
+          }
+        },
+        {
+          "text": "Roller skating",
+          "scores": {
+            "bubble-tea": 2
+          }
+        },
+        {
+          "text": "Choir singing",
+          "scores": {
+            "masala-chai": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "A group project hits a snag. You…",
+      "answers": [
+        {
+          "text": "Draw up a clear new plan",
+          "scores": {
+            "sencha": 2
+          }
+        },
+        {
+          "text": "Bring everyone snacks",
+          "scores": {
+            "masala-chai": 2
+          }
+        },
+        {
+          "text": "Suggest a completely wild idea",
+          "scores": {
+            "lapsang-souchong": 2
+          }
+        },
+        {
+          "text": "Crack a joke to ease the tension",
+          "scores": {
+            "bubble-tea": 2
+          }
+        },
+        {
+          "text": "Listen to every side",
+          "scores": {
+            "chamomile": 2
+          }
+        },
+        {
+          "text": "Spot the flaw nobody else saw",
+          "scores": {
+            "earl-grey": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Pick a sound to fall asleep to.",
+      "answers": [
+        {
+          "text": "Ocean waves",
+          "scores": {
+            "chamomile": 2
+          }
+        },
+        {
+          "text": "Howling wind",
+          "scores": {
+            "lapsang-souchong": 2
+          }
+        },
+        {
+          "text": "Ticking clocks",
+          "scores": {
+            "earl-grey": 2
+          }
+        },
+        {
+          "text": "Muffled chatter",
+          "scores": {
+            "masala-chai": 2
+          }
+        },
+        {
+          "text": "Whirring fans",
+          "scores": {
+            "sencha": 2
+          }
+        },
+        {
+          "text": "Lo-fi beats",
+          "scores": {
+            "bubble-tea": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "It's a friend's birthday. You send…",
+      "answers": [
+        {
+          "text": "A handwritten card",
+          "scores": {
+            "chamomile": 2
+          }
+        },
+        {
+          "text": "A first-edition book",
+          "scores": {
+            "earl-grey": 2
+          }
+        },
+        {
+          "text": "A silly voice note",
+          "scores": {
+            "bubble-tea": 2
+          }
+        },
+        {
+          "text": "A text at exactly midnight",
+          "scores": {
+            "sencha": 2
+          }
+        },
+        {
+          "text": "A huge care package",
+          "scores": {
+            "masala-chai": 2
+          }
+        },
+        {
+          "text": "A ticket to something new",
+          "scores": {
+            "lapsang-souchong": 2
+          }
+        }
+      ]
+    }
+  ]
+}

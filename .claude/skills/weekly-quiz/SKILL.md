@@ -97,6 +97,9 @@ Write `quizzes/WEEK/style.css` to give this quiz its own look. Be creative: it's
     .result-description .result-traits li .blend .blend-row .blend-name .blend-bar .blend-fill .blend-pct
     .result-actions .btn .all-outcomes .outcome-mini(.is-yours) .outcome-mini-name .outcome-mini-tagline`
   - `--outcome-color` is set on result cards to that outcome's `color`.
+  - Transitions are built in: each screen gets `.screen-enter` with `data-direction="forward|back|none"`, the
+    tapped answer gets `.is-picked` and its list `.is-locked`. Tune them with `--enter-distance` (default 28px)
+    and `--enter-duration` (default 320ms), or restyle `.answer.is-picked` to suit the theme. Don't remove them.
 - Keep it readable on a phone (390 px wide) and respect `prefers-reduced-motion` for any animation.
 
 ## 6. Check and fix (max 3 attempts)

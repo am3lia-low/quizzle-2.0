@@ -12,6 +12,13 @@
   quiz.outcomes.forEach(function (o) { outcomeById[o.id] = o; });
 
   var answers = []; // chosen answer index per question
+  var busy = false; // true while an answer's "picked" moment plays, so double taps can't skip a question
+  var lastProgress = 0; // progress bar width (%) on the previous screen, so the bar fills smoothly
+  var PICK_DELAY = 220; // ms to show the picked answer before moving on
+
+  function reducedMotion() {
+    return window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  }
 
   function el(tag, cls, text) {
     var node = document.createElement(tag);
@@ -24,13 +31,25 @@
     while (app.firstChild) app.removeChild(app.firstChild);
   }
 
-  function show(screen, name) {
+  // direction: "forward" (next), "back" (previous) or "none" (first load) picks the enter animation.
+  function show(screen, name, direction) {
     clear();
     app.dataset.screen = name;
+    screen.classList.add("screen-enter");
+    screen.dataset.direction = direction || "none";
     app.appendChild(screen);
     window.scrollTo(0, 0);
     var focusTarget = screen.querySelector("[data-autofocus]");
     if (focusTarget) focusTarget.focus();
+  }
+
+  // Highlight the picked answer briefly, then run `next`. Ignores taps while one is playing.
+  function pick(button, next) {
+    if (busy) return;
+    busy = true;
+    button.classList.add("is-picked");
+    button.parentNode.classList.add("is-locked");
+    setTimeout(function () { busy = false; next(); }, reducedMotion() ? 0 : PICK_DELAY);
   }
 
   // ---------- scoring (mirror of quizlib.score) ----------
@@ -57,7 +76,7 @@
   }
 
   // ---------- screens ----------
-  function renderIntro() {
+  function renderIntro(direction) {
     var s = el("section", "screen intro");
     if (quiz.emoji) s.appendChild(el("div", "quiz-emoji", quiz.emoji));
     s.appendChild(el("h1", "quiz-title", quiz.title));
@@ -67,12 +86,12 @@
     start.type = "button";
     start.dataset.testid = "start";
     start.setAttribute("data-autofocus", "");
-    start.addEventListener("click", function () { answers = []; renderQuestion(0); });
+    start.addEventListener("click", function () { answers = []; lastProgress = 0; renderQuestion(0, "forward"); });
     s.appendChild(start);
-    show(s, "intro");
+    show(s, "intro", direction);
   }
 
-  function renderQuestion(q) {
+  function renderQuestion(q, direction) {
     var question = quiz.questions[q];
     var s = el("section", "screen question");
     s.dataset.question = String(q);
@@ -83,7 +102,11 @@
     progress.setAttribute("aria-valuemax", String(quiz.questions.length));
     progress.setAttribute("aria-valuenow", String(q));
     var bar = el("div", "progress-bar");
-    bar.style.width = (q / quiz.questions.length * 100) + "%";
+    var target = q / quiz.questions.length * 100;
+    bar.style.width = lastProgress + "%";
+    lastProgress = target;
+    // Next frame: move to the new width so the bar's CSS transition fills it smoothly.
+    requestAnimationFrame(function () { requestAnimationFrame(function () { bar.style.width = target + "%"; }); });
     progress.appendChild(bar);
     s.appendChild(progress);
 
@@ -99,10 +122,12 @@
       b.type = "button";
       b.dataset.testid = "answer-" + i;
       b.addEventListener("click", function () {
-        answers[q] = i;
-        answers.length = q + 1;
-        if (q + 1 < quiz.questions.length) renderQuestion(q + 1);
-        else renderResult();
+        pick(b, function () {
+          answers[q] = i;
+          answers.length = q + 1;
+          if (q + 1 < quiz.questions.length) renderQuestion(q + 1, "forward");
+          else renderResult();
+        });
       });
       list.appendChild(b);
     });
@@ -112,10 +137,11 @@
     back.type = "button";
     back.dataset.testid = "back";
     back.addEventListener("click", function () {
-      if (q === 0) renderIntro(); else renderQuestion(q - 1);
+      if (busy) return;
+      if (q === 0) renderIntro("back"); else renderQuestion(q - 1, "back");
     });
     s.appendChild(back);
-    show(s, "question");
+    show(s, "question", direction);
   }
 
   function outcomeCard(o, cls) {
@@ -157,7 +183,7 @@
     var again = el("button", "btn", "Take it again");
     again.type = "button";
     again.dataset.testid = "restart";
-    again.addEventListener("click", function () { delete document.body.dataset.result; renderIntro(); });
+    again.addEventListener("click", function () { delete document.body.dataset.result; renderIntro("back"); });
     actions.appendChild(again);
     var allBtn = el("button", "btn", "See all results");
     allBtn.type = "button";
@@ -178,7 +204,7 @@
       allBtn.textContent = all.hidden ? "See all results" : "Hide all results";
     });
     s.appendChild(all);
-    show(s, "result");
+    show(s, "result", "forward");
   }
 
   function renderBlend(totals) {

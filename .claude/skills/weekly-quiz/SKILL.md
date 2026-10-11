@@ -16,7 +16,8 @@ the person gets an email for every run, so a clear failure message is the whole 
 
 ## 1. Work out the week
 
-- Default: the current ISO week, `date -u +%G-W%V` (e.g. `2026-W42`).
+- Default: the current ISO week in Singapore time, `TZ=Asia/Singapore date +%G-W%V` (e.g. `2026-W42`).
+  The Routine runs early Monday morning SGT, which is still Sunday in UTC, so don't use UTC here.
 - If the request names a week (e.g. "do week 2026-W43"), use that instead.
 - Call it `WEEK` below.
 

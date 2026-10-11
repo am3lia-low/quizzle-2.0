@@ -1,0 +1,470 @@
+{
+  "week": "2026-W42",
+  "title": "Which day of the week are you?",
+  "topic": "Which day of the week are you",
+  "category": "everyday",
+  "emoji": "📅",
+  "intro": "Ten questions about free afternoons, shoes and the compliments you secretly love. Flip through, and we'll circle the day on the calendar that matches your personality.",
+  "start_label": "Turn the page",
+  "result_label": "Your day of the week is",
+  "scoring": "winner",
+  "theme": {
+    "bg": "#f3efe6",
+    "fg": "#1d2333",
+    "card": "#ffffff",
+    "accent": "#b8322a",
+    "accent_fg": "#ffffff"
+  },
+  "outcomes": [
+    {
+      "id": "monday",
+      "name": "Monday",
+      "emoji": "🚀",
+      "color": "#1f5fa8",
+      "tagline": "Fresh start, clean slate, and a to-do list already in motion.",
+      "description": "Everyone else groans when you arrive, but secretly they need you. You're the fresh start: new notebook, new plan, new energy. You love a goal, you love a clean slate, and you have a rare gift for getting things moving while others are still finding their shoes.",
+      "traits": [
+        "driven",
+        "organised",
+        "optimistic"
+      ]
+    },
+    {
+      "id": "tuesday",
+      "name": "Tuesday",
+      "emoji": "🧱",
+      "color": "#3c6e47",
+      "tagline": "Steady, dependable and quietly getting everything done.",
+      "description": "You're the day that actually does the work. No fanfare, no drama, just a reliable rhythm that keeps the whole week standing up. People trust you because you show up, you follow through, and you never make a fuss about it. Underrated? Maybe. Essential? Absolutely.",
+      "traits": [
+        "reliable",
+        "practical",
+        "low-key"
+      ]
+    },
+    {
+      "id": "wednesday",
+      "name": "Wednesday",
+      "emoji": "⚖️",
+      "color": "#7a4fa0",
+      "tagline": "The balanced middle that holds everything together.",
+      "description": "You're the bridge between where things started and where they're going. You see both sides, you keep the peace, and you're the friend everyone calls when they need someone level-headed to talk it through. You make the hump feel like a gentle hill.",
+      "traits": [
+        "balanced",
+        "diplomatic",
+        "easy to talk to"
+      ]
+    },
+    {
+      "id": "thursday",
+      "name": "Thursday",
+      "emoji": "✨",
+      "color": "#b35310",
+      "tagline": "Almost there, and making the anticipation half the fun.",
+      "description": "You live for the build-up. You're the one who books the table, starts the countdown and gets everyone excited about what's coming next. Your optimism is contagious, and somehow the plans you hype up always turn out even better than promised.",
+      "traits": [
+        "hopeful",
+        "enthusiastic",
+        "forward-looking"
+      ]
+    },
+    {
+      "id": "friday",
+      "name": "Friday",
+      "emoji": "🎉",
+      "color": "#c2185b",
+      "tagline": "The week's favourite. Doors open, music up, let's go.",
+      "description": "You're the one everybody's been waiting for. You bring the energy, the playlist and the excuse to celebrate, and people instantly relax when you walk in. You know how to switch off from the serious stuff and remind everyone that life is meant to be enjoyed.",
+      "traits": [
+        "fun",
+        "sociable",
+        "spontaneous"
+      ]
+    },
+    {
+      "id": "saturday",
+      "name": "Saturday",
+      "emoji": "🧭",
+      "color": "#00796b",
+      "tagline": "Free, curious and already halfway out the door.",
+      "description": "You're wide open possibility. No alarm, no agenda, just a full day and a feeling that anything could happen. You chase new places and new experiences, you say yes to the unusual, and you come back from every adventure with a story worth hearing.",
+      "traits": [
+        "adventurous",
+        "free-spirited",
+        "curious"
+      ]
+    },
+    {
+      "id": "sunday",
+      "name": "Sunday",
+      "emoji": "☕",
+      "color": "#8a6212",
+      "tagline": "Slow mornings, long lunches and a deeply calming presence.",
+      "description": "You're the deep breath at the end of it all. You know the value of slowing down, you make every space feel cosier, and you're brilliant at savouring the moment instead of rushing past it. Time with you feels like a lie-in with nowhere to be.",
+      "traits": [
+        "calm",
+        "cosy",
+        "reflective"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "text": "Pick a time of day.",
+      "answers": [
+        {
+          "text": "Sunrise",
+          "scores": {
+            "monday": 2
+          }
+        },
+        {
+          "text": "Mid-morning",
+          "scores": {
+            "saturday": 2
+          }
+        },
+        {
+          "text": "Noon",
+          "scores": {
+            "wednesday": 2
+          }
+        },
+        {
+          "text": "Late afternoon",
+          "scores": {
+            "sunday": 2
+          }
+        },
+        {
+          "text": "Sunset",
+          "scores": {
+            "thursday": 3
+          }
+        },
+        {
+          "text": "Midnight",
+          "scores": {
+            "friday": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "You've got a free afternoon and no plans. You…",
+      "answers": [
+        {
+          "text": "Start a new online course",
+          "scores": {
+            "monday": 2
+          }
+        },
+        {
+          "text": "Call a friend for a long catch-up",
+          "scores": {
+            "wednesday": 2
+          }
+        },
+        {
+          "text": "Look up gigs for next month",
+          "scores": {
+            "thursday": 3
+          }
+        },
+        {
+          "text": "Round up friends for drinks",
+          "scores": {
+            "friday": 2
+          }
+        },
+        {
+          "text": "Hop on the first bus out of town",
+          "scores": {
+            "saturday": 2
+          }
+        },
+        {
+          "text": "Nap with the window open",
+          "scores": {
+            "sunday": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Pick a pair of shoes.",
+      "answers": [
+        {
+          "text": "Polished brogues",
+          "scores": {
+            "monday": 2
+          }
+        },
+        {
+          "text": "Everyday ankle boots",
+          "scores": {
+            "tuesday": 2
+          }
+        },
+        {
+          "text": "Classic white trainers",
+          "scores": {
+            "wednesday": 2
+          }
+        },
+        {
+          "text": "Glittery heels",
+          "scores": {
+            "friday": 2
+          }
+        },
+        {
+          "text": "Hiking boots",
+          "scores": {
+            "saturday": 2
+          }
+        },
+        {
+          "text": "Fluffy slippers",
+          "scores": {
+            "sunday": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Your friends are planning a trip. Your job is…",
+      "answers": [
+        {
+          "text": "Making the itinerary spreadsheet",
+          "scores": {
+            "monday": 2
+          }
+        },
+        {
+          "text": "Booking the tickets",
+          "scores": {
+            "tuesday": 2
+          }
+        },
+        {
+          "text": "Finding dates that suit everyone",
+          "scores": {
+            "wednesday": 2
+          }
+        },
+        {
+          "text": "Hyping it up for weeks beforehand",
+          "scores": {
+            "thursday": 3
+          }
+        },
+        {
+          "text": "Suggesting somewhere nobody's heard of",
+          "scores": {
+            "saturday": 2
+          }
+        },
+        {
+          "text": "Choosing a cosy place to stay",
+          "scores": {
+            "sunday": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Would you rather…",
+      "answers": [
+        {
+          "text": "Start something new",
+          "scores": {
+            "monday": 2,
+            "saturday": 1
+          }
+        },
+        {
+          "text": "Finish something you've begun",
+          "scores": {
+            "tuesday": 2,
+            "wednesday": 1
+          }
+        }
+      ]
+    },
+    {
+      "text": "A friend is torn over a big decision. You…",
+      "answers": [
+        {
+          "text": "Help them set a deadline",
+          "scores": {
+            "monday": 2
+          }
+        },
+        {
+          "text": "Ask what's worked for them before",
+          "scores": {
+            "tuesday": 2
+          }
+        },
+        {
+          "text": "Help them see both sides",
+          "scores": {
+            "wednesday": 2
+          }
+        },
+        {
+          "text": "Take them out to forget about it",
+          "scores": {
+            "friday": 2
+          }
+        },
+        {
+          "text": "Tell them to go for it",
+          "scores": {
+            "saturday": 2,
+            "thursday": 1
+          }
+        },
+        {
+          "text": "Tell them to sleep on it",
+          "scores": {
+            "sunday": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Pick a smell.",
+      "answers": [
+        {
+          "text": "Freshly sharpened pencils",
+          "scores": {
+            "monday": 2
+          }
+        },
+        {
+          "text": "Clean laundry",
+          "scores": {
+            "tuesday": 2
+          }
+        },
+        {
+          "text": "Cinema popcorn",
+          "scores": {
+            "friday": 2
+          }
+        },
+        {
+          "text": "Sun cream",
+          "scores": {
+            "saturday": 2
+          }
+        },
+        {
+          "text": "Warm bread",
+          "scores": {
+            "sunday": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Your ideal calendar looks…",
+      "answers": [
+        {
+          "text": "Packed",
+          "scores": {
+            "monday": 2
+          }
+        },
+        {
+          "text": "The same every week",
+          "scores": {
+            "tuesday": 2
+          }
+        },
+        {
+          "text": "Half full, half free",
+          "scores": {
+            "wednesday": 2
+          }
+        },
+        {
+          "text": "Dotted with things to look forward to",
+          "scores": {
+            "thursday": 3,
+            "friday": 1
+          }
+        },
+        {
+          "text": "Completely empty",
+          "scores": {
+            "sunday": 2,
+            "saturday": 1
+          }
+        }
+      ]
+    },
+    {
+      "text": "At the end of a long week, you'd rather have…",
+      "answers": [
+        {
+          "text": "A big night out",
+          "scores": {
+            "friday": 2,
+            "thursday": 1
+          }
+        },
+        {
+          "text": "A quiet night in",
+          "scores": {
+            "sunday": 2,
+            "tuesday": 1
+          }
+        }
+      ]
+    },
+    {
+      "text": "Which compliment would mean the most?",
+      "answers": [
+        {
+          "text": "\"You're unstoppable.\"",
+          "scores": {
+            "monday": 2
+          }
+        },
+        {
+          "text": "\"You're so dependable.\"",
+          "scores": {
+            "tuesday": 2
+          }
+        },
+        {
+          "text": "\"You're a great listener.\"",
+          "scores": {
+            "wednesday": 2
+          }
+        },
+        {
+          "text": "\"You're the life of the party.\"",
+          "scores": {
+            "friday": 2
+          }
+        },
+        {
+          "text": "\"You're up for anything.\"",
+          "scores": {
+            "saturday": 2
+          }
+        },
+        {
+          "text": "\"You're so soothing to be around.\"",
+          "scores": {
+            "sunday": 2
+          }
+        }
+      ]
+    }
+  ]
+}

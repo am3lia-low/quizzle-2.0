@@ -36,9 +36,15 @@ try {
     for (const answer of path) await page.click(`[data-testid="answer-${answer}"]`);
     const shown = await page.getAttribute(".screen.result", "data-result");
     if (shown !== outcome.id) failures.push(`${outcome.id}: page showed '${shown}' for path [${path}]`);
+    // "See all results" must really toggle the cards' visibility, not just exist.
+    const allPanel = page.locator(".all-outcomes");
+    if (await allPanel.isVisible()) failures.push(`${outcome.id}: all results are showing before 'See all results' is pressed`);
     await page.click('[data-testid="all-outcomes"]');
+    if (!(await allPanel.isVisible())) failures.push(`${outcome.id}: 'See all results' did not show the results`);
     const cards = await page.locator(".all-outcomes .outcome-mini").count();
     if (cards !== quiz.outcomes.length) failures.push(`${outcome.id}: 'see all results' shows ${cards} cards`);
+    await page.click('[data-testid="all-outcomes"]');
+    if (await allPanel.isVisible()) failures.push(`${outcome.id}: 'Hide all results' did not hide the results`);
     for (const e of errors) failures.push(`${outcome.id}: JS error: ${e}`);
     await page.close();
   }

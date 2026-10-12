@@ -1,0 +1,395 @@
+{
+  "week": "2026-W42",
+  "title": "Which Great Gatsby character are you?",
+  "topic": "Which Great Gatsby character are you",
+  "category": "fictional-characters",
+  "emoji": "🥂",
+  "intro": "It's summer on Long Island, 1922, and the party next door is spilling onto the lawn. Answer nine questions to find out who you'd be among the guests.",
+  "start_label": "Join the party",
+  "result_label": "You are",
+  "scoring": "winner",
+  "theme": {
+    "bg": "#0e1416",
+    "fg": "#f4ead2",
+    "card": "#172225",
+    "accent": "#d9b44a",
+    "accent_fg": "#14100a"
+  },
+  "outcomes": [
+    {
+      "id": "gatsby",
+      "name": "Jay Gatsby",
+      "emoji": "💚",
+      "color": "#e3c35e",
+      "tagline": "A dreamer with a plan, a mansion and a light across the bay.",
+      "description": "You believe in big hopes and grand gestures, and you're willing to reinvent yourself to reach them. Your optimism is magnetic: people turn up to whatever you've organised, even if they're not sure who you really are. Just remember the future is allowed to be different from the past.",
+      "traits": [
+        "hopeful",
+        "ambitious",
+        "generous"
+      ]
+    },
+    {
+      "id": "daisy",
+      "name": "Daisy Buchanan",
+      "emoji": "🌼",
+      "color": "#f2c9d8",
+      "tagline": "Charming, breezy and impossible to forget.",
+      "description": "You light up a room without trying, and people lean in when you talk. You love beautiful things, lazy afternoons and anything that keeps the mood light. Underneath the sparkle you feel things deeply, even if you'd rather not make a fuss about it.",
+      "traits": [
+        "charming",
+        "graceful",
+        "spontaneous"
+      ]
+    },
+    {
+      "id": "nick",
+      "name": "Nick Carraway",
+      "emoji": "📓",
+      "color": "#a8c8e6",
+      "tagline": "The thoughtful observer everyone ends up confiding in.",
+      "description": "You'd rather watch the party than be its centre, and you notice everything. People trust you with their secrets because you listen and don't rush to judge. You're loyal, quietly funny and the one who remembers how the whole story really went.",
+      "traits": [
+        "observant",
+        "loyal",
+        "reflective"
+      ]
+    },
+    {
+      "id": "jordan",
+      "name": "Jordan Baker",
+      "emoji": "⛳",
+      "color": "#94dbb0",
+      "tagline": "Cool, confident and always a step ahead.",
+      "description": "You move through life with easy self-assurance and a dry sense of humour. You're independent, sporty and happiest when you're doing things your own way. Nobody rattles you, and you'd never wait around for someone else to make the plan.",
+      "traits": [
+        "confident",
+        "independent",
+        "witty"
+      ]
+    },
+    {
+      "id": "owl-eyes",
+      "name": "Owl Eyes",
+      "emoji": "🦉",
+      "color": "#eba86c",
+      "tagline": "The curious guest who wandered into the library and found the real story.",
+      "description": "While everyone else is dancing, you're checking whether the books on the shelves are real. You're delightfully curious, easily amazed and far more perceptive than people expect. A rare result: you're the one who sees through the show and still shows up when it counts.",
+      "traits": [
+        "curious",
+        "perceptive",
+        "sincere"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "text": "You arrive at a party where you know almost nobody. You…",
+      "answers": [
+        {
+          "text": "Find a quiet corner and watch the room",
+          "scores": {
+            "nick": 2
+          }
+        },
+        {
+          "text": "Slip away to explore the rest of the house",
+          "scores": {
+            "owl-eyes": 2
+          }
+        },
+        {
+          "text": "Strike up a chat with the most interesting person there",
+          "scores": {
+            "jordan": 2
+          }
+        },
+        {
+          "text": "Keep an eye on the door for one particular guest",
+          "scores": {
+            "gatsby": 2
+          }
+        },
+        {
+          "text": "Settle somewhere comfy and let people come to you",
+          "scores": {
+            "daisy": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Pick a way to spend a hot summer afternoon.",
+      "answers": [
+        {
+          "text": "Lounging on a sofa by an open window",
+          "scores": {
+            "daisy": 2
+          }
+        },
+        {
+          "text": "Driving fast with the roof down",
+          "scores": {
+            "jordan": 2
+          }
+        },
+        {
+          "text": "Browsing a library you've never visited",
+          "scores": {
+            "owl-eyes": 1,
+            "nick": 1
+          }
+        },
+        {
+          "text": "Planning your next big move",
+          "scores": {
+            "gatsby": 2
+          }
+        },
+        {
+          "text": "Walking the city with no plan",
+          "scores": {
+            "nick": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Which would you rather have?",
+      "answers": [
+        {
+          "text": "One great love",
+          "scores": {
+            "gatsby": 2,
+            "daisy": 1
+          }
+        },
+        {
+          "text": "One great adventure",
+          "scores": {
+            "jordan": 2,
+            "owl-eyes": 1
+          }
+        },
+        {
+          "text": "One true friend",
+          "scores": {
+            "nick": 2,
+            "owl-eyes": 1
+          }
+        }
+      ]
+    },
+    {
+      "text": "Pick a skill you'd love to master.",
+      "answers": [
+        {
+          "text": "Public speaking",
+          "scores": {
+            "gatsby": 2
+          }
+        },
+        {
+          "text": "Singing",
+          "scores": {
+            "daisy": 2
+          }
+        },
+        {
+          "text": "Writing",
+          "scores": {
+            "nick": 2
+          }
+        },
+        {
+          "text": "Sailing",
+          "scores": {
+            "jordan": 2
+          }
+        },
+        {
+          "text": "Bookbinding",
+          "scores": {
+            "owl-eyes": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "A friend tells you a big secret. You…",
+      "answers": [
+        {
+          "text": "Keep it forever, no questions asked",
+          "scores": {
+            "nick": 2
+          }
+        },
+        {
+          "text": "Promise them it'll all work out",
+          "scores": {
+            "gatsby": 2
+          }
+        },
+        {
+          "text": "Gently steer the chat somewhere lighter",
+          "scores": {
+            "daisy": 2
+          }
+        },
+        {
+          "text": "Tell them straight what you'd do",
+          "scores": {
+            "jordan": 2
+          }
+        },
+        {
+          "text": "Listen wide-eyed to every detail",
+          "scores": {
+            "owl-eyes": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Pick a place to live.",
+      "answers": [
+        {
+          "text": "A grand house with an enormous lawn",
+          "scores": {
+            "gatsby": 2
+          }
+        },
+        {
+          "text": "An elegant townhouse in the oldest part of town",
+          "scores": {
+            "daisy": 2
+          }
+        },
+        {
+          "text": "A small cottage with an overgrown garden",
+          "scores": {
+            "nick": 2
+          }
+        },
+        {
+          "text": "A city apartment close to everything",
+          "scores": {
+            "jordan": 2
+          }
+        },
+        {
+          "text": "A rambling old house full of odd corners",
+          "scores": {
+            "owl-eyes": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "What do people compliment you on most?",
+      "answers": [
+        {
+          "text": "Your optimism",
+          "scores": {
+            "gatsby": 2
+          }
+        },
+        {
+          "text": "Your charm",
+          "scores": {
+            "daisy": 2
+          }
+        },
+        {
+          "text": "Your patience",
+          "scores": {
+            "nick": 2
+          }
+        },
+        {
+          "text": "Your confidence",
+          "scores": {
+            "jordan": 2
+          }
+        },
+        {
+          "text": "Your eye for detail",
+          "scores": {
+            "owl-eyes": 1,
+            "nick": 1
+          }
+        }
+      ]
+    },
+    {
+      "text": "You're running late for something important. You…",
+      "answers": [
+        {
+          "text": "Make a grand entrance anyway",
+          "scores": {
+            "gatsby": 2
+          }
+        },
+        {
+          "text": "Breeze in as if nothing happened",
+          "scores": {
+            "daisy": 2
+          }
+        },
+        {
+          "text": "Text ahead to explain",
+          "scores": {
+            "nick": 2
+          }
+        },
+        {
+          "text": "Take a shortcut nobody else knows",
+          "scores": {
+            "jordan": 2
+          }
+        },
+        {
+          "text": "Get distracted by something fascinating on the way",
+          "scores": {
+            "owl-eyes": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Pick a sound for a summer night.",
+      "answers": [
+        {
+          "text": "A full jazz orchestra on the lawn",
+          "scores": {
+            "gatsby": 2
+          }
+        },
+        {
+          "text": "Soft piano drifting from the next room",
+          "scores": {
+            "daisy": 2
+          }
+        },
+        {
+          "text": "Crickets outside an open window",
+          "scores": {
+            "nick": 2
+          }
+        },
+        {
+          "text": "Distant laughter from a boat on the bay",
+          "scores": {
+            "jordan": 2
+          }
+        },
+        {
+          "text": "The crackle of an old record",
+          "scores": {
+            "owl-eyes": 2
+          }
+        }
+      ]
+    }
+  ]
+}

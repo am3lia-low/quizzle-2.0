@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Poiret+One&family=Josefin+Sans:wght@400;600;700&display=swap");
+
+/* Art Deco party night: black lacquer, gold fans and stepped frames. */
+:root {
+  --border: #3a4a4c;
+  --muted: #b9ad92;
+  --radius: 4px;
+  --font-body: "Josefin Sans", system-ui, sans-serif;
+  --font-display: "Poiret One", Georgia, serif;
+  --gold-soft: rgba(217, 180, 74, .14);
+  --enter-distance: 18px;
+  --enter-duration: 380ms;
+}
+
+body {
+  background:
+    radial-gradient(circle at 50% 120%, transparent 0 58px, var(--gold-soft) 59px 61px, transparent 62px 88px, var(--gold-soft) 89px 91px, transparent 92px) 0 0 / 120px 60px,
+    linear-gradient(180deg, #0e1416, #10191b 60%, #0b1012);
+  background-color: var(--bg);
+}
+
+.site-header .quiz-week {
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: 2px 10px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-size: .78rem;
+}
+
+.screen.intro .quiz-title,
+.screen.question .question-text,
+.result-name {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: .04em;
+}
+.screen.intro .quiz-title { color: var(--accent); font-size: 2.4rem; text-transform: uppercase; }
+
+/* Stepped gold frame around the cards. */
+.screen.intro,
+.screen.question,
+.result-card {
+  position: relative;
+  background:
+    linear-gradient(90deg, var(--accent) 0 2px, transparent 2px calc(100% - 2px), var(--accent) calc(100% - 2px)) 0 0 / 100% 100% no-repeat,
+    linear-gradient(180deg, var(--accent) 0 2px, transparent 2px calc(100% - 2px), var(--accent) calc(100% - 2px)) 0 0 / 100% 100% no-repeat,
+    var(--card);
+  padding: 42px 22px 26px;
+  outline: 1px solid rgba(217, 180, 74, .45);
+  outline-offset: 5px;
+  margin: 10px 6px;
+}
+.screen.intro::before,
+.screen.question::before,
+.result-card::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  width: 64px;
+  height: 32px;
+  transform: translateX(-50%);
+  background:
+    repeating-conic-gradient(from -90deg at 50% 100%, var(--accent) 0 6deg, transparent 6deg 18deg);
+  clip-path: circle(32px at 50% 100%);
+  opacity: .8;
+  pointer-events: none;
+}
+.result-card {
+  outline-color: var(--outcome-color, var(--accent));
+}
+
+.progress { background: #24302f; border-radius: 0; }
+.progress-bar { background: linear-gradient(90deg, #a8842a, var(--accent), #f1d98a); border-radius: 0; }
+.question-count { color: var(--muted); text-transform: uppercase; letter-spacing: .16em; font-size: .78rem; }
+
+.answer {
+  background: transparent;
+  color: var(--fg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: border-color .2s ease, background-color .2s ease, transform .2s ease;
+}
+.answer:hover { border-color: var(--accent); background: var(--gold-soft); }
+.answer.is-picked {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--accent-fg);
+}
+
+.btn.btn-primary {
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-weight: 700;
+  border-radius: var(--radius);
+}
+
+.result-label { color: var(--muted); text-transform: uppercase; letter-spacing: .2em; }
+.result-name { color: var(--outcome-color, var(--accent)); font-size: 2.5rem; }
+.result-traits li {
+  border: 1px solid var(--outcome-color, var(--accent));
+  border-radius: var(--radius);
+  background: transparent;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-size: .8rem;
+}
+.outcome-mini { border: 1px solid var(--border); border-radius: var(--radius); }
+.outcome-mini.is-yours { outline: 2px solid var(--outcome-color, var(--accent)); outline-offset: 2px; }
+.outcome-mini-name { font-family: var(--font-display); color: var(--outcome-color, var(--fg)); }
+
+@media (max-width: 420px) {
+  .screen.intro .quiz-title { font-size: 1.9rem; }
+  .result-name { font-size: 2rem; }
+  .screen.intro, .screen.question, .result-card { padding: 40px 16px 22px; margin: 8px 4px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .answer { transition: none; }
+}

@@ -3,7 +3,8 @@
 Usage:
   python3 scripts/build.py                     # every quiz -> _site/
   python3 scripts/build.py --out DIR           # choose the output folder
-  python3 scripts/build.py --preview 2026-W42  # one quiz -> DIR/preview/index.html, with a PREVIEW banner
+  python3 scripts/build.py --preview 2026-W42  # one quiz -> DIR/preview/2026-W42/index.html and
+                                               # DIR/preview/index.html, with a PREVIEW banner
 
 Each quiz page inlines engine/engine.js, the quiz's style.css and quiz.json, so it
 works on its own, even opened straight from disk.
@@ -32,7 +33,7 @@ def render_quiz(week: str, nav: dict, preview: bool = False) -> str:
     replacements = {
         "__TITLE__": html.escape(quiz["title"]),
         "__DESCRIPTION__": html.escape(quiz["intro"]),
-        "__WEEK__": html.escape(week),
+        "__WEEK__": html.escape(quiz["week"]),
         "__HOME_HREF__": html.escape(nav["home"]),
         "__PREVIEW_BANNER__": banner,
         "__QUIZ_CSS__": theme_vars(quiz) + "\n" + quizlib.load_css(week),
@@ -57,17 +58,17 @@ def card_style(quiz: dict) -> str:
     return f"--qbg:{t['card']};--qfg:{t['fg']};--qaccent:{t['accent']};--qaccent-fg:{t['accent_fg']}"
 
 
-def render_archive(weeks: list[str]) -> str:
+def render_archive(quiz_ids: list[str]) -> str:
     template = (ENGINE / "archive.html").read_text(encoding="utf-8")
-    quizzes = [quizlib.load_quiz(w) for w in weeks]
-    newest_first = list(reversed(quizzes))
+    quizzes = [quizlib.load_quiz(i) for i in quiz_ids]
+    newest_first = list(reversed(list(zip(quiz_ids, quizzes))))
     e = html.escape
 
     featured = ""
     if newest_first:
-        q = newest_first[0]
+        qid, q = newest_first[0]
         featured = (
-            f'<a class="featured" href="{e(q["week"])}.html" style="{card_style(q)}">'
+            f'<a class="featured" href="{e(qid)}.html" style="{card_style(q)}">'
             f'<div class="label">This week · {e(q["week"])}</div>'
             f'<div class="emoji">{e(q.get("emoji", ""))}</div>'
             f'<h2>{e(q["title"])}</h2><p>{e(q["intro"])}</p>'
@@ -80,10 +81,10 @@ def render_archive(weeks: list[str]) -> str:
               f'{e(c.replace("-", " ").title())}</button>' for c in categories]
 
     cards = []
-    for q in newest_first:
+    for qid, q in newest_first:
         search = " ".join([q["title"], q["category"], q["intro"]] + [o["name"] for o in q["outcomes"]]).lower()
         cards.append(
-            f'<a class="card" href="{e(q["week"])}.html" data-category="{e(q["category"])}" '
+            f'<a class="card" href="{e(qid)}.html" data-category="{e(q["category"])}" '
             f'data-search="{e(search)}" style="{card_style(q)}">'
             f'<span class="emoji">{e(q.get("emoji", ""))}</span>'
             f'<h3>{e(q["title"])}</h3>'
@@ -101,31 +102,34 @@ def render_archive(weeks: list[str]) -> str:
     return out
 
 
-def build_site(out_dir, weeks: list[str]) -> None:
+def build_site(out_dir, quiz_ids: list[str]) -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
-    titles = {w: quizlib.load_quiz(w)["title"] for w in weeks}
-    for i, week in enumerate(weeks):
+    titles = {i: quizlib.load_quiz(i)["title"] for i in quiz_ids}
+    for n, qid in enumerate(quiz_ids):
         nav = {"home": "./"}
-        if i > 0:
-            nav["prev"] = {"href": f"{weeks[i - 1]}.html", "title": titles[weeks[i - 1]]}
-        if i + 1 < len(weeks):
-            nav["next"] = {"href": f"{weeks[i + 1]}.html", "title": titles[weeks[i + 1]]}
-        (out_dir / f"{week}.html").write_text(render_quiz(week, nav), encoding="utf-8")
-    (out_dir / "index.html").write_text(render_archive(weeks), encoding="utf-8")
+        if n > 0:
+            nav["prev"] = {"href": f"{quiz_ids[n - 1]}.html", "title": titles[quiz_ids[n - 1]]}
+        if n + 1 < len(quiz_ids):
+            nav["next"] = {"href": f"{quiz_ids[n + 1]}.html", "title": titles[quiz_ids[n + 1]]}
+        (out_dir / f"{qid}.html").write_text(render_quiz(qid, nav), encoding="utf-8")
+    (out_dir / "index.html").write_text(render_archive(quiz_ids), encoding="utf-8")
     (out_dir / ".nojekyll").write_text("", encoding="utf-8")
 
 
-def build_preview(out_dir, week: str) -> None:
+def build_preview(out_dir, quiz_id: str) -> None:
+    # preview/<id>/ keeps a stable link per quiz, so several open PRs can be previewed at once;
+    # preview/ always shows the most recently built one.
     preview_dir = out_dir / "preview"
-    preview_dir.mkdir(parents=True, exist_ok=True)
-    html_text = render_quiz(week, {"home": "../"}, preview=True)
-    (preview_dir / "index.html").write_text(html_text, encoding="utf-8")
+    (preview_dir / quiz_id).mkdir(parents=True, exist_ok=True)
+    (preview_dir / quiz_id / "index.html").write_text(
+        render_quiz(quiz_id, {"home": "../../"}, preview=True), encoding="utf-8")
+    (preview_dir / "index.html").write_text(render_quiz(quiz_id, {"home": "../"}, preview=True), encoding="utf-8")
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--out", default=str(quizlib.ROOT / "_site"))
-    parser.add_argument("--preview", metavar="WEEK", help="build only this quiz as the preview page")
+    parser.add_argument("--preview", metavar="QUIZ_ID", help="build only this quiz as the preview page")
     parser.add_argument("--clean", action="store_true", help="delete the output folder first")
     args = parser.parse_args()
 
@@ -134,7 +138,10 @@ def main() -> int:
     if args.clean and out_dir.exists():
         shutil.rmtree(out_dir)
 
-    weeks = [args.preview] if args.preview else quizlib.all_weeks()
+    if args.preview and not quizlib.QUIZ_ID_RE.match(args.preview):
+        print(f"bad quiz id: {args.preview}")
+        return 2
+    weeks = [args.preview] if args.preview else quizlib.all_quiz_ids()
     problems = []
     for week in weeks:
         problems += [f"{week}: {p}" for p in quizlib.validate(quizlib.load_quiz(week), week)]
@@ -146,7 +153,7 @@ def main() -> int:
 
     if args.preview:
         build_preview(out_dir, args.preview)
-        print(f"built preview of {args.preview} -> {out_dir / 'preview' / 'index.html'}")
+        print(f"built preview of {args.preview} -> {out_dir / 'preview' / args.preview / 'index.html'}")
     else:
         build_site(out_dir, weeks)
         print(f"built {len(weeks)} quiz page(s) + index.html -> {out_dir}")

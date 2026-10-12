@@ -1,48 +1,64 @@
 ---
 name: weekly-quiz
-description: Generate this week's personality quiz (content + theme), check it, write the report and open a PR for review. Use when asked to run the weekly quiz, make a quiz for a given week, or redo a failed week.
+description: Generate this week's personality quiz (content + theme), check it, write the report and open a PR for review. Use when asked to run the weekly quiz, make a quiz (or several) for a given week, make an extra quiz this week, or redo a failed week.
 ---
 
 # Weekly quiz
 
-You are making one personality quiz for the site at `https://am3lia-low.github.io/quizzle-2.0/`.
-The output is a pull request that a human reviews, plays and merges. Merging publishes it.
+You are making personality quizzes for the site at `https://am3lia-low.github.io/quizzle-2.0/`.
+Each quiz is its own pull request that a human reviews, plays and merges. Merging publishes it.
 
-You only ever **write data**: a `quiz.json`, a `style.css`, a report, and the shortened topic list.
-You never edit the engine, the scripts, the workflows or anything else. A scope check enforces this.
+You only ever **write data**: a `quiz.json`, a `style.css` and a report per quiz.
+You never edit the engine, the scripts, the workflows, `topics.json` or anything else. A scope check enforces this.
 
 Work through the steps in order. If a step says **stop**, end the run with a short message saying why;
 the person gets an email for every run, so a clear failure message is the whole error report.
 
-## 1. Work out the week
+## 1. Work out the week and how many quizzes
 
 - Default: the current ISO week in Singapore time, `TZ=Asia/Singapore date +%G-W%V` (e.g. `2026-W42`).
   The Routine runs early Monday morning SGT, which is still Sunday in UTC, so don't use UTC here.
 - If the request names a week (e.g. "do week 2026-W43"), use that instead.
 - Call it `WEEK` below.
+- `COUNT` = how many quizzes to make: 1 unless the request asks for more ("make 2 quizzes this week").
+- `EXTRA` = yes if the request asks for quizzes *on top of* what the week already has ("make another quiz this
+  week", "add a second quiz today"), or asks for more than one. Otherwise no.
 
-## 2. Make sure this isn't a duplicate run
+## 2. Pick the quiz ID and make sure this isn't a duplicate run
+
+A quiz ID is `WEEK` for the week's first quiz, then `WEEK-2`, `WEEK-3`, … up to `WEEK-9` for extra quizzes in the
+same week (e.g. `2026-W42-2`). The ID names the folder, the report, the branch and the PR. Call it `ID` below.
 
 - `git fetch origin main` and start from a fresh `origin/main`.
-- If `quizzes/WEEK/` already exists on `main`: **stop** ("WEEK is already published").
-- List open pull requests in this repo. If one is titled `Quiz WEEK: …`: **stop** ("WEEK already has an open PR: <link>").
+- An ID is **taken** if `quizzes/ID/` exists on `main` or an open pull request is titled `Quiz ID: …`.
+  List the open pull requests once and check both.
+- If EXTRA is no: `ID` = `WEEK`. If it's taken: **stop** ("WEEK is already published" or
+  "WEEK already has an open PR: <link>"). This keeps an accidental second run of the Routine from making a duplicate.
+- If EXTRA is yes: `ID` = the first free ID in the order `WEEK`, `WEEK-2`, `WEEK-3`, …
+  If all nine are taken: **stop** ("WEEK already has 9 quizzes").
 - A leftover branch from a failed run with no PR is fine: delete it or reuse the name with a fresh start from `origin/main`.
-- Branch name: `quiz/WEEK`. If this session was told to develop on a specific branch, use that branch instead.
+- Branch name: `quiz/ID`. If this session was told to develop on a specific branch, use that branch for the first
+  quiz, and that name plus `-2`, `-3`, … for the others.
+
+**More than one quiz (COUNT > 1):** make them one at a time. Do steps 2–9 for the first quiz, then go back to
+step 2 for the next one. Each quiz gets its own branch, started fresh from `origin/main` (never on top of the previous
+quiz's branch), and its own PR. Its new PR title makes its ID and topic count as taken for the next quiz.
+If a later quiz has to **stop**, the earlier PRs stay open. Say which quizzes made it and which didn't.
 
 ## 3. Pick the topic
 
-- Read `topics.json` (a list, already shuffled). If it's empty: **stop** ("topic list is empty; time for a refresh").
+- Read `topics.json` (a list, already shuffled). Don't edit it.
 - Collect topics already in use: the `topic` field of every `quizzes/*/quiz.json`, plus the topic in the title of
-  every open `Quiz …: <topic>` PR. Take the **first entry that is not already in use**.
+  every open `Quiz …: <topic>` PR (including the ones you opened earlier in this run).
+  Take the **first entry that is not already in use**.
+  If every entry is in use (or the list is empty): **stop** ("topic list is used up; time for a refresh").
 - If the request says "skip this topic" or names a topic, follow that.
-- Remove the chosen entry from `topics.json`, keeping the rest of the file exactly as it was
-  (same order, one entry per line).
 - The entry may preset `outcomes` (how many results) and `scoring` (`winner` or `blend`). `null` means you decide.
 
 ## 4. Design the quiz
 
 Read `docs/example-quiz/quiz.json` and `style.css` for the exact format, then write
-`quizzes/WEEK/quiz.json`. The validator is the source of truth for the rules; the main ones:
+`quizzes/ID/quiz.json`. The validator is the source of truth for the rules; the main ones:
 
 - **Questions:** 5–12. Pick the count that suits the topic. Each has 2–6 answers.
 - **Outcomes:** 2–10, or the preset count. Each has `id` (slug), `name`, `tagline` (≤90 chars),
@@ -53,7 +69,7 @@ Read `docs/example-quiz/quiz.json` and `style.css` for the exact format, then wr
   Use blend when results naturally overlap (styles, archetypes, aesthetics), winner when they're distinct types.
 - **Tie-break** is automatic: the tied outcome that scored most recently wins. Don't design around it.
 - **Theme:** `bg`, `fg`, `card`, `accent`, `accent_fg` as 6-digit hex. Text contrast must be ≥ 4.5.
-- `week` = WEEK, `topic` = the topic string exactly as it was in `topics.json`, `category` = its category.
+- `week` = WEEK (the plain ISO week, even for `WEEK-2`), `topic` = the topic string exactly as it was in `topics.json`, `category` = its category.
 
 Writing guidelines:
 - Fun, warm and a bit witty. Answers should be things people actually pick, not obviously "the right one".
@@ -77,11 +93,12 @@ Question logic (the most common failure, so check every question against these):
 - Lopsided results are allowed and can be fun (a rare 🦄 result is good), but every outcome must be reachable.
 - No stereotypes about real groups of people, nothing about health, weight, religion or politics.
 - Fictional characters: names and well-known traits only; no quoting copyrighted text.
-- Don't reuse questions or outcome sets from earlier quizzes; skim `quizzes/*/quiz.json` titles first.
+- Don't reuse questions or outcome sets from earlier quizzes; skim `quizzes/*/quiz.json` titles first
+  (and any quiz you wrote earlier in this run, which is on its own branch).
 
 ## 5. Design the theme
 
-Write `quizzes/WEEK/style.css` to give this quiz its own look. Be creative: it's the main way quizzes differ.
+Write `quizzes/ID/style.css` to give this quiz its own look. Be creative: it's the main way quizzes differ.
 
 - Your CSS is placed after the engine's base styles, so it overrides them.
 - `theme` colours are already applied as `--bg --fg --card --accent --accent-fg`. You can also set:
@@ -104,7 +121,7 @@ Write `quizzes/WEEK/style.css` to give this quiz its own look. Be creative: it's
 
 ## 6. Check and fix (max 3 attempts)
 
-Run `scripts/check_quiz.sh WEEK`. It runs, in order:
+Run `scripts/check_quiz.sh ID`. It runs, in order:
 `validate.py` (schema, limits, contrast, CSS rules) → `simulate.py` (10,000 random playthroughs; fails if an
 outcome is unreachable) → `build.py` → `playtest.mjs` (a headless browser plays the real page to every outcome).
 
@@ -118,7 +135,7 @@ obviously isn't what you intended, adjust the scores and re-run (this counts as 
 
 Start a subagent (Agent tool) with this brief, passing it the path to `quiz.json` and the simulate output:
 
-> You are reviewing a personality quiz before it's published. Read quizzes/WEEK/quiz.json, then
+> You are reviewing a personality quiz before it's published. Read quizzes/ID/quiz.json, then
 > .claude/skills/weekly-quiz/SKILL.md section 4 ("Question logic").
 > Go through EVERY question one by one and check each answer against those rules: does it actually answer
 > the question, is it the same kind of thing as the other answers, is it one idea, is it distinct?
@@ -127,31 +144,32 @@ Start a subagent (Agent tool) with this brief, passing it the path to `quiz.json
 > answers that obviously point at one result. Report NON-BLOCKING notes (tone, weaker questions, ideas).
 > Quote the exact text for every issue. Don't rewrite the quiz.
 
-Fix every blocking issue, then run `scripts/check_quiz.sh WEEK` again (must pass). If you changed more than a
+Fix every blocking issue, then run `scripts/check_quiz.sh ID` again (must pass). If you changed more than a
 couple of answers, run the critic once more on the new version.
 
 ## 8. Report
 
-Write `.work/WEEK/notes.md` with short sections:
+Write `.work/ID/notes.md` with short sections:
 - **Design choices:** why this number of questions/outcomes, why this scoring mode, the theme idea.
 - **Critic notes:** what it flagged, what you changed, what you left and why.
 - **Uncertainties:** anything the reviewer should look at closely.
 
-Then run `python3 scripts/report.py WEEK --notes .work/WEEK/notes.md --attempts N`.
-This writes `reports/WEEK.md` with the outcomes, every question and its scoring, and the outcome split.
+Then run `python3 scripts/report.py ID --notes .work/ID/notes.md --attempts N`.
+This writes `reports/ID.md` with the outcomes, every question and its scoring, and the outcome split.
 Never type the numbers yourself.
 
 ## 9. Scope check, commit, PR
 
-1. `python3 scripts/check_scope.py WEEK`. It must pass. If it lists other files, revert them (don't commit them).
-2. Commit exactly: `quizzes/WEEK/quiz.json`, `quizzes/WEEK/style.css`, `reports/WEEK.md`, `topics.json`.
-   Message: `Add quiz WEEK: <title>`.
+1. `python3 scripts/check_scope.py ID`. It must pass. If it lists other files, revert them (don't commit them).
+2. Commit exactly: `quizzes/ID/quiz.json`, `quizzes/ID/style.css`, `reports/ID.md`.
+   Message: `Add quiz ID: <title>`.
 3. Push the branch and open a PR against `main`:
-   - Title: `Quiz WEEK: <topic>` (exactly this form; step 2 relies on it).
+   - Title: `Quiz ID: <topic>` (exactly this form; step 2 relies on it).
    - Body: the title and emoji, one line about the theme, the outcome split table (copy it from
-     `reports/WEEK.md`), a link to the report file on the branch, and:
-     "Preview: https://am3lia-low.github.io/quizzle-2.0/preview/ (ready a minute or two after the PR opens)".
+     `reports/ID.md`), a link to the report file on the branch, and:
+     "Preview: https://am3lia-low.github.io/quizzle-2.0/preview/ID/ (ready a minute or two after the PR opens)".
 4. Finish with a short summary: the title, the PR link, the preview link, and anything from "Uncertainties".
+   With several quizzes, one summary block per quiz.
 
 ## Things that are not your job
 

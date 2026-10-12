@@ -1,8 +1,9 @@
-# Preview a quiz PR at https://<user>.github.io/<repo>/preview/ before it's merged.
+# Preview quiz PRs before they're merged: every open quiz PR at
+# https://<user>.github.io/<repo>/preview/<quiz-id>/, and the latest one at /preview/.
 #
 # Runs as pull_request_target so it deploys from main's context (GitHub Pages only
 # accepts deployments from main by default). For safety it only ever runs main's
-# build code; from the PR it takes nothing but the quiz data files (quiz.json and
+# build code; from each PR it takes nothing but the quiz data files (quiz.json and
 # style.css), which build.py validates before using.
 name: Preview quiz
 
@@ -13,6 +14,7 @@ on:
 
 permissions:
   contents: read
+  pull-requests: read
   pages: write
   id-token: write
 
@@ -35,31 +37,13 @@ jobs:
           python-version: "3.12"
       - name: Build the live site from main
         run: python3 scripts/build.py --out _site --clean
-      - name: Find the PR's quiz week
-        id: week
+      - name: Build preview pages for every open quiz PR
+        # Every open quiz PR gets /preview/<quiz-id>/, so two PRs open at once (e.g. two quizzes
+        # in one week) can both be played. /preview/ shows the PR that triggered this run.
         env:
-          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
-          BASE_SHA: ${{ github.event.pull_request.base.sha }}
-        run: |
-          git fetch --no-tags origin "$HEAD_SHA"
-          week=$(git diff --name-only "$BASE_SHA...$HEAD_SHA" -- quizzes/ \
-            | sed -nE 's#^quizzes/([0-9]{4}-W[0-9]{2})/quiz\.json$#\1#p' | sort -u | tail -n 1)
-          if [ -z "$week" ]; then echo "No new quiz.json in this PR"; exit 1; fi
-          echo "week=$week" >> "$GITHUB_OUTPUT"
-      - name: Add the PR's quiz data (data files only)
-        env:
-          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
-          WEEK: ${{ steps.week.outputs.week }}
-        run: |
-          mkdir -p "quizzes/$WEEK"
-          git show "$HEAD_SHA:quizzes/$WEEK/quiz.json" > "quizzes/$WEEK/quiz.json"
-          git show "$HEAD_SHA:quizzes/$WEEK/style.css" > "quizzes/$WEEK/style.css"
-      - name: Build the preview page
-        env:
-          WEEK: ${{ steps.week.outputs.week }}
-        run: |
-          python3 scripts/build.py --out _site --preview "$WEEK"
-          echo "Preview of **$WEEK** will be at \`/preview/\` once deployed." >> "$GITHUB_STEP_SUMMARY"
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: bash scripts/build_pr_previews.sh _site "$PR_NUMBER"
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

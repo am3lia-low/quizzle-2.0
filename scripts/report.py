@@ -89,7 +89,7 @@ def main() -> int:
         "- [x] validate.py passed",
         "- [x] simulate.py passed (every outcome reachable)",
         "- [x] build.py + playtest passed",
-        "- [x] check_scope.py passed (only this week's files changed)",
+        "- [x] check_scope.py passed (only this quiz's files changed)",
         "",
     ]
 

@@ -30,10 +30,8 @@ def main() -> int:
     changed |= set(git("diff", "--name-only", "HEAD"))
     changed |= set(git("ls-files", "--others", "--exclude-standard"))
 
-    # topics.json is left alone: used topics are found from quizzes/*/quiz.json and open PR titles,
-    # so two quiz PRs open at once never conflict over it.
-    allowed = {f"quizzes/{week}/quiz.json", f"quizzes/{week}/style.css", f"reports/{week}.md"}
-    required = allowed
+    allowed = {f"quizzes/{week}/quiz.json", f"quizzes/{week}/style.css", f"reports/{week}.md", "topics.json"}
+    required = allowed - {"topics.json"}
 
     outside = sorted(changed - allowed)
     missing = sorted(required - changed)

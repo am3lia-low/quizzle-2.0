@@ -27,15 +27,14 @@ A quiz `<id>` is its ISO week, e.g. `2026-W42`. Extra quizzes in the same week g
 | `quizzes/<id>/quiz.json` | Quiz content and colours | Agent |
 | `quizzes/<id>/style.css` | Quiz theme | Agent |
 | `reports/<id>.md` | Review report: outcomes, every question, outcome split | Agent (via `report.py`) |
-| `topics.json` | Upcoming topics; the agent takes the first one no quiz or open PR uses yet | You (refill when used up) |
+| `topics.json` | Upcoming topics; each quiz PR removes the one it used | Agent removes one; you refill it |
 | `engine/` | Quiz engine (`engine.js`), page shell, main page template | You |
 | `scripts/` | Checks, simulation, build, playtest, scope guard | You |
 | `.github/workflows/` | Deploy on merge, preview on PR | You |
 | `.claude/skills/weekly-quiz/` | The agent's playbook | You |
 | `docs/example-quiz/` | Reference quiz (format example, used for testing) | You |
 
-The agent may only change its quiz's files and its report. `check_scope.py` enforces this. It doesn't edit
-`topics.json`, so two quiz PRs open at once never conflict over it.
+The agent may only change its quiz's files, its report and `topics.json`. `check_scope.py` enforces this.
 
 ## The checks
 
@@ -47,6 +46,7 @@ The agent may only change its quiz's files and its report. `check_scope.py` enfo
 | `playtest.mjs` | Headless browser plays the built page to every outcome and replays random paths |
 | `report.py` | Writes the report from the simulation output (numbers are never typed by hand) |
 | `check_scope.py` | Fails if anything outside this quiz's files changed |
+| `remove_topic.py` | Removes one topic from `topics.json` (also fixes `topics.json` merge conflicts) |
 | `build_pr_previews.sh` | (CI) Adds a `/preview/<id>/` page for every open quiz PR |
 
 Try it locally with the example quiz:
@@ -76,3 +76,13 @@ Ask for it in the request, e.g. "run the weekly-quiz skill and make 2 quizzes th
 "make another quiz this week". The agent picks the next free IDs (`2026-W42`, `2026-W42-2`, …) and opens one PR
 per quiz. To make this the default, put it in the Routine's prompt. To get them on different days, add a
 second Routine (e.g. Thursday) whose prompt says "make another quiz this week".
+
+**Merge conflicts are expected here.** Each quiz PR removes its own topic from `topics.json`, so when two are open
+at once, merging the first gives the second a conflict in `topics.json`. To fix it, either:
+
+- ask Claude: "fix the topics.json merge conflict on PR #N" (the skill has the steps), or
+- run it yourself on the PR's branch:
+  `git merge origin/main`, then `python3 scripts/remove_topic.py --quiz <id> --from origin/main`,
+  `git add topics.json`, `git commit --no-edit`, and push, or
+- use GitHub's **Resolve conflicts** button and delete the conflict markers so that both quizzes' topic lines
+  are gone, keeping the commas valid.

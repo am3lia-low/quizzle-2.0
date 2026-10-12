@@ -8,8 +8,8 @@ description: Generate this week's personality quiz (content + theme), check it, 
 You are making personality quizzes for the site at `https://am3lia-low.github.io/quizzle-2.0/`.
 Each quiz is its own pull request that a human reviews, plays and merges. Merging publishes it.
 
-You only ever **write data**: a `quiz.json`, a `style.css` and a report per quiz.
-You never edit the engine, the scripts, the workflows, `topics.json` or anything else. A scope check enforces this.
+You only ever **write data**: a `quiz.json`, a `style.css` and a report per quiz, and the shortened topic list.
+You never edit the engine, the scripts, the workflows or anything else. A scope check enforces this.
 
 Work through the steps in order. If a step says **stop**, end the run with a short message saying why;
 the person gets an email for every run, so a clear failure message is the whole error report.
@@ -44,15 +44,20 @@ same week (e.g. `2026-W42-2`). The ID names the folder, the report, the branch a
 step 2 for the next one. Each quiz gets its own branch, started fresh from `origin/main` (never on top of the previous
 quiz's branch), and its own PR. Its new PR title makes its ID and topic count as taken for the next quiz.
 If a later quiz has to **stop**, the earlier PRs stay open. Say which quizzes made it and which didn't.
+Each PR removes its own topic from `topics.json`, so whichever is merged second will get a merge conflict there.
+That's expected: say so in the final summary, and point to "Fixing a topics.json merge conflict".
 
 ## 3. Pick the topic
 
-- Read `topics.json` (a list, already shuffled). Don't edit it.
+- Read `topics.json` (a list, already shuffled). If it's empty: **stop** ("topic list is empty; time for a refresh").
 - Collect topics already in use: the `topic` field of every `quizzes/*/quiz.json`, plus the topic in the title of
-  every open `Quiz …: <topic>` PR (including the ones you opened earlier in this run).
-  Take the **first entry that is not already in use**.
-  If every entry is in use (or the list is empty): **stop** ("topic list is used up; time for a refresh").
+  every open `Quiz …: <topic>` PR (including the ones you opened earlier in this run; their removal from
+  `topics.json` isn't on `main` yet). Take the **first entry that is not already in use**.
+  If every entry is in use: **stop** ("every topic left is already in an open PR; merge some or refresh the list").
 - If the request says "skip this topic" or names a topic, follow that.
+- Remove only the chosen entry: `python3 scripts/remove_topic.py --topic "<topic>"`. Don't edit `topics.json` by hand.
+  (Each quiz PR removes its own topic. When two quiz PRs are open at once, merging one gives the other a merge
+  conflict in `topics.json`; see "Fixing a topics.json merge conflict" below.)
 - The entry may preset `outcomes` (how many results) and `scoring` (`winner` or `blend`). `null` means you decide.
 
 ## 4. Design the quiz
@@ -161,7 +166,7 @@ Never type the numbers yourself.
 ## 9. Scope check, commit, PR
 
 1. `python3 scripts/check_scope.py ID`. It must pass. If it lists other files, revert them (don't commit them).
-2. Commit exactly: `quizzes/ID/quiz.json`, `quizzes/ID/style.css`, `reports/ID.md`.
+2. Commit exactly: `quizzes/ID/quiz.json`, `quizzes/ID/style.css`, `reports/ID.md`, `topics.json`.
    Message: `Add quiz ID: <title>`.
 3. Push the branch and open a PR against `main`:
    - Title: `Quiz ID: <topic>` (exactly this form; step 2 relies on it).
@@ -170,6 +175,23 @@ Never type the numbers yourself.
      "Preview: https://am3lia-low.github.io/quizzle-2.0/preview/ID/ (ready a minute or two after the PR opens)".
 4. Finish with a short summary: the title, the PR link, the preview link, and anything from "Uncertainties".
    With several quizzes, one summary block per quiz.
+
+## Fixing a topics.json merge conflict
+
+Use this when asked to update or fix a quiz PR that GitHub says has conflicts (usually because another quiz PR
+was merged first, and both removed a line from `topics.json`). It is also part of driving your own quiz PR to green.
+
+1. Check out the PR's branch and `git fetch origin main`. Find its quiz `ID` from `quizzes/<ID>/` in the PR.
+2. `git merge origin/main`. Never rebase or force-push a quiz branch.
+3. If only `topics.json` conflicts, resolve it with
+   `python3 scripts/remove_topic.py --quiz ID --from origin/main`
+   (main's list, which already lacks the merged quizzes' topics, minus this quiz's topic), then `git add topics.json`
+   and `git commit --no-edit`.
+   If anything else conflicts, or the script says the topic isn't in main's list (another merged quiz already
+   used it): `git merge --abort` and **stop**, explaining what conflicted.
+4. Check: `python3 scripts/check_scope.py ID` and `scripts/check_quiz.sh ID` must pass, and
+   `git diff origin/main -- topics.json` must show exactly one removed line: this quiz's topic.
+5. Push the branch (a normal push; the merge commit keeps the history intact).
 
 ## Things that are not your job
 

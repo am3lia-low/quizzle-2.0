@@ -4,7 +4,7 @@
   "topic": "Which Great Gatsby character are you",
   "category": "fictional-characters",
   "emoji": "🥂",
-  "intro": "It's summer on Long Island, 1922, and the party next door is spilling onto the lawn. Answer nine questions to find out who you'd be among the guests.",
+  "intro": "It's summer on Long Island, 1922, and the party next door is spilling onto the lawn. Answer eleven questions to find out who you'd be in the story.",
   "start_label": "Join the party",
   "result_label": "You are",
   "scoring": "winner",
@@ -74,11 +74,50 @@
       "emoji": "🦉",
       "color": "#eba86c",
       "tagline": "The curious guest who wandered into the library and found the real story.",
-      "description": "While everyone else is dancing, you're checking whether the books on the shelves are real. You're delightfully curious, easily amazed and far more perceptive than people expect. A rare result: you're the one who sees through the show and still shows up when it counts.",
+      "description": "While everyone else is dancing, you're checking whether the books on the shelves are real. You're delightfully curious, easily amazed and far more perceptive than people expect. You're the one who sees through the show and still shows up when it counts.",
       "traits": [
         "curious",
         "perceptive",
         "sincere"
+      ]
+    },
+    {
+      "id": "tom",
+      "name": "Tom Buchanan",
+      "emoji": "🏇",
+      "color": "#f2917f",
+      "tagline": "Bold, competitive and never one to sit on the sidelines.",
+      "description": "You throw yourself into everything at full strength, from a weekend match to a long day outdoors. You love a good contest and you love winning, and you're never shy about saying what you think. People always know exactly where they stand with you, and you bring serious energy to any team you're on.",
+      "traits": [
+        "bold",
+        "sporty",
+        "decisive"
+      ]
+    },
+    {
+      "id": "myrtle",
+      "name": "Myrtle Wilson",
+      "emoji": "💃",
+      "color": "#d9a6f2",
+      "tagline": "Full of life and hungry for something bigger.",
+      "description": "You have more energy than any room can hold, and you're not afraid to want more from life. You can turn an ordinary afternoon into an impromptu party, and you light up when things get glamorous. Your zest is contagious, and people remember an evening with you long after it ends.",
+      "traits": [
+        "vivacious",
+        "daring",
+        "sociable"
+      ]
+    },
+    {
+      "id": "george",
+      "name": "George Wilson",
+      "emoji": "🔧",
+      "color": "#bcc8ad",
+      "tagline": "Steady hands, a quiet heart and a job done properly.",
+      "description": "You're the dependable one who keeps things running while everyone else is busy making a scene. You're patient, hardworking and devoted to the people you love, even if you don't say much about it. Nobody notices how much you hold together until you take a day off.",
+      "traits": [
+        "dependable",
+        "devoted",
+        "hardworking"
       ]
     }
   ],
@@ -108,6 +147,12 @@
           "text": "Keep an eye on the door for one particular guest",
           "scores": {
             "gatsby": 2
+          }
+        },
+        {
+          "text": "Head straight for the dance floor",
+          "scores": {
+            "myrtle": 2
           }
         },
         {
@@ -141,15 +186,15 @@
           }
         },
         {
-          "text": "Planning your next big move",
+          "text": "Playing a hard-fought match",
           "scores": {
-            "gatsby": 2
+            "tom": 2
           }
         },
         {
-          "text": "Walking the city with no plan",
+          "text": "Fixing something that's been broken for ages",
           "scores": {
-            "nick": 2
+            "george": 2
           }
         }
       ]
@@ -167,8 +212,25 @@
         {
           "text": "One great adventure",
           "scores": {
-            "jordan": 2,
-            "owl-eyes": 1
+            "jordan": 2
+          }
+        },
+        {
+          "text": "One fresh start",
+          "scores": {
+            "myrtle": 2
+          }
+        },
+        {
+          "text": "One great victory",
+          "scores": {
+            "tom": 2
+          }
+        },
+        {
+          "text": "One happy home",
+          "scores": {
+            "george": 2
           }
         },
         {
@@ -184,7 +246,7 @@
       "text": "Pick a skill you'd love to master.",
       "answers": [
         {
-          "text": "Public speaking",
+          "text": "Acting",
           "scores": {
             "gatsby": 2
           }
@@ -202,15 +264,21 @@
           }
         },
         {
-          "text": "Sailing",
+          "text": "Horse riding",
           "scores": {
-            "jordan": 2
+            "tom": 2
           }
         },
         {
           "text": "Bookbinding",
           "scores": {
             "owl-eyes": 2
+          }
+        },
+        {
+          "text": "Dancing",
+          "scores": {
+            "myrtle": 2
           }
         }
       ]
@@ -221,7 +289,8 @@
         {
           "text": "Keep it forever, no questions asked",
           "scores": {
-            "nick": 2
+            "nick": 2,
+            "george": 1
           }
         },
         {
@@ -239,13 +308,20 @@
         {
           "text": "Tell them straight what you'd do",
           "scores": {
-            "jordan": 2
+            "jordan": 2,
+            "tom": 1
           }
         },
         {
           "text": "Listen wide-eyed to every detail",
           "scores": {
             "owl-eyes": 2
+          }
+        },
+        {
+          "text": "Share an even bigger one of your own",
+          "scores": {
+            "myrtle": 2
           }
         }
       ]
@@ -254,9 +330,15 @@
       "text": "Pick a place to live.",
       "answers": [
         {
-          "text": "A grand house with an enormous lawn",
+          "text": "A brand-new mansion by the water",
           "scores": {
             "gatsby": 2
+          }
+        },
+        {
+          "text": "A sprawling country estate with stables",
+          "scores": {
+            "tom": 2
           }
         },
         {
@@ -268,13 +350,15 @@
         {
           "text": "A small cottage with an overgrown garden",
           "scores": {
-            "nick": 2
+            "nick": 2,
+            "george": 1
           }
         },
         {
           "text": "A city apartment close to everything",
           "scores": {
-            "jordan": 2
+            "myrtle": 2,
+            "jordan": 1
           }
         },
         {
@@ -303,13 +387,15 @@
         {
           "text": "Your patience",
           "scores": {
-            "nick": 2
+            "george": 2,
+            "nick": 1
           }
         },
         {
           "text": "Your confidence",
           "scores": {
-            "jordan": 2
+            "jordan": 2,
+            "tom": 1
           }
         },
         {
@@ -317,6 +403,12 @@
           "scores": {
             "owl-eyes": 1,
             "nick": 1
+          }
+        },
+        {
+          "text": "Your energy",
+          "scores": {
+            "myrtle": 2
           }
         }
       ]
@@ -327,7 +419,8 @@
         {
           "text": "Make a grand entrance anyway",
           "scores": {
-            "gatsby": 2
+            "tom": 2,
+            "myrtle": 1
           }
         },
         {
@@ -339,7 +432,8 @@
         {
           "text": "Text ahead to explain",
           "scores": {
-            "nick": 2
+            "nick": 2,
+            "george": 1
           }
         },
         {
@@ -352,6 +446,12 @@
           "text": "Get distracted by something fascinating on the way",
           "scores": {
             "owl-eyes": 2
+          }
+        },
+        {
+          "text": "Promise to make it up to them in style",
+          "scores": {
+            "gatsby": 2
           }
         }
       ]
@@ -378,15 +478,107 @@
           }
         },
         {
-          "text": "Distant laughter from a boat on the bay",
+          "text": "A crowded room all talking at once",
           "scores": {
-            "jordan": 2
+            "myrtle": 2
           }
         },
         {
           "text": "The crackle of an old record",
           "scores": {
             "owl-eyes": 2
+          }
+        },
+        {
+          "text": "The hum of a well-tuned engine",
+          "scores": {
+            "george": 2,
+            "jordan": 1
+          }
+        }
+      ]
+    },
+    {
+      "text": "A friend needs help moving house. You…",
+      "answers": [
+        {
+          "text": "Turn up early with your own toolbox",
+          "scores": {
+            "george": 2
+          }
+        },
+        {
+          "text": "Do all the heavy lifting yourself",
+          "scores": {
+            "tom": 2
+          }
+        },
+        {
+          "text": "Pay for movers as a surprise",
+          "scores": {
+            "gatsby": 2,
+            "daisy": 1
+          }
+        },
+        {
+          "text": "Keep everyone's spirits up with music",
+          "scores": {
+            "myrtle": 2
+          }
+        },
+        {
+          "text": "Label every box carefully",
+          "scores": {
+            "nick": 1,
+            "owl-eyes": 1
+          }
+        },
+        {
+          "text": "Drive the van",
+          "scores": {
+            "jordan": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Pick a motto.",
+      "answers": [
+        {
+          "text": "Tomorrow can be better than today",
+          "scores": {
+            "gatsby": 2
+          }
+        },
+        {
+          "text": "Why worry when you can smile?",
+          "scores": {
+            "daisy": 2
+          }
+        },
+        {
+          "text": "Hear everyone out first",
+          "scores": {
+            "nick": 2
+          }
+        },
+        {
+          "text": "Play to win",
+          "scores": {
+            "tom": 2,
+            "jordan": 1
+          }
+        },
+        {
+          "text": "Life's too short to stay home",
+          "scores": {
+            "myrtle": 2
+          }
+        },
+        {
+          "text": "Do it once and do it right",
+          "scores": {
+            "george": 2
           }
         }
       ]

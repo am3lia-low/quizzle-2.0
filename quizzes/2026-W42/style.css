@@ -42,7 +42,7 @@ body {
     linear-gradient(180deg, var(--accent) 0 24px, var(--card) 24px);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding-top: 40px;
+  padding: 40px 20px 28px;
   box-shadow: 0 1px 0 var(--border), 0 4px 0 -1px #faf7f1, 0 5px 0 -1px var(--border),
     0 14px 30px -18px rgba(29, 35, 51, .45);
 }

@@ -1,6 +1,6 @@
 """Validate a quiz: schema, content limits, theme contrast, CSS safety.
 
-Usage: python3 scripts/validate.py 2026-W42
+Usage: python3 scripts/validate.py 2026-W42      (or 2026-W42-2 for a second quiz that week)
 Exit code 0 = valid, 1 = problems (printed one per line).
 """
 
@@ -15,8 +15,8 @@ def main() -> int:
         print(__doc__)
         return 2
     week = sys.argv[1]
-    if not quizlib.WEEK_RE.match(week):
-        print(f"bad week id: {week}")
+    if not quizlib.QUIZ_ID_RE.match(week):
+        print(f"bad quiz id: {week} (expected e.g. 2026-W42 or 2026-W42-2)")
         return 2
     path = quizlib.quiz_dir(week) / "quiz.json"
     try:

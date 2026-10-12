@@ -1,6 +1,6 @@
-"""Guardrail: fail if the agent changed anything outside this week's quiz files.
+"""Guardrail: fail if the agent changed anything outside one quiz's files.
 
-Usage: python3 scripts/check_scope.py 2026-W42 [--base origin/main]
+Usage: python3 scripts/check_scope.py 2026-W42 [--base origin/main]   (or 2026-W42-2, ...)
 Looks at committed, staged, unstaged and untracked changes compared with the base.
 """
 
@@ -18,10 +18,13 @@ def git(*args: str) -> list[str]:
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("week")
+    parser.add_argument("quiz_id")
     parser.add_argument("--base", default="origin/main")
     args = parser.parse_args()
-    week = args.week
+    week = args.quiz_id
+    if not quizlib.QUIZ_ID_RE.match(week):
+        print(f"bad quiz id: {week}")
+        return 2
 
     changed = set(git("diff", "--name-only", f"{args.base}...HEAD"))
     changed |= set(git("diff", "--name-only", "HEAD"))

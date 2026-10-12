@@ -8,29 +8,33 @@ Site: https://am3lia-low.github.io/quizzle-2.0/
 ## How a week works
 
 1. A weekly **Routine** (scheduled Claude Code cloud session) runs the `weekly-quiz` skill.
-2. The agent takes the next topic from `topics.json`, writes `quizzes/<week>/quiz.json` (questions, outcomes,
-   scoring) and `quizzes/<week>/style.css` (that quiz's theme).
-3. It runs the checks (`scripts/check_quiz.sh <week>`), gets a second opinion from a critic subagent,
-   writes `reports/<week>.md`, and opens a PR titled `Quiz <week>: <topic>`.
-4. The PR triggers a preview at https://am3lia-low.github.io/quizzle-2.0/preview/
+2. The agent takes the next unused topic from `topics.json`, writes `quizzes/<id>/quiz.json` (questions,
+   outcomes, scoring) and `quizzes/<id>/style.css` (that quiz's theme).
+3. It runs the checks (`scripts/check_quiz.sh <id>`), gets a second opinion from a critic subagent,
+   writes `reports/<id>.md`, and opens a PR titled `Quiz <id>: <topic>`.
+4. The PR triggers a preview at https://am3lia-low.github.io/quizzle-2.0/preview/<id>/
+   (`/preview/` always shows the most recently updated quiz PR).
 5. You get an email when the run finishes. Play the preview, read the report, then merge (publish) or
    close (reject; the topic goes back in the queue).
+
+A quiz `<id>` is its ISO week, e.g. `2026-W42`. Extra quizzes in the same week get `2026-W42-2`, `2026-W42-3`, …
+(up to `-9`). Each quiz is its own PR with its own preview, so several can wait for review at once.
 
 ## Layout
 
 | Path | What | Who edits it |
 |---|---|---|
-| `quizzes/<week>/quiz.json` | Quiz content and colours | Agent |
-| `quizzes/<week>/style.css` | Quiz theme | Agent |
-| `reports/<week>.md` | Review report: outcomes, every question, outcome split | Agent (via `report.py`) |
-| `topics.json` | Upcoming topics, one used per week | Agent removes one; you refill it |
+| `quizzes/<id>/quiz.json` | Quiz content and colours | Agent |
+| `quizzes/<id>/style.css` | Quiz theme | Agent |
+| `reports/<id>.md` | Review report: outcomes, every question, outcome split | Agent (via `report.py`) |
+| `topics.json` | Upcoming topics; each quiz PR removes the one it used | Agent removes one; you refill it |
 | `engine/` | Quiz engine (`engine.js`), page shell, main page template | You |
 | `scripts/` | Checks, simulation, build, playtest, scope guard | You |
 | `.github/workflows/` | Deploy on merge, preview on PR | You |
 | `.claude/skills/weekly-quiz/` | The agent's playbook | You |
 | `docs/example-quiz/` | Reference quiz (format example, used for testing) | You |
 
-The agent may only change its week's quiz files, its report and `topics.json`. `check_scope.py` enforces this.
+The agent may only change its quiz's files, its report and `topics.json`. `check_scope.py` enforces this.
 
 ## The checks
 
@@ -41,7 +45,9 @@ The agent may only change its week's quiz files, its report and `topics.json`. `
 | `build.py` | Builds one self-contained HTML file per quiz plus the main page into `_site/` |
 | `playtest.mjs` | Headless browser plays the built page to every outcome and replays random paths |
 | `report.py` | Writes the report from the simulation output (numbers are never typed by hand) |
-| `check_scope.py` | Fails if anything outside this week's files changed |
+| `check_scope.py` | Fails if anything outside this quiz's files changed |
+| `remove_topic.py` | Removes one topic from `topics.json` (also fixes `topics.json` merge conflicts) |
+| `build_pr_previews.sh` | (CI) Adds a `/preview/<id>/` page for every open quiz PR |
 
 Try it locally with the example quiz:
 
@@ -63,3 +69,20 @@ rm -rf quizzes/2026-W41 .work       # clean up
 Open the Routine and press **Run now**, or ask Claude in any session, e.g. "run the weekly quiz Routine for
 week 2026-W43" or "…and skip this topic". The run stops on its own if that week is already published or
 already has an open PR.
+
+## More than one quiz in a week (or a day)
+
+Ask for it in the request, e.g. "run the weekly-quiz skill and make 2 quizzes this week", or
+"make another quiz this week". The agent picks the next free IDs (`2026-W42`, `2026-W42-2`, …) and opens one PR
+per quiz. To make this the default, put it in the Routine's prompt. To get them on different days, add a
+second Routine (e.g. Thursday) whose prompt says "make another quiz this week".
+
+**Merge conflicts are expected here.** Each quiz PR removes its own topic from `topics.json`, so when two are open
+at once, merging the first gives the second a conflict in `topics.json`. To fix it, either:
+
+- ask Claude: "fix the topics.json merge conflict on PR #N" (the skill has the steps), or
+- run it yourself on the PR's branch:
+  `git merge origin/main`, then `python3 scripts/remove_topic.py --quiz <id> --from origin/main`,
+  `git add topics.json`, `git commit --no-edit`, and push, or
+- use GitHub's **Resolve conflicts** button and delete the conflict markers so that both quizzes' topic lines
+  are gone, keeping the commas valid.

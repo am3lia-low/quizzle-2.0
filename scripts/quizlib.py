@@ -17,6 +17,8 @@ REPORTS = ROOT / "reports"
 TOPICS = ROOT / "topics.json"
 
 WEEK_RE = re.compile(r"^\d{4}-W(0[1-9]|[1-4]\d|5[0-3])$")
+# A quiz id is its ISO week, plus "-2" .. "-9" for extra quizzes in the same week.
+QUIZ_ID_RE = re.compile(r"^(\d{4}-W(?:0[1-9]|[1-4]\d|5[0-3]))(?:-([2-9]))?$")
 ID_RE = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
 HEX_RE = re.compile(r"^#[0-9a-fA-F]{6}$")
 
@@ -33,23 +35,35 @@ MAX_CSS_BYTES = 30_000
 
 # ---------------------------------------------------------------- loading
 
-def quiz_dir(week: str) -> Path:
-    return QUIZZES / week
+def week_of(quiz_id: str) -> str:
+    """'2026-W42-2' -> '2026-W42'."""
+    return QUIZ_ID_RE.match(quiz_id).group(1)
 
 
-def load_quiz(week: str) -> dict:
-    return json.loads((quiz_dir(week) / "quiz.json").read_text(encoding="utf-8"))
+def quiz_id_key(quiz_id: str) -> tuple[str, int]:
+    """Sort key: by week, then the first quiz of a week before '-2', '-3', ..."""
+    m = QUIZ_ID_RE.match(quiz_id)
+    return m.group(1), int(m.group(2) or 1)
 
 
-def load_css(week: str) -> str:
-    path = quiz_dir(week) / "style.css"
+def quiz_dir(quiz_id: str) -> Path:
+    return QUIZZES / quiz_id
+
+
+def load_quiz(quiz_id: str) -> dict:
+    return json.loads((quiz_dir(quiz_id) / "quiz.json").read_text(encoding="utf-8"))
+
+
+def load_css(quiz_id: str) -> str:
+    path = quiz_dir(quiz_id) / "style.css"
     return path.read_text(encoding="utf-8") if path.exists() else ""
 
 
-def all_weeks() -> list[str]:
+def all_quiz_ids() -> list[str]:
     if not QUIZZES.exists():
         return []
-    return sorted(p.name for p in QUIZZES.iterdir() if p.is_dir() and WEEK_RE.match(p.name))
+    ids = [p.name for p in QUIZZES.iterdir() if p.is_dir() and QUIZ_ID_RE.match(p.name)]
+    return sorted(ids, key=quiz_id_key)
 
 
 # ---------------------------------------------------------------- validation
@@ -95,7 +109,7 @@ def contrast(a: str, b: str) -> float:
     return (la + 0.05) / (lb + 0.05)
 
 
-def validate(quiz: dict, week: str | None = None) -> list[str]:
+def validate(quiz: dict, quiz_id: str | None = None) -> list[str]:
     """Return a list of human-readable problems. Empty list means valid."""
     errors: list[str] = []
     if not isinstance(quiz, dict):
@@ -104,8 +118,8 @@ def validate(quiz: dict, week: str | None = None) -> list[str]:
 
     if not isinstance(quiz.get("week"), str) or not WEEK_RE.match(quiz.get("week", "")):
         errors.append("quiz.week: must look like 2026-W42")
-    elif week and quiz["week"] != week:
-        errors.append(f"quiz.week: '{quiz['week']}' does not match folder '{week}'")
+    elif quiz_id and quiz["week"] != week_of(quiz_id):
+        errors.append(f"quiz.week: '{quiz['week']}' does not match folder '{quiz_id}' (expected '{week_of(quiz_id)}')")
     _check_text(quiz.get("title"), "quiz.title", errors, 80)
     _check_text(quiz.get("topic"), "quiz.topic", errors, 120)
     if not isinstance(quiz.get("category"), str) or not ID_RE.match(quiz.get("category", "")):

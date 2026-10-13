@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;600;700&display=swap");
+
+/* Talking it out: chat-bubble answers, a two-tone "both sides" backdrop and a speech-bubble result card. */
+:root {
+  --border: #d9d3c7;
+  --muted: #586174;
+  --radius: 22px;
+  --font-body: "Figtree", system-ui, sans-serif;
+  --font-display: "Young Serif", Georgia, serif;
+  --enter-distance: 20px;
+  --side-a: #e4ebf3;
+  --side-b: #f4e4de;
+}
+
+body {
+  background:
+    radial-gradient(circle at 8% 18%, var(--side-a) 0 140px, transparent 141px),
+    radial-gradient(circle at 94% 82%, var(--side-b) 0 170px, transparent 171px),
+    var(--bg);
+}
+
+.site-header .quiz-week {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 2px 10px;
+  font-weight: 600;
+}
+
+.screen.intro .quiz-title,
+.screen.question .question-text,
+.result-name { font-family: var(--font-display); font-weight: 400; }
+
+.screen.intro .quiz-emoji { display: inline-block; transform: rotate(-6deg); }
+
+/* The question is the incoming message. */
+.screen.question .question-text {
+  position: relative;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius) var(--radius) var(--radius) 6px;
+  padding: 16px 18px;
+  box-shadow: 0 6px 18px -14px rgba(31, 38, 51, .5);
+}
+
+.progress { background: var(--border); border-radius: 999px; }
+.progress-bar { background: var(--accent); border-radius: 999px; }
+.question-count { font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+
+/* Answers are the replies: bubbles that lean alternately left and right. */
+.answer {
+  border: 1px solid var(--border);
+  border-radius: var(--radius) var(--radius) 6px var(--radius);
+  background: var(--card);
+  box-shadow: 0 2px 0 var(--border);
+  transition: transform .15s ease, background-color .15s ease, color .15s ease;
+}
+.answer:nth-child(odd) { margin-right: 8%; border-radius: var(--radius) var(--radius) var(--radius) 6px; }
+.answer:nth-child(even) { margin-left: 8%; }
+.answer:hover { background: var(--side-a); }
+.answer:nth-child(even):hover { background: var(--side-b); }
+.answer.is-picked,
+.answer.is-picked:hover {
+  background: var(--accent);
+  color: var(--accent-fg);
+  border-color: var(--accent);
+  transform: scale(1.02);
+}
+
+.btn.btn-primary { border-radius: 999px; }
+
+/* Result: a big speech bubble with a tail in the outcome's colour. */
+.result-card {
+  position: relative;
+  border: 2px solid var(--outcome-color, var(--accent));
+  border-radius: 28px 28px 28px 8px;
+  box-shadow: 0 14px 34px -18px rgba(31, 38, 51, .45);
+}
+.result-card::after {
+  content: "";
+  position: absolute;
+  left: 22px;
+  bottom: -14px;
+  width: 24px;
+  height: 24px;
+  background: var(--card);
+  border-right: 2px solid var(--outcome-color, var(--accent));
+  border-bottom: 2px solid var(--outcome-color, var(--accent));
+  transform: skewX(-30deg) rotate(45deg);
+}
+.result-traits li {
+  border-radius: 999px;
+  border: 1px solid var(--outcome-color, var(--accent));
+}
+.blend-fill { background: var(--outcome-color, var(--accent)); }
+.outcome-mini { border-radius: 18px 18px 18px 6px; }
+.outcome-mini.is-yours { border-color: var(--outcome-color, var(--accent)); }
+
+@media (prefers-reduced-motion: reduce) {
+  .answer { transition: none; }
+  .answer.is-picked { transform: none; }
+}

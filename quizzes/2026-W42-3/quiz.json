@@ -1,0 +1,426 @@
+{
+  "week": "2026-W42",
+  "title": "What's your conflict style?",
+  "topic": "What's your conflict style",
+  "category": "psychology",
+  "emoji": "💬",
+  "intro": "Nine questions about small disagreements, from dirty dishes to the last slice of pizza. We'll show you how you handle friction, and what mix of styles you bring to the table.",
+  "start_label": "Let's talk it out",
+  "result_label": "Your conflict style is",
+  "scoring": "blend",
+  "theme": {
+    "bg": "#f3f0ea",
+    "fg": "#1f2633",
+    "card": "#ffffff",
+    "accent": "#2f5d8a",
+    "accent_fg": "#ffffff"
+  },
+  "outcomes": [
+    {
+      "id": "straight-shooter",
+      "name": "The Straight Shooter",
+      "emoji": "🎯",
+      "color": "#b23a2e",
+      "tagline": "Say it plainly, sort it quickly, move on.",
+      "description": "You'd rather have an awkward five minutes than a tense five weeks. You name the problem, say where you stand and expect others to do the same. People always know where they are with you, and that honesty is a gift, even when it arrives a little fast.",
+      "traits": [
+        "honest",
+        "decisive",
+        "brave"
+      ]
+    },
+    {
+      "id": "bridge-builder",
+      "name": "The Bridge Builder",
+      "emoji": "🌉",
+      "color": "#2f5d8a",
+      "tagline": "Not your side or mine: let's find a better one.",
+      "description": "You treat a disagreement like a puzzle that both people are solving together. You ask questions, you listen for what someone actually needs, and you keep going until everyone walks away feeling heard. It takes longer, and the results tend to last.",
+      "traits": [
+        "curious",
+        "patient",
+        "fair"
+      ]
+    },
+    {
+      "id": "peacekeeper",
+      "name": "The Peacekeeper",
+      "emoji": "🕊️",
+      "color": "#3f7d5c",
+      "tagline": "Keeping the room warm is your quiet superpower.",
+      "description": "You notice when someone is upset before they've said a word, and you'll happily give a little ground to keep things kind. Friends feel safe around you. Just remember your own wishes count too: the people who love you want to hear them.",
+      "traits": [
+        "kind",
+        "generous",
+        "perceptive"
+      ]
+    },
+    {
+      "id": "dealmaker",
+      "name": "The Dealmaker",
+      "emoji": "🤝",
+      "color": "#8a5a12",
+      "tagline": "Half each, shake on it, let's get dinner.",
+      "description": "You're practical about disagreements: everyone gives a bit, everyone gets a bit, and nobody spends the whole evening arguing. You're brilliant at spotting the reasonable middle and talking people towards it. Group trips run smoother with you in charge of the plan.",
+      "traits": [
+        "practical",
+        "reasonable",
+        "quick-thinking"
+      ]
+    },
+    {
+      "id": "cool-head",
+      "name": "The Cool Head",
+      "emoji": "🧊",
+      "color": "#4b5a73",
+      "tagline": "Step back, breathe, then come back wiser.",
+      "description": "You know that not every argument needs to happen right now. You take a walk, let the heat drain out, and return when you can say what you actually mean. Plenty of fights simply dissolve on their own while you're away, and the ones that don't go far better.",
+      "traits": [
+        "calm",
+        "reflective",
+        "steady"
+      ]
+    },
+    {
+      "id": "tension-breaker",
+      "name": "The Tension Breaker",
+      "emoji": "🃏",
+      "color": "#7a3f8f",
+      "tagline": "One well-timed joke and everyone exhales.",
+      "description": "You have a knack for finding the funny side just when the room needs it most. A light word from you lowers shoulders and reminds everyone they actually like each other. Once people are laughing again, the real conversation tends to get a lot easier.",
+      "traits": [
+        "witty",
+        "warm",
+        "disarming"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "text": "Your housemate keeps leaving dishes in the sink. You…",
+      "answers": [
+        {
+          "text": "Mention it the next time you see them",
+          "scores": {
+            "straight-shooter": 2
+          }
+        },
+        {
+          "text": "Suggest a rota you can both live with",
+          "scores": {
+            "dealmaker": 2,
+            "bridge-builder": 1
+          }
+        },
+        {
+          "text": "Wash them yourself, just this once",
+          "scores": {
+            "peacekeeper": 2
+          }
+        },
+        {
+          "text": "Stick a googly-eyed note on the pile",
+          "scores": {
+            "tension-breaker": 2
+          }
+        },
+        {
+          "text": "Leave it until you're less annoyed",
+          "scores": {
+            "cool-head": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Your friends can't agree on where to eat. You…",
+      "answers": [
+        {
+          "text": "Pick a place and book it",
+          "scores": {
+            "straight-shooter": 2
+          }
+        },
+        {
+          "text": "Ask what everyone's in the mood for",
+          "scores": {
+            "bridge-builder": 2
+          }
+        },
+        {
+          "text": "Suggest one place now and another next week",
+          "scores": {
+            "dealmaker": 2
+          }
+        },
+        {
+          "text": "Go wherever the others choose",
+          "scores": {
+            "peacekeeper": 2
+          }
+        },
+        {
+          "text": "Stay out of it until there's a shortlist",
+          "scores": {
+            "cool-head": 2
+          }
+        },
+        {
+          "text": "Nominate the worst restaurant in town",
+          "scores": {
+            "tension-breaker": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Pick a superpower for an argument.",
+      "answers": [
+        {
+          "text": "Mind reading",
+          "scores": {
+            "bridge-builder": 2
+          }
+        },
+        {
+          "text": "Pausing time",
+          "scores": {
+            "cool-head": 2
+          }
+        },
+        {
+          "text": "Instant persuasion",
+          "scores": {
+            "dealmaker": 2,
+            "straight-shooter": 1
+          }
+        },
+        {
+          "text": "Fearlessness",
+          "scores": {
+            "straight-shooter": 2
+          }
+        },
+        {
+          "text": "Healing",
+          "scores": {
+            "peacekeeper": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "There's one slice of pizza left and you and a friend both want it. You…",
+      "answers": [
+        {
+          "text": "Cut it down the middle",
+          "scores": {
+            "dealmaker": 2
+          }
+        },
+        {
+          "text": "Tell them it's all theirs",
+          "scores": {
+            "peacekeeper": 2
+          }
+        },
+        {
+          "text": "Say you'd really like it",
+          "scores": {
+            "straight-shooter": 2
+          }
+        },
+        {
+          "text": "Ask who's hungrier",
+          "scores": {
+            "bridge-builder": 2
+          }
+        },
+        {
+          "text": "Make a dramatic speech for it",
+          "scores": {
+            "tension-breaker": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "A friend cancels on you last minute for the third time. You feel…",
+      "answers": [
+        {
+          "text": "Fed up",
+          "scores": {
+            "straight-shooter": 2
+          }
+        },
+        {
+          "text": "Worried",
+          "scores": {
+            "peacekeeper": 2
+          }
+        },
+        {
+          "text": "Puzzled",
+          "scores": {
+            "bridge-builder": 2
+          }
+        },
+        {
+          "text": "Philosophical",
+          "scores": {
+            "cool-head": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Which of these sounds most like you mid-disagreement?",
+      "answers": [
+        {
+          "text": "\"Here's how I see it.\"",
+          "scores": {
+            "straight-shooter": 2
+          }
+        },
+        {
+          "text": "\"What am I missing?\"",
+          "scores": {
+            "bridge-builder": 2
+          }
+        },
+        {
+          "text": "\"What if we each give a little?\"",
+          "scores": {
+            "dealmaker": 2
+          }
+        },
+        {
+          "text": "\"Can I get back to you?\"",
+          "scores": {
+            "cool-head": 2
+          }
+        },
+        {
+          "text": "\"Are you okay?\"",
+          "scores": {
+            "peacekeeper": 2
+          }
+        },
+        {
+          "text": "\"We sound ridiculous.\"",
+          "scores": {
+            "tension-breaker": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Someone gives you feedback you don't agree with. You…",
+      "answers": [
+        {
+          "text": "Say so on the spot",
+          "scores": {
+            "straight-shooter": 2
+          }
+        },
+        {
+          "text": "Ask what they meant by it",
+          "scores": {
+            "bridge-builder": 2
+          }
+        },
+        {
+          "text": "Take on the parts that are fair",
+          "scores": {
+            "dealmaker": 2
+          }
+        },
+        {
+          "text": "Thank them warmly anyway",
+          "scores": {
+            "peacekeeper": 2
+          }
+        },
+        {
+          "text": "Think it over for a day",
+          "scores": {
+            "cool-head": 2
+          }
+        },
+        {
+          "text": "Laugh it off",
+          "scores": {
+            "tension-breaker": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Pick a game.",
+      "answers": [
+        {
+          "text": "Chess",
+          "scores": {
+            "cool-head": 2,
+            "straight-shooter": 1
+          }
+        },
+        {
+          "text": "Monopoly",
+          "scores": {
+            "dealmaker": 2
+          }
+        },
+        {
+          "text": "Escape room",
+          "scores": {
+            "bridge-builder": 2,
+            "peacekeeper": 1
+          }
+        },
+        {
+          "text": "Charades",
+          "scores": {
+            "tension-breaker": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "After a disagreement is over, what matters most to you?",
+      "answers": [
+        {
+          "text": "That it's properly settled",
+          "scores": {
+            "straight-shooter": 2,
+            "dealmaker": 1
+          }
+        },
+        {
+          "text": "That everyone feels okay",
+          "scores": {
+            "peacekeeper": 2
+          }
+        },
+        {
+          "text": "That you understand each other better",
+          "scores": {
+            "bridge-builder": 2
+          }
+        },
+        {
+          "text": "That everyone can laugh about it",
+          "scores": {
+            "tension-breaker": 2
+          }
+        },
+        {
+          "text": "That nobody said anything they'll regret",
+          "scores": {
+            "cool-head": 2
+          }
+        }
+      ]
+    }
+  ]
+}

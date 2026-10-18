@@ -1,0 +1,350 @@
+{
+  "week": "2026-W43",
+  "title": "Which band member are you?",
+  "topic": "Which band member are you",
+  "category": "music",
+  "emoji": "🎸",
+  "intro": "Eight questions about blank walls, queues and Friday nights. We'll find your spot on the stage.",
+  "start_label": "Soundcheck",
+  "result_label": "In the band, you're the",
+  "scoring": "winner",
+  "theme": {
+    "bg": "#16121f",
+    "fg": "#f3eefb",
+    "card": "#231c33",
+    "accent": "#ff4f9a",
+    "accent_fg": "#16121f"
+  },
+  "outcomes": [
+    {
+      "id": "lead-singer",
+      "name": "Lead Singer",
+      "emoji": "🎤",
+      "color": "#ff7ab3",
+      "tagline": "Front and centre, and somehow it never looks like effort.",
+      "description": "You light up a room without trying and you're not shy about owning the moment. People want to be around your energy, and you're brilliant at making everyone else feel like part of the show. Someone has to say the bold thing first, and it's usually you.",
+      "traits": [
+        "charismatic",
+        "expressive",
+        "bold"
+      ]
+    },
+    {
+      "id": "lead-guitarist",
+      "name": "Lead Guitarist",
+      "emoji": "🎸",
+      "color": "#ffb347",
+      "tagline": "The flourish everyone remembers on the way home.",
+      "description": "You've got flair, skill and a healthy love of a big moment. You put real hours into the things you care about, and when you finally show them off, it lands. You're the friend with the dramatic stories and the even more dramatic sunglasses.",
+      "traits": [
+        "passionate",
+        "skilled",
+        "dramatic"
+      ]
+    },
+    {
+      "id": "bassist",
+      "name": "Bassist",
+      "emoji": "🎵",
+      "color": "#7fd6c2",
+      "tagline": "Quietly holding everything together, and loving every minute.",
+      "description": "You're the calm, steady core of every group you're in. You don't need the spotlight to know you matter, and the people who get it really get it. You're relaxed, loyal and a lot cooler than you let on.",
+      "traits": [
+        "steady",
+        "loyal",
+        "low-key cool"
+      ]
+    },
+    {
+      "id": "drummer",
+      "name": "Drummer",
+      "emoji": "🥁",
+      "color": "#ff8a5c",
+      "tagline": "Pure energy, perfect timing and the loudest laugh in the room.",
+      "description": "You keep everyone moving. You're fun, a little chaotic and surprisingly reliable when it counts: the plan only happens because you set the pace. Life's better at full volume, and your friends know you'll always turn up.",
+      "traits": [
+        "energetic",
+        "fun-loving",
+        "dependable"
+      ]
+    },
+    {
+      "id": "keyboardist",
+      "name": "Keyboardist",
+      "emoji": "🎹",
+      "color": "#a99bff",
+      "tagline": "The secret genius behind the sound.",
+      "description": "You're thoughtful, inventive and full of ideas other people didn't know they needed. You love tinkering until something is just right, and you notice details everyone else misses. Quiet in a crowd, brilliant one-to-one.",
+      "traits": [
+        "inventive",
+        "thoughtful",
+        "detail-loving"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "text": "You're given a blank wall to decorate. You put up…",
+      "answers": [
+        {
+          "text": "A wall of party photos",
+          "scores": {
+            "lead-singer": 2
+          }
+        },
+        {
+          "text": "One bold mural",
+          "scores": {
+            "lead-guitarist": 2
+          }
+        },
+        {
+          "text": "A print you've had for years",
+          "scores": {
+            "bassist": 2
+          }
+        },
+        {
+          "text": "A huge neon sign",
+          "scores": {
+            "drummer": 2
+          }
+        },
+        {
+          "text": "A map covered in pins",
+          "scores": {
+            "keyboardist": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Pick a pet.",
+      "answers": [
+        {
+          "text": "A parrot",
+          "scores": {
+            "lead-singer": 2
+          }
+        },
+        {
+          "text": "A peacock",
+          "scores": {
+            "lead-guitarist": 2
+          }
+        },
+        {
+          "text": "A cat",
+          "scores": {
+            "bassist": 2
+          }
+        },
+        {
+          "text": "A border collie",
+          "scores": {
+            "drummer": 2
+          }
+        },
+        {
+          "text": "An octopus",
+          "scores": {
+            "keyboardist": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "You're stuck in a long queue. You…",
+      "answers": [
+        {
+          "text": "Make friends with the people around you",
+          "scores": {
+            "lead-singer": 2
+          }
+        },
+        {
+          "text": "Pace up and down",
+          "scores": {
+            "drummer": 2
+          }
+        },
+        {
+          "text": "Wait it out, no big deal",
+          "scores": {
+            "bassist": 2
+          }
+        },
+        {
+          "text": "Do a crossword on your phone",
+          "scores": {
+            "keyboardist": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "A friend asks for honest feedback on their big idea. You…",
+      "answers": [
+        {
+          "text": "Cheer them on loudly",
+          "scores": {
+            "drummer": 2
+          }
+        },
+        {
+          "text": "Send back a page of detailed thoughts",
+          "scores": {
+            "keyboardist": 2
+          }
+        },
+        {
+          "text": "Ask a few gentle questions",
+          "scores": {
+            "bassist": 2
+          }
+        },
+        {
+          "text": "Pitch an even bigger version of it",
+          "scores": {
+            "lead-guitarist": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Pick a sport.",
+      "answers": [
+        {
+          "text": "Figure skating",
+          "scores": {
+            "lead-singer": 2
+          }
+        },
+        {
+          "text": "Skateboarding",
+          "scores": {
+            "lead-guitarist": 2
+          }
+        },
+        {
+          "text": "Rowing",
+          "scores": {
+            "bassist": 2
+          }
+        },
+        {
+          "text": "Basketball",
+          "scores": {
+            "drummer": 2
+          }
+        },
+        {
+          "text": "Rock climbing",
+          "scores": {
+            "keyboardist": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Your ideal Friday night is…",
+      "answers": [
+        {
+          "text": "A rooftop party full of new faces",
+          "scores": {
+            "lead-singer": 2
+          }
+        },
+        {
+          "text": "A packed dance floor until 2am",
+          "scores": {
+            "drummer": 2
+          }
+        },
+        {
+          "text": "A tiny bar with a few close friends",
+          "scores": {
+            "bassist": 2
+          }
+        },
+        {
+          "text": "A quiet night with a new project",
+          "scores": {
+            "keyboardist": 2
+          }
+        },
+        {
+          "text": "A midnight showing of a cult film",
+          "scores": {
+            "lead-guitarist": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Your group chat would be lost without your…",
+      "answers": [
+        {
+          "text": "Voice notes",
+          "scores": {
+            "lead-singer": 2
+          }
+        },
+        {
+          "text": "Plans",
+          "scores": {
+            "drummer": 1,
+            "bassist": 1
+          }
+        },
+        {
+          "text": "Hot takes",
+          "scores": {
+            "lead-guitarist": 2
+          }
+        },
+        {
+          "text": "Links",
+          "scores": {
+            "keyboardist": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Pick a dream job for a day.",
+      "answers": [
+        {
+          "text": "Talk-show host",
+          "scores": {
+            "lead-singer": 2
+          }
+        },
+        {
+          "text": "Stunt performer",
+          "scores": {
+            "lead-guitarist": 2
+          }
+        },
+        {
+          "text": "Barista",
+          "scores": {
+            "bassist": 2
+          }
+        },
+        {
+          "text": "Tour guide",
+          "scores": {
+            "drummer": 2
+          }
+        },
+        {
+          "text": "Museum curator",
+          "scores": {
+            "keyboardist": 2
+          }
+        }
+      ]
+    }
+  ]
+}

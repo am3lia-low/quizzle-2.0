@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Young+Serif&family=DM+Sans:wght@400;500;700&display=swap");
+
+/* Greenhouse: glasshouse panes, terracotta pots for buttons, plant-shop label for the result card. */
+:root {
+  --border: #cfdcc7;
+  --muted: #4f6353;
+  --radius: 16px;
+  --font-body: "DM Sans", system-ui, sans-serif;
+  --font-display: "Young Serif", Georgia, serif;
+  --terracotta: #b8613a;
+  --pane: rgba(47, 107, 58, .07);
+  --enter-distance: 22px;
+}
+
+body {
+  background:
+    radial-gradient(ellipse 70% 40% at 50% -10%, rgba(255, 244, 196, .7), transparent 70%),
+    repeating-linear-gradient(90deg, transparent 0 78px, var(--pane) 78px 80px),
+    repeating-linear-gradient(0deg, transparent 0 118px, var(--pane) 118px 120px),
+    var(--bg);
+  background-attachment: fixed;
+}
+
+.site-header .quiz-week {
+  background: var(--accent);
+  color: var(--accent-fg);
+  border-radius: 999px;
+  padding: 2px 10px;
+  font-weight: 700;
+  font-size: .8em;
+}
+
+.screen.intro .quiz-title,
+.screen.question .question-text,
+.result-name {
+  font-family: var(--font-display);
+  font-weight: 400;
+}
+
+.screen.intro .quiz-emoji {
+  display: inline-block;
+  transform-origin: 50% 100%;
+  animation: sway 4s ease-in-out infinite;
+}
+@keyframes sway {
+  0%, 100% { transform: rotate(-4deg); }
+  50% { transform: rotate(4deg); }
+}
+
+/* Buttons as terracotta pots: flat rim on top, tapering sides. */
+.btn.btn-primary {
+  background: var(--terracotta);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px 6px 18px 18px;
+  box-shadow: inset 0 6px 0 rgba(255, 255, 255, .18), 0 4px 0 #8c4526;
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+.btn.btn-primary:hover { background: #a9542f; }
+.btn.btn-primary:active { transform: translateY(2px); box-shadow: inset 0 6px 0 rgba(255, 255, 255, .18), 0 2px 0 #8c4526; }
+
+.progress { background: var(--border); border-radius: 999px; height: 8px; }
+.progress-bar {
+  background: linear-gradient(90deg, #7fb069, var(--accent));
+  border-radius: 999px;
+}
+.question-count { color: var(--muted); font-weight: 500; letter-spacing: .04em; }
+
+.answer {
+  position: relative;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 4px 22px 4px 22px;
+  text-align: left;
+  font-weight: 500;
+  padding-left: 46px;
+  transition: background .2s ease, border-color .2s ease, transform .2s ease;
+}
+.answer::before {
+  content: "🌱";
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%) scale(.9);
+  opacity: .55;
+  transition: transform .2s ease, opacity .2s ease;
+}
+.answer:hover { background: #f1f8ec; border-color: #9cc28a; }
+.answer:hover::before { opacity: 1; transform: translateY(-50%) scale(1.05); }
+.answer.is-picked {
+  background: #e3f0dc;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent);
+}
+.answer.is-picked::before { content: "🌿"; opacity: 1; transform: translateY(-50%) scale(1.15); }
+
+/* Result card as a plant-shop label tag. */
+.result-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-top: 10px solid var(--outcome-color);
+  border-radius: 6px 6px 22px 22px;
+  box-shadow: 0 14px 30px -14px rgba(31, 46, 34, .45);
+}
+.result-label {
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-size: .78em;
+  color: var(--muted);
+}
+.result-name { color: var(--outcome-color); }
+.result-tagline { font-style: italic; }
+.result-traits li {
+  background: color-mix(in srgb, var(--outcome-color) 12%, var(--card));
+  color: var(--fg);
+  border: 1px dashed var(--outcome-color);
+  border-radius: 999px;
+}
+
+.outcome-mini { border-radius: 4px 16px 4px 16px; border: 1px solid var(--border); }
+.outcome-mini.is-yours { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent); }
+
+@media (prefers-reduced-motion: reduce) {
+  .screen.intro .quiz-emoji { animation: none; }
+  .answer, .answer::before { transition: none; }
+  .answer:hover::before, .answer.is-picked::before { transform: translateY(-50%); }
+}

@@ -1,5 +1,4 @@
 [
-  {"topic": "Which ocean creature are you", "category": "nature", "outcomes": null, "scoring": null},
   {"topic": "Which candle scent are you", "category": "aesthetics", "outcomes": null, "scoring": null},
   {"topic": "Which kind of wizard would you be", "category": "whimsical", "outcomes": null, "scoring": null},
   {"topic": "Which moon phase are you", "category": "nature", "outcomes": 8, "scoring": null},

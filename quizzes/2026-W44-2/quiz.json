@@ -1,0 +1,460 @@
+{
+  "week": "2026-W44",
+  "title": "Which ocean creature are you?",
+  "topic": "Which ocean creature are you",
+  "category": "nature",
+  "emoji": "🌊",
+  "intro": "Nine questions about afternoons, friends and road trips. Dive in and find out what's swimming beneath the surface.",
+  "start_label": "Dive in",
+  "result_label": "Your ocean creature is",
+  "scoring": "winner",
+  "theme": {
+    "bg": "#0a2540",
+    "fg": "#e8f6fb",
+    "card": "#0f3557",
+    "accent": "#5fe0d0",
+    "accent_fg": "#06283d"
+  },
+  "outcomes": [
+    {
+      "id": "octopus",
+      "name": "Octopus",
+      "emoji": "🐙",
+      "color": "#ff9a8a",
+      "tagline": "Eight arms, three hearts, and a plan for everything.",
+      "description": "You're the clever one who can't leave a puzzle alone. Locked jar? Tricky problem? You'll find a way in, or out. Real octopuses are famous escape artists and quick learners, and you share their gift for improvising with whatever's to hand. Life is never boring around you.",
+      "traits": [
+        "curious",
+        "inventive",
+        "resourceful"
+      ]
+    },
+    {
+      "id": "sea-turtle",
+      "name": "Sea Turtle",
+      "emoji": "🐢",
+      "color": "#8fe0a0",
+      "tagline": "Calm, unhurried, and always finds the way home.",
+      "description": "You play the long game and you don't rattle easily. Sea turtles cross whole oceans and still find their way back to the beach they hatched on, and you have that same quiet sense of direction. People trust your perspective because you've clearly thought things through.",
+      "traits": [
+        "patient",
+        "steady",
+        "wise"
+      ]
+    },
+    {
+      "id": "dolphin",
+      "name": "Dolphin",
+      "emoji": "🐬",
+      "color": "#7fd0ff",
+      "tagline": "The life of the pod and everyone's favourite plus-one.",
+      "description": "You bring the energy. Dolphins live in close-knit groups, play just for fun and even use signature whistles a bit like names, and you're the friend who knows everyone's name at the party. You make plans happen and people happier.",
+      "traits": [
+        "playful",
+        "sociable",
+        "upbeat"
+      ]
+    },
+    {
+      "id": "sea-otter",
+      "name": "Sea Otter",
+      "emoji": "🦦",
+      "color": "#f0c08a",
+      "tagline": "Cosy, loyal, and holding on to the people who matter.",
+      "description": "Sea otters hold paws while they sleep so they don't drift apart, and that's very you. You keep your people close, remember the little things and turn any place into somewhere comfortable. Being around you feels like coming home.",
+      "traits": [
+        "loyal",
+        "caring",
+        "cosy"
+      ]
+    },
+    {
+      "id": "whale",
+      "name": "Humpback Whale",
+      "emoji": "🐋",
+      "color": "#b4c2ff",
+      "tagline": "A big heart and a song that carries for miles.",
+      "description": "You feel things deeply and you're not afraid to show it. Humpback whales sing long, complex songs that change over time, and you're the one with the playlist for every mood and the friend who asks how someone is really doing. Gentle, thoughtful and quietly huge in people's lives.",
+      "traits": [
+        "empathetic",
+        "deep",
+        "gentle"
+      ]
+    },
+    {
+      "id": "pufferfish",
+      "name": "Pufferfish",
+      "emoji": "🐡",
+      "color": "#ffd36e",
+      "tagline": "Small, sweet, and surprisingly mighty when it counts.",
+      "description": "You take a while to warm up to people, but once you do, you'll defend them fiercely. Behind the careful exterior is a secret artist: one small pufferfish spends days sculpting intricate circles in the sand. You're a true original with your own very specific taste.",
+      "traits": [
+        "original",
+        "honest",
+        "protective"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "text": "It's a free afternoon. Where do you end up?",
+      "answers": [
+        {
+          "text": "A museum I've never been to",
+          "scores": {
+            "octopus": 2
+          }
+        },
+        {
+          "text": "A busy city park",
+          "scores": {
+            "dolphin": 2
+          }
+        },
+        {
+          "text": "My own living room",
+          "scores": {
+            "sea-otter": 2
+          }
+        },
+        {
+          "text": "A long trail out of town",
+          "scores": {
+            "sea-turtle": 2
+          }
+        },
+        {
+          "text": "A rooftop at sunset",
+          "scores": {
+            "whale": 2
+          }
+        },
+        {
+          "text": "A tiny shop full of odd trinkets",
+          "scores": {
+            "pufferfish": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "A friend cancels plans at the last minute. You…",
+      "answers": [
+        {
+          "text": "Reply \"no worries!\" and genuinely mean it",
+          "scores": {
+            "sea-turtle": 2
+          }
+        },
+        {
+          "text": "Rope in someone else straight away",
+          "scores": {
+            "dolphin": 2
+          }
+        },
+        {
+          "text": "Start a project I've been itching to try",
+          "scores": {
+            "octopus": 2
+          }
+        },
+        {
+          "text": "Ask if everything's alright",
+          "scores": {
+            "whale": 2,
+            "sea-otter": 1
+          }
+        },
+        {
+          "text": "Feel secretly a little relieved",
+          "scores": {
+            "pufferfish": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Pick a superpower.",
+      "answers": [
+        {
+          "text": "Shapeshifting",
+          "scores": {
+            "octopus": 2
+          }
+        },
+        {
+          "text": "Reading minds",
+          "scores": {
+            "whale": 2
+          }
+        },
+        {
+          "text": "Invisibility",
+          "scores": {
+            "pufferfish": 2
+          }
+        },
+        {
+          "text": "Living forever",
+          "scores": {
+            "sea-turtle": 2
+          }
+        },
+        {
+          "text": "Super speed",
+          "scores": {
+            "dolphin": 2
+          }
+        },
+        {
+          "text": "Healing",
+          "scores": {
+            "sea-otter": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "What's your ideal group size for a night out?",
+      "answers": [
+        {
+          "text": "Just me",
+          "scores": {
+            "sea-turtle": 1,
+            "pufferfish": 1
+          }
+        },
+        {
+          "text": "Two of us",
+          "scores": {
+            "sea-otter": 2
+          }
+        },
+        {
+          "text": "Three or four of us",
+          "scores": {
+            "whale": 2
+          }
+        },
+        {
+          "text": "Five or six of us",
+          "scores": {
+            "octopus": 1,
+            "dolphin": 1
+          }
+        },
+        {
+          "text": "A whole crowd",
+          "scores": {
+            "dolphin": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Which gift makes you happiest?",
+      "answers": [
+        {
+          "text": "A puzzle box",
+          "scores": {
+            "octopus": 2
+          }
+        },
+        {
+          "text": "A ticket to a gig",
+          "scores": {
+            "whale": 2
+          }
+        },
+        {
+          "text": "A plant that will outlive us all",
+          "scores": {
+            "sea-turtle": 2
+          }
+        },
+        {
+          "text": "Something handmade",
+          "scores": {
+            "sea-otter": 2
+          }
+        },
+        {
+          "text": "A rare first edition",
+          "scores": {
+            "pufferfish": 2
+          }
+        },
+        {
+          "text": "A karaoke machine",
+          "scores": {
+            "dolphin": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Someone is being rude to your friend. You…",
+      "answers": [
+        {
+          "text": "Tell them to stop, immediately",
+          "scores": {
+            "pufferfish": 2
+          }
+        },
+        {
+          "text": "Defuse it with a joke",
+          "scores": {
+            "dolphin": 2
+          }
+        },
+        {
+          "text": "Steer us both somewhere else",
+          "scores": {
+            "octopus": 2
+          }
+        },
+        {
+          "text": "Calmly ask what the problem is",
+          "scores": {
+            "sea-turtle": 2
+          }
+        },
+        {
+          "text": "Stand right next to my friend",
+          "scores": {
+            "sea-otter": 2
+          }
+        },
+        {
+          "text": "Check on my friend afterwards",
+          "scores": {
+            "whale": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "What's playing on a long drive?",
+      "answers": [
+        {
+          "text": "Ambient music with no words",
+          "scores": {
+            "sea-turtle": 2
+          }
+        },
+        {
+          "text": "Big sing-along pop",
+          "scores": {
+            "dolphin": 2
+          }
+        },
+        {
+          "text": "Sweeping film scores",
+          "scores": {
+            "whale": 2
+          }
+        },
+        {
+          "text": "A true-crime podcast",
+          "scores": {
+            "octopus": 2
+          }
+        },
+        {
+          "text": "Comfort songs from childhood",
+          "scores": {
+            "sea-otter": 2
+          }
+        },
+        {
+          "text": "A band nobody else has heard of",
+          "scores": {
+            "pufferfish": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Pick a travel bag.",
+      "answers": [
+        {
+          "text": "A backpack with a dozen pockets",
+          "scores": {
+            "octopus": 2
+          }
+        },
+        {
+          "text": "A tiny carry-on",
+          "scores": {
+            "pufferfish": 2
+          }
+        },
+        {
+          "text": "A hard-shell suitcase",
+          "scores": {
+            "sea-turtle": 2
+          }
+        },
+        {
+          "text": "A huge duffel bag",
+          "scores": {
+            "sea-otter": 2
+          }
+        },
+        {
+          "text": "A bright neon holdall",
+          "scores": {
+            "dolphin": 2
+          }
+        },
+        {
+          "text": "A well-worn canvas tote",
+          "scores": {
+            "whale": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "What do people usually come to you for?",
+      "answers": [
+        {
+          "text": "A solution",
+          "scores": {
+            "octopus": 2
+          }
+        },
+        {
+          "text": "A good time",
+          "scores": {
+            "dolphin": 2
+          }
+        },
+        {
+          "text": "A hug",
+          "scores": {
+            "sea-otter": 2
+          }
+        },
+        {
+          "text": "A deep talk",
+          "scores": {
+            "whale": 2
+          }
+        },
+        {
+          "text": "A fresh perspective",
+          "scores": {
+            "sea-turtle": 2
+          }
+        },
+        {
+          "text": "A recommendation",
+          "scores": {
+            "pufferfish": 2
+          }
+        }
+      ]
+    }
+  ]
+}

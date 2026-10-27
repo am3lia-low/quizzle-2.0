@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;700&display=swap");
+
+:root {
+  --muted: #a9cbdc;
+  --border: #1f557d;
+  --radius: 22px;
+  --font-body: "Nunito", system-ui, sans-serif;
+  --font-display: "Baloo 2", "Trebuchet MS", sans-serif;
+}
+
+/* Sunlight from the surface fading into the deep, with a few drifting bubbles */
+body.quiz-page {
+  background:
+    radial-gradient(circle at 12% 22%, rgba(255,255,255,.10) 0 6px, transparent 7px),
+    radial-gradient(circle at 18% 30%, rgba(255,255,255,.07) 0 4px, transparent 5px),
+    radial-gradient(circle at 86% 64%, rgba(255,255,255,.08) 0 8px, transparent 9px),
+    radial-gradient(circle at 80% 72%, rgba(255,255,255,.06) 0 4px, transparent 5px),
+    radial-gradient(ellipse 120% 40% at 50% 0%, rgba(95,224,208,.22), transparent 70%),
+    linear-gradient(180deg, #0f4c6e 0%, var(--bg) 45%, #061a2e 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+.quiz-title, .result-name { letter-spacing: .01em; }
+.quiz-emoji, .result-emoji { display: inline-block; animation: bob 4s ease-in-out infinite; }
+
+.answer {
+  border: 1px solid var(--border);
+  box-shadow: 0 3px 0 #082036;
+  transition: background-color .15s ease, border-color .15s ease;
+}
+.answer:hover { background: #154468; border-color: var(--accent); }
+.answer.is-picked { background: var(--accent); color: var(--accent-fg); border-color: var(--accent); }
+
+.progress { background: #082036; }
+.progress-bar { background: linear-gradient(90deg, #3fb6c9, var(--accent)); }
+
+.result-card {
+  border: 2px solid var(--outcome-color);
+  box-shadow: 0 0 0 6px rgba(95,224,208,.08), 0 18px 40px -16px rgba(0,0,0,.6);
+}
+.result-name { color: var(--outcome-color); }
+.result-traits li { border: 1px solid var(--outcome-color); }
+.blend-fill { background: var(--outcome-color); }
+.outcome-mini.is-yours { border-color: var(--accent); }
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .quiz-emoji, .result-emoji { animation: none; }
+  .answer { transition: none; }
+}

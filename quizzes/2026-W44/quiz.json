@@ -1,0 +1,413 @@
+{
+  "week": "2026-W44",
+  "title": "Which houseplant are you?",
+  "topic": "Which houseplant are you",
+  "category": "whimsical",
+  "emoji": "🪴",
+  "intro": "Eight questions about new homes, dinner parties and late nights. We'll find the leafy housemate that matches your personality.",
+  "start_label": "Pot me up",
+  "result_label": "Your houseplant is",
+  "scoring": "winner",
+  "theme": {
+    "bg": "#eef3e8",
+    "fg": "#1f2e22",
+    "card": "#fbfdf8",
+    "accent": "#2f6b3a",
+    "accent_fg": "#ffffff"
+  },
+  "outcomes": [
+    {
+      "id": "monstera",
+      "name": "Monstera",
+      "emoji": "🌿",
+      "color": "#2e6b3f",
+      "tagline": "Big leaves, big heart, takes up the whole corner and nobody minds.",
+      "description": "You fill a room in the best way. You host the dinners, you have the big ideas and you always make space for one more. Give you a bit of room and you'll grow into something everyone notices, splitting new leaves just when people thought you couldn't get any more impressive.",
+      "traits": [
+        "generous",
+        "bold",
+        "expansive"
+      ]
+    },
+    {
+      "id": "snake-plant",
+      "name": "Snake Plant",
+      "emoji": "🌱",
+      "color": "#5b6e2b",
+      "tagline": "Unbothered, upright and quietly coping in any light.",
+      "description": "Forgotten for three weeks? Still standing. You're the steady one: calm in a crisis, low on drama and reliable in a way that makes everyone feel safe. You don't need much fuss to do well, and your easy, unshakeable calm rubs off on the people around you.",
+      "traits": [
+        "resilient",
+        "steady",
+        "dependable"
+      ]
+    },
+    {
+      "id": "pothos",
+      "name": "Pothos",
+      "emoji": "🍃",
+      "color": "#2f7d6b",
+      "tagline": "Gets along with everyone and somehow ends up on every shelf.",
+      "description": "You're easy company and you fit in anywhere: a new job, a new city, a friend's sofa. You trail happily into every corner of people's lives, and give a bit of yourself to anyone who asks; half your friends have a cutting of you growing in a jar of water.",
+      "traits": [
+        "adaptable",
+        "friendly",
+        "easygoing"
+      ]
+    },
+    {
+      "id": "fiddle-leaf-fig",
+      "name": "Fiddle-Leaf Fig",
+      "emoji": "🌳",
+      "color": "#8a5a2b",
+      "tagline": "Particular about the details, and stunning once it's just right.",
+      "description": "You know exactly how you like things, and that's not a flaw, it's taste. The right light, the right spot, the right plan. Move you around too much and you'll let people know, but once you're settled you're the most striking thing in the room.",
+      "traits": [
+        "discerning",
+        "stylish",
+        "precise"
+      ]
+    },
+    {
+      "id": "succulent",
+      "name": "Succulent",
+      "emoji": "🌵",
+      "color": "#a8505f",
+      "tagline": "Sun-seeking, self-sufficient and happiest with a bit of space.",
+      "description": "You carry what you need and head off where the light is. Independent and sunny, you're the friend who books the solo trip and comes back glowing. You don't need much looking after, and you're surprisingly good at looking after yourself.",
+      "traits": [
+        "independent",
+        "sunny",
+        "adventurous"
+      ]
+    },
+    {
+      "id": "prayer-plant",
+      "name": "Prayer Plant",
+      "emoji": "🌙",
+      "color": "#7a3b5e",
+      "tagline": "Opens up by day, folds in for a cosy night.",
+      "description": "You live by rhythms: the morning routine, the evening wind-down, the Sunday reset. You're thoughtful and in tune with how you feel, and you know when to open up and when to fold in and recharge. People find your calm, steady patterns quietly reassuring.",
+      "traits": [
+        "thoughtful",
+        "intuitive",
+        "grounded"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "text": "You've just moved into a new flat. First thing you do?",
+      "answers": [
+        {
+          "text": "Throw a housewarming for everyone I know",
+          "scores": {
+            "monstera": 2
+          }
+        },
+        {
+          "text": "Knock on the neighbours' doors to say hi",
+          "scores": {
+            "pothos": 2
+          }
+        },
+        {
+          "text": "Find the sunniest window to sit by",
+          "scores": {
+            "succulent": 2
+          }
+        },
+        {
+          "text": "Arrange the shelves until they look just right",
+          "scores": {
+            "fiddle-leaf-fig": 2
+          }
+        },
+        {
+          "text": "Make up the bed",
+          "scores": {
+            "prayer-plant": 2
+          }
+        },
+        {
+          "text": "Unpack just the essentials",
+          "scores": {
+            "snake-plant": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Pick a season.",
+      "answers": [
+        {
+          "text": "Spring",
+          "scores": {
+            "pothos": 2
+          }
+        },
+        {
+          "text": "Summer",
+          "scores": {
+            "succulent": 2,
+            "monstera": 1
+          }
+        },
+        {
+          "text": "Autumn",
+          "scores": {
+            "prayer-plant": 2,
+            "fiddle-leaf-fig": 1
+          }
+        },
+        {
+          "text": "Winter",
+          "scores": {
+            "snake-plant": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "How do you pack for a weekend away?",
+      "answers": [
+        {
+          "text": "Everything I might need, and then some",
+          "scores": {
+            "monstera": 2
+          }
+        },
+        {
+          "text": "Just one small bag",
+          "scores": {
+            "succulent": 2,
+            "snake-plant": 1
+          }
+        },
+        {
+          "text": "A carefully planned outfit for each day",
+          "scores": {
+            "fiddle-leaf-fig": 2
+          }
+        },
+        {
+          "text": "Whatever happens to be clean",
+          "scores": {
+            "pothos": 2
+          }
+        },
+        {
+          "text": "The same items from my usual checklist",
+          "scores": {
+            "prayer-plant": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Pick a view from your window.",
+      "answers": [
+        {
+          "text": "A busy street market",
+          "scores": {
+            "pothos": 2
+          }
+        },
+        {
+          "text": "A sprawling city skyline",
+          "scores": {
+            "monstera": 2
+          }
+        },
+        {
+          "text": "A sunlit beach",
+          "scores": {
+            "succulent": 2
+          }
+        },
+        {
+          "text": "A misty lake at dusk",
+          "scores": {
+            "prayer-plant": 2
+          }
+        },
+        {
+          "text": "An elegant old square",
+          "scores": {
+            "fiddle-leaf-fig": 2
+          }
+        },
+        {
+          "text": "A snowy mountain",
+          "scores": {
+            "snake-plant": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Pick a way to travel.",
+      "answers": [
+        {
+          "text": "A vintage convertible",
+          "scores": {
+            "fiddle-leaf-fig": 2
+          }
+        },
+        {
+          "text": "A hot-air balloon",
+          "scores": {
+            "succulent": 2
+          }
+        },
+        {
+          "text": "A sleeper train",
+          "scores": {
+            "prayer-plant": 2
+          }
+        },
+        {
+          "text": "A canal boat",
+          "scores": {
+            "snake-plant": 2
+          }
+        },
+        {
+          "text": "A tandem bike",
+          "scores": {
+            "pothos": 2
+          }
+        },
+        {
+          "text": "A party bus",
+          "scores": {
+            "monstera": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "At a dinner party, you're the guest who…",
+      "answers": [
+        {
+          "text": "Brings a dish big enough for everyone",
+          "scores": {
+            "monstera": 2
+          }
+        },
+        {
+          "text": "Chats to every single person there",
+          "scores": {
+            "pothos": 2
+          }
+        },
+        {
+          "text": "Notices how beautifully the table is set",
+          "scores": {
+            "fiddle-leaf-fig": 2
+          }
+        },
+        {
+          "text": "Heads home early",
+          "scores": {
+            "prayer-plant": 2
+          }
+        },
+        {
+          "text": "Quietly fixes the wobbly table leg",
+          "scores": {
+            "snake-plant": 2
+          }
+        },
+        {
+          "text": "Slips out to the balcony for some air",
+          "scores": {
+            "succulent": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Pick a dessert.",
+      "answers": [
+        {
+          "text": "A towering layer cake",
+          "scores": {
+            "monstera": 2
+          }
+        },
+        {
+          "text": "A zingy lemon sorbet",
+          "scores": {
+            "succulent": 2
+          }
+        },
+        {
+          "text": "A flawless crème brûlée",
+          "scores": {
+            "fiddle-leaf-fig": 2
+          }
+        },
+        {
+          "text": "A big plate of cookies",
+          "scores": {
+            "pothos": 2
+          }
+        },
+        {
+          "text": "A warm rice pudding",
+          "scores": {
+            "prayer-plant": 2
+          }
+        },
+        {
+          "text": "A square of dark chocolate",
+          "scores": {
+            "snake-plant": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "It's 11pm on a Saturday. You're most likely…",
+      "answers": [
+        {
+          "text": "Sleeping soundly",
+          "scores": {
+            "prayer-plant": 2
+          }
+        },
+        {
+          "text": "Dancing until closing time",
+          "scores": {
+            "monstera": 2
+          }
+        },
+        {
+          "text": "Rewatching a favourite show",
+          "scores": {
+            "snake-plant": 2
+          }
+        },
+        {
+          "text": "Perfecting a new recipe",
+          "scores": {
+            "fiddle-leaf-fig": 2
+          }
+        },
+        {
+          "text": "Chatting on a two-hour phone call",
+          "scores": {
+            "pothos": 2
+          }
+        },
+        {
+          "text": "Wandering the city on my own",
+          "scores": {
+            "succulent": 2
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -89,5 +89,6 @@
   {"topic": "Which cheese are you", "category": "food", "outcomes": null, "scoring": null},
   {"topic": "Which classic detective are you", "category": "fictional-characters", "outcomes": null, "scoring": null},
   {"topic": "Which mug are you", "category": "everyday", "outcomes": null, "scoring": null},
-  {"topic": "What's your creative process", "category": "psychology", "outcomes": null, "scoring": "blend"}
+  {"topic": "What's your creative process", "category": "psychology", "outcomes": null, "scoring": "blend"},
+  {"topic": "What kind of magic do you have", "category": "whimsical", "outcomes": null, "scoring": null}
 ]

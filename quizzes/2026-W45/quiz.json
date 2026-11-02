@@ -4,7 +4,7 @@
   "topic": "Which candle scent are you",
   "category": "aesthetics",
   "emoji": "🕯️",
-  "intro": "Nine questions about lazy Sundays, sleepy sounds and how you text. Strike a match and we'll find the scent that matches your glow.",
+  "intro": "Nine questions about perfect Sundays, picnic spots and how you text. Strike a match and we'll find the scent that matches your glow.",
   "start_label": "Light my wick",
   "result_label": "Your candle scent is",
   "scoring": "blend",
@@ -103,40 +103,40 @@
   ],
   "questions": [
     {
-      "text": "You've got a free Sunday afternoon. You…",
+      "text": "Pick a perfect Sunday.",
       "answers": [
         {
-          "text": "Bake something and eat half the batter",
+          "text": "Baking all afternoon",
           "scores": {
             "vanilla-bean": 2
           }
         },
         {
-          "text": "Go for a run",
+          "text": "Running a 10k",
           "scores": {
             "citrus-grove": 2
           }
         },
         {
-          "text": "Deep-clean the whole flat",
+          "text": "Deep-cleaning the flat",
           "scores": {
             "fresh-linen": 2
           }
         },
         {
-          "text": "Go for a long hike",
+          "text": "Hiking in the hills",
           "scores": {
             "cedar-smoke": 2
           }
         },
         {
-          "text": "Drive to the coast",
+          "text": "Driving to the coast",
           "scores": {
             "sea-salt": 2
           }
         },
         {
-          "text": "Write a long letter to someone",
+          "text": "Writing letters",
           "scores": {
             "rose-peony": 2
           }
@@ -144,34 +144,42 @@
       ]
     },
     {
-      "text": "Pick a season.",
+      "text": "Pick a holiday souvenir.",
       "answers": [
         {
-          "text": "Spring",
+          "text": "A jar of local honey",
           "scores": {
-            "rose-peony": 2,
-            "citrus-grove": 1
+            "vanilla-bean": 2
           }
         },
         {
-          "text": "Summer",
+          "text": "A bright woven tote",
           "scores": {
-            "citrus-grove": 2,
-            "sea-salt": 1
+            "citrus-grove": 2
           }
         },
         {
-          "text": "Autumn",
+          "text": "A set of embroidered napkins",
           "scores": {
-            "cedar-smoke": 2,
-            "vanilla-bean": 1
+            "fresh-linen": 2
           }
         },
         {
-          "text": "Winter",
+          "text": "A carved wooden spoon",
           "scores": {
-            "vanilla-bean": 2,
-            "fresh-linen": 1
+            "cedar-smoke": 2
+          }
+        },
+        {
+          "text": "A jar of seashells",
+          "scores": {
+            "sea-salt": 2
+          }
+        },
+        {
+          "text": "A pressed flower",
+          "scores": {
+            "rose-peony": 2
           }
         }
       ]
@@ -254,40 +262,40 @@
       ]
     },
     {
-      "text": "Where would you most like to live?",
+      "text": "Pick a picnic spot.",
       "answers": [
         {
-          "text": "A cabin in a pine forest",
+          "text": "A pine forest clearing",
           "scores": {
             "cedar-smoke": 2
           }
         },
         {
-          "text": "A shack right on the beach",
+          "text": "A sand dune",
           "scores": {
             "sea-salt": 2
           }
         },
         {
-          "text": "A sunny flat above a market",
+          "text": "A sunny orchard",
           "scores": {
             "citrus-grove": 2
           }
         },
         {
-          "text": "A cottage with a walled garden",
+          "text": "A wildflower meadow",
           "scores": {
             "rose-peony": 2
           }
         },
         {
-          "text": "A minimalist loft",
+          "text": "A neatly mown park",
           "scores": {
             "fresh-linen": 2
           }
         },
         {
-          "text": "A farmhouse with a huge kitchen",
+          "text": "Your own back garden",
           "scores": {
             "vanilla-bean": 2
           }
@@ -295,38 +303,43 @@
       ]
     },
     {
-      "text": "Pick a time of day.",
+      "text": "Pick a party theme.",
       "answers": [
         {
-          "text": "Dawn",
+          "text": "Pyjamas and movies",
           "scores": {
-            "citrus-grove": 2
+            "vanilla-bean": 2
           }
         },
         {
-          "text": "Mid-morning",
+          "text": "Disco",
+          "scores": {
+            "citrus-grove": 2,
+            "sea-salt": 1
+          }
+        },
+        {
+          "text": "All-white dinner",
           "scores": {
             "fresh-linen": 2
           }
         },
         {
-          "text": "Mid-afternoon",
-          "scores": {
-            "vanilla-bean": 2,
-            "sea-salt": 1
-          }
-        },
-        {
-          "text": "Golden hour",
-          "scores": {
-            "rose-peony": 2,
-            "sea-salt": 1
-          }
-        },
-        {
-          "text": "Midnight",
+          "text": "Bonfire night",
           "scores": {
             "cedar-smoke": 2
+          }
+        },
+        {
+          "text": "Beach barbecue",
+          "scores": {
+            "sea-salt": 2
+          }
+        },
+        {
+          "text": "Garden tea party",
+          "scores": {
+            "rose-peony": 2
           }
         }
       ]
@@ -363,42 +376,42 @@
       ]
     },
     {
-      "text": "Pick a sound to fall asleep to.",
+      "text": "Pick a colour for your bedroom walls.",
       "answers": [
         {
-          "text": "A crackling fire",
-          "scores": {
-            "cedar-smoke": 2
-          }
-        },
-        {
-          "text": "Waves on the shore",
-          "scores": {
-            "sea-salt": 2
-          }
-        },
-        {
-          "text": "Rain on the window",
+          "text": "Honey",
           "scores": {
             "vanilla-bean": 2
           }
         },
         {
-          "text": "A humming fan",
+          "text": "Sunshine yellow",
+          "scores": {
+            "citrus-grove": 2
+          }
+        },
+        {
+          "text": "Pure white",
           "scores": {
             "fresh-linen": 2
           }
         },
         {
-          "text": "A slow love song",
+          "text": "Forest green",
           "scores": {
-            "rose-peony": 2
+            "cedar-smoke": 2
           }
         },
         {
-          "text": "Distant city traffic",
+          "text": "Seafoam",
           "scores": {
-            "citrus-grove": 2
+            "sea-salt": 2
+          }
+        },
+        {
+          "text": "Blush pink",
+          "scores": {
+            "rose-peony": 2
           }
         }
       ]

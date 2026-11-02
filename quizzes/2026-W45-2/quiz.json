@@ -1,0 +1,385 @@
+{
+  "week": "2026-W45",
+  "title": "What kind of AI matches your mind?",
+  "topic": "What kind of AI matches your mind",
+  "category": "psychology",
+  "emoji": "🤖",
+  "intro": "Seven questions about puzzle boxes, treehouses and adventures. We'll process your answers and match you with the AI that thinks like you do.",
+  "start_label": "Boot me up",
+  "result_label": "Your AI match is",
+  "scoring": "blend",
+  "theme": {
+    "bg": "#0e1024",
+    "fg": "#e8ecff",
+    "card": "#171a36",
+    "accent": "#7cf5c8",
+    "accent_fg": "#0e1024"
+  },
+  "outcomes": [
+    {
+      "id": "oracle",
+      "name": "The Oracle",
+      "emoji": "🔮",
+      "color": "#c7a6ff",
+      "tagline": "Calm, far-sighted and usually right in the end.",
+      "description": "You see the big picture before anyone else has finished reading the question. You think deeply, you'd rather be wise than quick, and when you finally weigh in, people listen. Your best ideas arrive in the shower.",
+      "traits": [
+        "wise",
+        "patient",
+        "intuitive"
+      ],
+      "image": null
+    },
+    {
+      "id": "analyst",
+      "name": "The Analyst",
+      "emoji": "📊",
+      "color": "#6fc3ff",
+      "tagline": "Finds the pattern, checks the facts, shows the working.",
+      "description": "Your mind is a beautifully organised filing cabinet. You love evidence, clear reasoning and a well-made chart, and you're the person who quietly spots the mistake everyone else missed. Precise, fair and brilliant.",
+      "traits": [
+        "logical",
+        "precise",
+        "fair-minded"
+      ],
+      "image": null
+    },
+    {
+      "id": "dreamweaver",
+      "name": "The Dreamweaver",
+      "emoji": "🎨",
+      "color": "#ff8fd1",
+      "tagline": "Turns a blank page into a whole new world.",
+      "description": "Give you a prompt and you'll come back with ten ideas, three of them wonderful and one of them gloriously weird. You think in pictures, stories and what-ifs, and you make everyone around you a little more imaginative.",
+      "traits": [
+        "imaginative",
+        "playful",
+        "original"
+      ],
+      "image": null
+    },
+    {
+      "id": "tinkerer",
+      "name": "The Tinkerer",
+      "emoji": "🔧",
+      "color": "#ffb15c",
+      "tagline": "Learns by building, breaking and building again.",
+      "description": "Instructions are optional; experiments are not. You understand things by getting your hands on them, and there's nothing you won't try to fix with a bit of patience and a spare part. Practical, inventive and hard to stump.",
+      "traits": [
+        "hands-on",
+        "inventive",
+        "resourceful"
+      ],
+      "image": null
+    },
+    {
+      "id": "companion",
+      "name": "The Companion",
+      "emoji": "💬",
+      "color": "#ffe17a",
+      "tagline": "Reads the room and makes everyone feel heard.",
+      "description": "Your superpower is people. You remember the little details, you know when someone needs a joke or a quiet moment, and conversations with you leave people feeling better than before. Smart, yes, but kind first.",
+      "traits": [
+        "empathetic",
+        "warm",
+        "attentive"
+      ],
+      "image": null
+    },
+    {
+      "id": "explorer",
+      "name": "The Explorer",
+      "emoji": "🛰️",
+      "color": "#7cf5a0",
+      "tagline": "Always one tab away from a brand-new obsession.",
+      "description": "Your curiosity has no off switch. You follow every interesting thread to see where it goes, you collect fun facts like souvenirs and you're never happier than when you're somewhere (or learning something) completely new.",
+      "traits": [
+        "curious",
+        "adventurous",
+        "open-minded"
+      ],
+      "image": null
+    }
+  ],
+  "questions": [
+    {
+      "text": "A mysterious puzzle box lands on your desk. You…",
+      "answers": [
+        {
+          "text": "Wait for a hunch",
+          "scores": {
+            "oracle": 2
+          }
+        },
+        {
+          "text": "Map out every possible move",
+          "scores": {
+            "analyst": 2
+          }
+        },
+        {
+          "text": "Imagine what might be inside",
+          "scores": {
+            "dreamweaver": 2
+          }
+        },
+        {
+          "text": "Take it apart to see how it works",
+          "scores": {
+            "tinkerer": 2
+          }
+        },
+        {
+          "text": "Call a friend to solve it together",
+          "scores": {
+            "companion": 2
+          }
+        },
+        {
+          "text": "Look up where it came from",
+          "scores": {
+            "explorer": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Your team is building a treehouse. You're in charge of…",
+      "answers": [
+        {
+          "text": "Picturing the finished result",
+          "scores": {
+            "oracle": 2
+          }
+        },
+        {
+          "text": "Measuring everything twice",
+          "scores": {
+            "analyst": 2
+          }
+        },
+        {
+          "text": "Designing the look",
+          "scores": {
+            "dreamweaver": 2
+          }
+        },
+        {
+          "text": "Hammering it together",
+          "scores": {
+            "tinkerer": 2
+          }
+        },
+        {
+          "text": "Keeping everyone's spirits up",
+          "scores": {
+            "companion": 2
+          }
+        },
+        {
+          "text": "Finding the perfect tree",
+          "scores": {
+            "explorer": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Pick a place to think.",
+      "answers": [
+        {
+          "text": "A mountaintop",
+          "scores": {
+            "oracle": 2
+          }
+        },
+        {
+          "text": "A library",
+          "scores": {
+            "analyst": 2
+          }
+        },
+        {
+          "text": "An art studio",
+          "scores": {
+            "dreamweaver": 2
+          }
+        },
+        {
+          "text": "A garage workshop",
+          "scores": {
+            "tinkerer": 2
+          }
+        },
+        {
+          "text": "A café",
+          "scores": {
+            "companion": 2
+          }
+        },
+        {
+          "text": "A night train",
+          "scores": {
+            "explorer": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Head or heart?",
+      "answers": [
+        {
+          "text": "Head, every time",
+          "scores": {
+            "analyst": 2,
+            "tinkerer": 1
+          }
+        },
+        {
+          "text": "Mostly head",
+          "scores": {
+            "tinkerer": 2,
+            "explorer": 1
+          }
+        },
+        {
+          "text": "Mostly heart",
+          "scores": {
+            "dreamweaver": 2,
+            "oracle": 1
+          }
+        },
+        {
+          "text": "Heart, every time",
+          "scores": {
+            "companion": 2,
+            "oracle": 1
+          }
+        }
+      ]
+    },
+    {
+      "text": "You win a voucher to spend on yourself. You get…",
+      "answers": [
+        {
+          "text": "A telescope",
+          "scores": {
+            "oracle": 2
+          }
+        },
+        {
+          "text": "A label maker",
+          "scores": {
+            "analyst": 2
+          }
+        },
+        {
+          "text": "A set of oil paints",
+          "scores": {
+            "dreamweaver": 2
+          }
+        },
+        {
+          "text": "A soldering kit",
+          "scores": {
+            "tinkerer": 2
+          }
+        },
+        {
+          "text": "A stack of greeting cards",
+          "scores": {
+            "companion": 2
+          }
+        },
+        {
+          "text": "A pair of hiking boots",
+          "scores": {
+            "explorer": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Pick something to take on an adventure.",
+      "answers": [
+        {
+          "text": "A star chart",
+          "scores": {
+            "oracle": 2
+          }
+        },
+        {
+          "text": "A magnifying glass",
+          "scores": {
+            "analyst": 2
+          }
+        },
+        {
+          "text": "A sketchbook",
+          "scores": {
+            "dreamweaver": 2
+          }
+        },
+        {
+          "text": "A roll of duct tape",
+          "scores": {
+            "tinkerer": 2
+          }
+        },
+        {
+          "text": "A walkie-talkie",
+          "scores": {
+            "companion": 2
+          }
+        },
+        {
+          "text": "A compass",
+          "scores": {
+            "explorer": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Pick a book for a long weekend.",
+      "answers": [
+        {
+          "text": "A philosophy classic",
+          "scores": {
+            "oracle": 2
+          }
+        },
+        {
+          "text": "A popular-science bestseller",
+          "scores": {
+            "analyst": 2
+          }
+        },
+        {
+          "text": "A fantasy epic",
+          "scores": {
+            "dreamweaver": 2
+          }
+        },
+        {
+          "text": "A repair manual",
+          "scores": {
+            "tinkerer": 2
+          }
+        },
+        {
+          "text": "A big family saga",
+          "scores": {
+            "companion": 2
+          }
+        },
+        {
+          "text": "A travel memoir",
+          "scores": {
+            "explorer": 2
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;600&display=swap");
+
+:root {
+  --muted: #a3abd6;
+  --border: #2c3163;
+  --radius: 14px;
+  --font-body: "IBM Plex Sans", system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Trebuchet MS", sans-serif;
+  --enter-distance: 18px;
+}
+
+/* A softly glowing circuit grid */
+body.quiz-page {
+  background:
+    radial-gradient(ellipse 60% 40% at 80% 0%, rgba(124,245,200,.14), transparent 70%),
+    radial-gradient(ellipse 60% 40% at 10% 100%, rgba(199,166,255,.16), transparent 70%),
+    linear-gradient(rgba(124,245,200,.05) 1px, transparent 1px) 0 0 / 28px 28px,
+    linear-gradient(90deg, rgba(124,245,200,.05) 1px, transparent 1px) 0 0 / 28px 28px,
+    var(--bg);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+.quiz-title, .result-name { letter-spacing: -.01em; }
+.quiz-title::after {
+  content: "_";
+  color: var(--accent);
+  margin-left: .08em;
+  animation: blink 1.1s steps(1) infinite;
+}
+.question-count { font-family: var(--font-display); color: var(--accent); letter-spacing: .08em; text-transform: uppercase; }
+
+.answer {
+  border: 1px solid var(--border);
+  box-shadow: 0 0 0 1px rgba(124,245,200,0);
+  transition: background-color .15s ease, border-color .15s ease, box-shadow .2s ease;
+}
+.answer:hover {
+  background: #1f2350;
+  border-color: var(--accent);
+  box-shadow: 0 0 16px -4px rgba(124,245,200,.55);
+}
+.answer.is-picked {
+  background: var(--accent);
+  color: var(--accent-fg);
+  border-color: var(--accent);
+  box-shadow: 0 0 24px -2px rgba(124,245,200,.75);
+}
+
+.progress { background: #0a0c1c; border: 1px solid var(--border); }
+.progress-bar { background: linear-gradient(90deg, #c7a6ff, var(--accent)); }
+
+.result-card {
+  border: 1px solid var(--outcome-color);
+  box-shadow: 0 0 0 4px rgba(14,16,36,.8), 0 0 36px -10px var(--outcome-color);
+}
+.result-name { color: var(--outcome-color); }
+.result-traits li { border: 1px solid var(--outcome-color); font-family: var(--font-display); }
+.blend-fill { background: var(--outcome-color); }
+.outcome-mini.is-yours { border-color: var(--accent); box-shadow: 0 0 14px -6px rgba(124,245,200,.8); }
+
+@keyframes blink { 50% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .quiz-title::after { animation: none; }
+  .answer { transition: none; }
+}

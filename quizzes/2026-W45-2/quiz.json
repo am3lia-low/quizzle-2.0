@@ -1,0 +1,481 @@
+{
+  "week": "2026-W45",
+  "title": "What kind of AI matches your mind?",
+  "topic": "What kind of AI matches your mind",
+  "category": "psychology",
+  "emoji": "🤖",
+  "intro": "Nine questions about how you learn, decide and tell stories. The way you think reveals which kind of AI shares your brain: a giant LLM, an open-source model, a classic decision tree or something else entirely.",
+  "start_label": "Boot me up",
+  "result_label": "Your mind runs like",
+  "scoring": "blend",
+  "theme": {
+    "bg": "#0e1024",
+    "fg": "#e8ecff",
+    "card": "#171a36",
+    "accent": "#7cf5c8",
+    "accent_fg": "#0e1024"
+  },
+  "outcomes": [
+    {
+      "id": "frontier-llm",
+      "name": "The Frontier LLM",
+      "emoji": "🧠",
+      "color": "#c7a6ff",
+      "tagline": "A giant generalist who can chat about absolutely anything.",
+      "description": "Like the huge language models trained on mountains of text, you've soaked up a bit of everything and love connecting it all. You think out loud, find the right words fast and can switch from poetry to tax advice in one breath. Ask you a question and you'll give a thoughtful answer, plus three fun tangents.",
+      "traits": [
+        "knowledgeable",
+        "articulate",
+        "versatile"
+      ],
+      "image": null
+    },
+    {
+      "id": "open-source",
+      "name": "The Open-Source Model",
+      "emoji": "🔓",
+      "color": "#7cf5a0",
+      "tagline": "Shares everything, hides nothing, and gets better with friends.",
+      "description": "Open-source models publish their inner workings so anyone can study, tweak and improve them, and that's very you. You believe good ideas should be shared, you love a community project, and you're happiest when people take what you started and make it their own.",
+      "traits": [
+        "generous",
+        "transparent",
+        "collaborative"
+      ],
+      "image": null
+    },
+    {
+      "id": "tiny-model",
+      "name": "The Tiny On-Device Model",
+      "emoji": "📱",
+      "color": "#6fc3ff",
+      "tagline": "Small, quick and brilliant at doing more with less.",
+      "description": "Compact models run right on your phone: fast, private and efficient. You're the same. You don't need a data centre's worth of fuss to be clever. You get to the point, travel light and quietly get things done while everyone else is still loading.",
+      "traits": [
+        "efficient",
+        "focused",
+        "self-reliant"
+      ],
+      "image": null
+    },
+    {
+      "id": "decision-tree",
+      "name": "The Decision Tree",
+      "emoji": "🌳",
+      "color": "#ffe17a",
+      "tagline": "Clear thinking, one sensible question at a time.",
+      "description": "A classic of traditional machine learning, a decision tree reaches answers through a chain of simple yes-or-no questions, and it can always explain exactly why it chose what it chose. That's you: logical, fair and refreshingly easy to follow. People trust your reasoning because you show your working.",
+      "traits": [
+        "logical",
+        "transparent",
+        "fair-minded"
+      ],
+      "image": null
+    },
+    {
+      "id": "rl-agent",
+      "name": "The Reinforcement Learner",
+      "emoji": "🎮",
+      "color": "#ffb15c",
+      "tagline": "Tries, fails, learns, and eventually wins.",
+      "description": "Reinforcement learning agents learn by trial and error, chasing rewards until they master the game. You learn by doing, too. Mistakes don't scare you, because each one makes you sharper. Give you a goal and enough tries, and you'll find a way to beat it.",
+      "traits": [
+        "persistent",
+        "competitive",
+        "adaptable"
+      ],
+      "image": null
+    },
+    {
+      "id": "diffusion-model",
+      "name": "The Diffusion Model",
+      "emoji": "🎨",
+      "color": "#ff8fd1",
+      "tagline": "Turns pure noise into something beautiful.",
+      "description": "Diffusion models start with random static and refine it, step by step, into a picture. You work the same way: you think in images and possibilities, you're comfortable with a messy first draft, and you have a gift for turning a vague idea into something people can actually see.",
+      "traits": [
+        "imaginative",
+        "visual",
+        "patient"
+      ],
+      "image": null
+    },
+    {
+      "id": "recommender",
+      "name": "The Recommender System",
+      "emoji": "🎯",
+      "color": "#8fd3d8",
+      "tagline": "Knows what you'll love before you do.",
+      "description": "Recommendation systems learn people's tastes and suggest the perfect next song, show or book. You're the friend with the uncanny gift for that. You notice what people light up about, you remember their favourites and your suggestions are basically never wrong.",
+      "traits": [
+        "perceptive",
+        "attentive",
+        "thoughtful"
+      ],
+      "image": null
+    }
+  ],
+  "questions": [
+    {
+      "text": "Someone asks you a question you've never thought about. You…",
+      "answers": [
+        {
+          "text": "Start talking and work it out as you go",
+          "scores": {
+            "frontier-llm": 2
+          }
+        },
+        {
+          "text": "Break it into smaller questions",
+          "scores": {
+            "decision-tree": 2
+          }
+        },
+        {
+          "text": "Make a guess, then adjust from their reaction",
+          "scores": {
+            "rl-agent": 2
+          }
+        },
+        {
+          "text": "Give a short, quick answer",
+          "scores": {
+            "tiny-model": 2
+          }
+        },
+        {
+          "text": "Throw it open to the group chat",
+          "scores": {
+            "open-source": 2
+          }
+        },
+        {
+          "text": "Sketch it out on a napkin",
+          "scores": {
+            "diffusion-model": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Pick a way to learn a new skill.",
+      "answers": [
+        {
+          "text": "Practise, fail, practise again",
+          "scores": {
+            "rl-agent": 2
+          }
+        },
+        {
+          "text": "Read everything ever written about it",
+          "scores": {
+            "frontier-llm": 2
+          }
+        },
+        {
+          "text": "Join an online community",
+          "scores": {
+            "open-source": 2
+          }
+        },
+        {
+          "text": "Follow a clear checklist",
+          "scores": {
+            "decision-tree": 2
+          }
+        },
+        {
+          "text": "Copy what similar people did",
+          "scores": {
+            "recommender": 2
+          }
+        },
+        {
+          "text": "Learn only the essentials",
+          "scores": {
+            "tiny-model": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "What's on your desk right now?",
+      "answers": [
+        {
+          "text": "A sketchbook and pens",
+          "scores": {
+            "diffusion-model": 2
+          }
+        },
+        {
+          "text": "Almost nothing",
+          "scores": {
+            "tiny-model": 2
+          }
+        },
+        {
+          "text": "A bit of everything",
+          "scores": {
+            "frontier-llm": 2
+          }
+        },
+        {
+          "text": "Treats for whoever drops by",
+          "scores": {
+            "recommender": 2
+          }
+        },
+        {
+          "text": "Neatly labelled trays",
+          "scores": {
+            "decision-tree": 2
+          }
+        },
+        {
+          "text": "A gadget you built yourself",
+          "scores": {
+            "open-source": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "You're choosing a film for movie night. You…",
+      "answers": [
+        {
+          "text": "Pick something like the last one everyone loved",
+          "scores": {
+            "recommender": 2
+          }
+        },
+        {
+          "text": "Rule out options one by one",
+          "scores": {
+            "decision-tree": 2
+          }
+        },
+        {
+          "text": "Put on one and switch if it's bad",
+          "scores": {
+            "rl-agent": 2
+          }
+        },
+        {
+          "text": "Choose the shortest one",
+          "scores": {
+            "tiny-model": 2
+          }
+        },
+        {
+          "text": "Let anyone add to the shortlist",
+          "scores": {
+            "open-source": 2
+          }
+        },
+        {
+          "text": "Go with the most striking poster",
+          "scores": {
+            "diffusion-model": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "How do you tell a story?",
+      "answers": [
+        {
+          "text": "With every detail and side plot",
+          "scores": {
+            "frontier-llm": 2
+          }
+        },
+        {
+          "text": "Short and to the point",
+          "scores": {
+            "tiny-model": 2
+          }
+        },
+        {
+          "text": "Painting a vivid scene",
+          "scores": {
+            "diffusion-model": 2
+          }
+        },
+        {
+          "text": "Matched to whoever's listening",
+          "scores": {
+            "recommender": 2
+          }
+        },
+        {
+          "text": "Testing what gets a laugh",
+          "scores": {
+            "rl-agent": 2
+          }
+        },
+        {
+          "text": "In strict order",
+          "scores": {
+            "decision-tree": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Jack of all trades or master of one?",
+      "answers": [
+        {
+          "text": "Jack of all trades",
+          "scores": {
+            "frontier-llm": 2,
+            "recommender": 1
+          }
+        },
+        {
+          "text": "Leaning jack of all trades",
+          "scores": {
+            "open-source": 2,
+            "recommender": 1
+          }
+        },
+        {
+          "text": "Leaning master of one",
+          "scores": {
+            "decision-tree": 2,
+            "rl-agent": 1
+          }
+        },
+        {
+          "text": "Master of one",
+          "scores": {
+            "tiny-model": 2,
+            "diffusion-model": 1
+          }
+        }
+      ]
+    },
+    {
+      "text": "How do you like your rules?",
+      "answers": [
+        {
+          "text": "Clear and written down",
+          "scores": {
+            "decision-tree": 2
+          }
+        },
+        {
+          "text": "Open for anyone to improve",
+          "scores": {
+            "open-source": 2
+          }
+        },
+        {
+          "text": "Made to be tested",
+          "scores": {
+            "rl-agent": 2
+          }
+        },
+        {
+          "text": "Few and simple",
+          "scores": {
+            "tiny-model": 2
+          }
+        },
+        {
+          "text": "Tailored to each person",
+          "scores": {
+            "recommender": 2
+          }
+        },
+        {
+          "text": "Bent in creative ways",
+          "scores": {
+            "diffusion-model": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "What's your secret talent?",
+      "answers": [
+        {
+          "text": "Remembering obscure trivia",
+          "scores": {
+            "frontier-llm": 2
+          }
+        },
+        {
+          "text": "Picking the perfect gift",
+          "scores": {
+            "recommender": 2
+          }
+        },
+        {
+          "text": "Getting good at anything with practice",
+          "scores": {
+            "rl-agent": 2
+          }
+        },
+        {
+          "text": "Explaining your reasoning clearly",
+          "scores": {
+            "decision-tree": 2
+          }
+        },
+        {
+          "text": "Drawing from imagination",
+          "scores": {
+            "diffusion-model": 2
+          }
+        },
+        {
+          "text": "Improving other people's ideas",
+          "scores": {
+            "open-source": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Pick a place to work.",
+      "answers": [
+        {
+          "text": "A huge library",
+          "scores": {
+            "frontier-llm": 2
+          }
+        },
+        {
+          "text": "A shared community workshop",
+          "scores": {
+            "open-source": 2
+          }
+        },
+        {
+          "text": "A quiet café corner",
+          "scores": {
+            "tiny-model": 2
+          }
+        },
+        {
+          "text": "An art studio",
+          "scores": {
+            "diffusion-model": 2
+          }
+        },
+        {
+          "text": "A games arcade",
+          "scores": {
+            "rl-agent": 2
+          }
+        },
+        {
+          "text": "A tidy office",
+          "scores": {
+            "decision-tree": 2
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,454 @@
+{
+  "week": "2026-W46",
+  "title": "Which kind of wizard would you be?",
+  "topic": "Which kind of wizard would you be",
+  "category": "whimsical",
+  "emoji": "🧙",
+  "intro": "Nine questions about libraries, village fairs and spells gone slightly wrong. Dust off your hat and find out what sort of magic you'd practise.",
+  "start_label": "Open the spellbook",
+  "result_label": "You would be a",
+  "scoring": "winner",
+  "theme": {
+    "bg": "#16123a",
+    "fg": "#f4edda",
+    "card": "#241e52",
+    "accent": "#e8c15a",
+    "accent_fg": "#16123a"
+  },
+  "outcomes": [
+    {
+      "id": "storm-caller",
+      "name": "Storm Caller",
+      "emoji": "⛈️",
+      "color": "#8ec2ff",
+      "tagline": "Big gestures, bright sparks and a cape that's always flapping.",
+      "description": "Your magic is loud, bold and best watched from a safe distance. You leap first and work out the landing on the way down, and somehow it usually works. People feel braver standing next to you, and nobody ever forgets the day you turned up.",
+      "traits": [
+        "bold",
+        "spontaneous",
+        "electric"
+      ]
+    },
+    {
+      "id": "hedge-wizard",
+      "name": "Hedge Wizard",
+      "emoji": "🌿",
+      "color": "#9bd88f",
+      "tagline": "Herbs on the windowsill, soup on the stove, a cure for everything.",
+      "description": "Your magic is the everyday kind that actually helps: a balm for a scraped knee, a tea for a bad night, a garden that feeds the whole lane. You're steady and practical, and your kitchen is where everyone ends up when they need looking after.",
+      "traits": [
+        "grounded",
+        "nurturing",
+        "resourceful"
+      ]
+    },
+    {
+      "id": "stargazer",
+      "name": "Stargazer",
+      "emoji": "🔭",
+      "color": "#cdbdff",
+      "tagline": "Up the tallest tower, reading tomorrow in the sky.",
+      "description": "You see patterns other people miss and you're happiest with a quiet night and a big question. Friends come to you for perspective, because you always seem to be looking a little further ahead. Your notebooks are full of dreams, maps and very good hunches.",
+      "traits": [
+        "intuitive",
+        "reflective",
+        "far-sighted"
+      ]
+    },
+    {
+      "id": "enchanter",
+      "name": "Enchanter",
+      "emoji": "✨",
+      "color": "#ffa3d2",
+      "tagline": "One smile, one sparkle, and the whole room is on your side.",
+      "description": "Your magic works on people, and you use it for good: soothing arguments, starting parties and making strangers feel like old friends. You know exactly the right word at the right moment. Half your spells are just charm, and honestly that's the best half.",
+      "traits": [
+        "charming",
+        "sociable",
+        "persuasive"
+      ]
+    },
+    {
+      "id": "alchemist",
+      "name": "Alchemist",
+      "emoji": "⚗️",
+      "color": "#ffbb6b",
+      "tagline": "Scorch marks on the ceiling, a breakthrough in the notebook.",
+      "description": "You want to know how everything works, and then you want to make it work better. You're patient with experiments and impatient with 'because that's how it's done'. Your workshop is a glorious mess of bubbling jars, and every failure is just data.",
+      "traits": [
+        "curious",
+        "methodical",
+        "inventive"
+      ]
+    },
+    {
+      "id": "beast-keeper",
+      "name": "Beast Keeper",
+      "emoji": "🦉",
+      "color": "#e3cf94",
+      "tagline": "Owls on your shoulder, foxes at your door, friends with everything.",
+      "description": "Your magic is mostly listening, and every creature in the forest seems to know it. You're gentle, observant and fiercely loyal to the ones you love, whether they have two legs, four or wings. Wherever you settle, something small and furry moves in.",
+      "traits": [
+        "gentle",
+        "loyal",
+        "observant"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "text": "You're let loose in an ancient library. Which shelf do you reach for first?",
+      "answers": [
+        {
+          "text": "Old charts of the night sky",
+          "scores": {
+            "stargazer": 2
+          }
+        },
+        {
+          "text": "Battered cookbooks full of margin notes",
+          "scores": {
+            "hedge-wizard": 2
+          }
+        },
+        {
+          "text": "Notebooks from failed experiments",
+          "scores": {
+            "alchemist": 2
+          }
+        },
+        {
+          "text": "Field guides to forest birds",
+          "scores": {
+            "beast-keeper": 2
+          }
+        },
+        {
+          "text": "Bundles of old love letters",
+          "scores": {
+            "enchanter": 2
+          }
+        },
+        {
+          "text": "Accounts of famous shipwrecks",
+          "scores": {
+            "storm-caller": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Someone knocks on your door at midnight. You…",
+      "answers": [
+        {
+          "text": "Fling it open, whoever it is",
+          "scores": {
+            "storm-caller": 2
+          }
+        },
+        {
+          "text": "Put the kettle on, then answer",
+          "scores": {
+            "hedge-wizard": 2
+          }
+        },
+        {
+          "text": "Guess who it is before you look",
+          "scores": {
+            "stargazer": 2
+          }
+        },
+        {
+          "text": "Open it with a grin and a joke",
+          "scores": {
+            "enchanter": 2
+          }
+        },
+        {
+          "text": "Ask a trick question through the door",
+          "scores": {
+            "alchemist": 2
+          }
+        },
+        {
+          "text": "Wait to see if the cat hisses",
+          "scores": {
+            "beast-keeper": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Your wizard's home has one unusual feature. It's…",
+      "answers": [
+        {
+          "text": "A balcony right above the sea",
+          "scores": {
+            "storm-caller": 2
+          }
+        },
+        {
+          "text": "A greenhouse inside the kitchen",
+          "scores": {
+            "hedge-wizard": 2
+          }
+        },
+        {
+          "text": "An attic with a glass roof",
+          "scores": {
+            "stargazer": 2
+          }
+        },
+        {
+          "text": "A ballroom you could never fill",
+          "scores": {
+            "enchanter": 2
+          }
+        },
+        {
+          "text": "A workshop with a scorched ceiling",
+          "scores": {
+            "alchemist": 2
+          }
+        },
+        {
+          "text": "A porch built into a tree",
+          "scores": {
+            "beast-keeper": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "A spell goes wrong and turns your eyebrows blue. You…",
+      "answers": [
+        {
+          "text": "Show them off at a party",
+          "scores": {
+            "enchanter": 2
+          }
+        },
+        {
+          "text": "Work out exactly what went wrong",
+          "scores": {
+            "alchemist": 2
+          }
+        },
+        {
+          "text": "Try the spell again, but bigger",
+          "scores": {
+            "storm-caller": 2
+          }
+        },
+        {
+          "text": "Mix up a remedy and fix it",
+          "scores": {
+            "hedge-wizard": 2
+          }
+        },
+        {
+          "text": "Take it as a sign of something",
+          "scores": {
+            "stargazer": 2
+          }
+        },
+        {
+          "text": "Ask your owl if it noticed",
+          "scores": {
+            "beast-keeper": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Which job at the village fair is yours?",
+      "answers": [
+        {
+          "text": "Reading fortunes in a little tent",
+          "scores": {
+            "stargazer": 2
+          }
+        },
+        {
+          "text": "Judging the jam competition",
+          "scores": {
+            "hedge-wizard": 2
+          }
+        },
+        {
+          "text": "Setting off the fireworks",
+          "scores": {
+            "storm-caller": 2
+          }
+        },
+        {
+          "text": "Hosting the talent show",
+          "scores": {
+            "enchanter": 2
+          }
+        },
+        {
+          "text": "Fixing the broken carousel",
+          "scores": {
+            "alchemist": 2
+          }
+        },
+        {
+          "text": "Running the petting zoo",
+          "scores": {
+            "beast-keeper": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "What gets you out of bed on a cold morning?",
+      "answers": [
+        {
+          "text": "The smell of something baking",
+          "scores": {
+            "hedge-wizard": 2
+          }
+        },
+        {
+          "text": "Wild weather I don't want to miss",
+          "scores": {
+            "storm-caller": 2
+          }
+        },
+        {
+          "text": "A half-finished idea",
+          "scores": {
+            "alchemist": 2
+          }
+        },
+        {
+          "text": "A pet waiting for breakfast",
+          "scores": {
+            "beast-keeper": 2
+          }
+        },
+        {
+          "text": "Plans with people I like",
+          "scores": {
+            "enchanter": 2
+          }
+        },
+        {
+          "text": "A dream I want to write down",
+          "scores": {
+            "stargazer": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Trying something new, you…",
+      "answers": [
+        {
+          "text": "Dive straight in",
+          "scores": {
+            "storm-caller": 1,
+            "enchanter": 1
+          }
+        },
+        {
+          "text": "Read the instructions first",
+          "scores": {
+            "alchemist": 1,
+            "hedge-wizard": 1
+          }
+        },
+        {
+          "text": "Watch someone else try first",
+          "scores": {
+            "stargazer": 1,
+            "beast-keeper": 1
+          }
+        }
+      ]
+    },
+    {
+      "text": "You find a dusty old chest. Inside is…",
+      "answers": [
+        {
+          "text": "A brass telescope",
+          "scores": {
+            "stargazer": 2
+          }
+        },
+        {
+          "text": "A pouch of ancient seeds",
+          "scores": {
+            "hedge-wizard": 2
+          }
+        },
+        {
+          "text": "A cloak that catches the wind",
+          "scores": {
+            "storm-caller": 2
+          }
+        },
+        {
+          "text": "A ring that makes strangers smile",
+          "scores": {
+            "enchanter": 2
+          }
+        },
+        {
+          "text": "A box of unlabelled bottles",
+          "scores": {
+            "alchemist": 2
+          }
+        },
+        {
+          "text": "A whistle only animals can hear",
+          "scores": {
+            "beast-keeper": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "A friend wants help asking someone out. You…",
+      "answers": [
+        {
+          "text": "Write them a dazzling speech",
+          "scores": {
+            "enchanter": 2
+          }
+        },
+        {
+          "text": "Make them a calming cup of tea",
+          "scores": {
+            "hedge-wizard": 2
+          }
+        },
+        {
+          "text": "Tell them to go for it tonight",
+          "scores": {
+            "storm-caller": 2
+          }
+        },
+        {
+          "text": "Research their favourite things",
+          "scores": {
+            "alchemist": 2
+          }
+        },
+        {
+          "text": "Suggest a walk in the woods",
+          "scores": {
+            "beast-keeper": 2
+          }
+        },
+        {
+          "text": "Help them pick the perfect moment",
+          "scores": {
+            "stargazer": 2
+          }
+        }
+      ]
+    }
+  ]
+}

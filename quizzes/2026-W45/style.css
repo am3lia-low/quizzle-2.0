@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Lato:wght@400;700&display=swap");
+
+:root {
+  --muted: #c9b59c;
+  --border: #4a3a2c;
+  --radius: 20px;
+  --font-body: "Lato", system-ui, sans-serif;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+}
+
+/* A dim room lit by one candle: a warm glow rising from below */
+body.quiz-page {
+  background:
+    radial-gradient(ellipse 70% 45% at 50% 100%, rgba(242,184,75,.22), transparent 70%),
+    radial-gradient(circle at 50% 108%, rgba(255,214,140,.18) 0 140px, transparent 260px),
+    linear-gradient(180deg, #140e0a 0%, var(--bg) 55%, #2a1c12 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+.quiz-title, .result-name { letter-spacing: .01em; font-weight: 700; }
+.question-text { font-family: var(--font-display); font-size: 1.6em; }
+
+.quiz-emoji, .result-emoji {
+  display: inline-block;
+  filter: drop-shadow(0 0 12px rgba(242,184,75,.55));
+  animation: flicker 3.2s ease-in-out infinite;
+}
+
+/* Answers like smooth poured wax */
+.answer {
+  border: 1px solid var(--border);
+  box-shadow: inset 0 1px 0 rgba(255,240,215,.06), 0 4px 0 #160f0b;
+  transition: background-color .15s ease, border-color .15s ease, box-shadow .2s ease;
+}
+.answer:hover {
+  background: #3a2c21;
+  border-color: var(--accent);
+  box-shadow: 0 0 18px -6px rgba(242,184,75,.6), 0 4px 0 #160f0b;
+}
+.answer.is-picked {
+  background: var(--accent);
+  color: var(--accent-fg);
+  border-color: var(--accent);
+  box-shadow: 0 0 26px -4px rgba(242,184,75,.8);
+}
+
+.progress { background: #160f0b; }
+.progress-bar { background: linear-gradient(90deg, #c2561a, var(--accent), #ffe3a3); }
+
+.result-card {
+  border: 2px solid var(--outcome-color);
+  box-shadow: 0 0 40px -14px var(--outcome-color), 0 18px 40px -16px rgba(0,0,0,.7);
+}
+.result-name { color: var(--outcome-color); }
+.result-traits li { border: 1px solid var(--outcome-color); }
+.blend-fill { background: var(--outcome-color); }
+.outcome-mini.is-yours { border-color: var(--accent); box-shadow: 0 0 16px -6px rgba(242,184,75,.7); }
+
+@keyframes flicker {
+  0%, 100% { transform: rotate(-1deg) scale(1); opacity: 1; }
+  30% { transform: rotate(1.5deg) scale(1.03); opacity: .92; }
+  55% { transform: rotate(-.5deg) scale(.99); opacity: 1; }
+  80% { transform: rotate(1deg) scale(1.02); opacity: .95; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .quiz-emoji, .result-emoji { animation: none; }
+  .answer { transition: none; }
+}

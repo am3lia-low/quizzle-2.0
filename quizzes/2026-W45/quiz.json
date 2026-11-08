@@ -1,0 +1,455 @@
+{
+  "week": "2026-W45",
+  "title": "Which candle scent are you?",
+  "topic": "Which candle scent are you",
+  "category": "aesthetics",
+  "emoji": "🕯️",
+  "intro": "Nine questions about perfect Sundays, picnic spots and how you text. Strike a match and we'll find the scent that matches your glow.",
+  "start_label": "Light the wick",
+  "result_label": "Your candle scent is",
+  "scoring": "blend",
+  "theme": {
+    "bg": "#1f1712",
+    "fg": "#f6ead8",
+    "card": "#2b211a",
+    "accent": "#f2b84b",
+    "accent_fg": "#1f1712"
+  },
+  "outcomes": [
+    {
+      "id": "vanilla-bean",
+      "name": "Vanilla Bean",
+      "emoji": "🍦",
+      "color": "#f3d9a4",
+      "tagline": "The human equivalent of a warm kitchen on a cold night.",
+      "description": "You make people feel at home within five minutes of meeting them. There's always a spare blanket, a second helping and a good excuse to stay a bit longer. Comfort is a superpower, and you've got it in spades.",
+      "traits": [
+        "warm",
+        "generous",
+        "homey"
+      ],
+      "image": null
+    },
+    {
+      "id": "citrus-grove",
+      "name": "Citrus Grove",
+      "emoji": "🍋",
+      "color": "#f7a541",
+      "tagline": "Bright, zesty and impossible to be grumpy around.",
+      "description": "You walk into a room and the energy goes up a notch. You're the first to suggest the spontaneous plan and the last to run out of steam. Mornings don't scare you, and somehow you make everyone else a bit more awake too.",
+      "traits": [
+        "energetic",
+        "upbeat",
+        "spontaneous"
+      ],
+      "image": null
+    },
+    {
+      "id": "fresh-linen",
+      "name": "Fresh Linen",
+      "emoji": "🧺",
+      "color": "#cfe0ef",
+      "tagline": "Calm, clean and quietly running the whole show.",
+      "description": "You like things just so, and honestly, life goes better when you're in charge of it. Your calm is contagious, your lists are legendary and your space always feels like a deep breath. People trust you because you follow through.",
+      "traits": [
+        "organised",
+        "calm",
+        "dependable"
+      ],
+      "image": null
+    },
+    {
+      "id": "cedar-smoke",
+      "name": "Cedar & Smoke",
+      "emoji": "🌲",
+      "color": "#c49a6c",
+      "tagline": "Grounded, a little mysterious, and best by a fire.",
+      "description": "You're the deep end of the friend group: thoughtful, steady and happiest somewhere with trees and no signal. You don't say much in a crowd, but one-on-one you're the person everyone wants to talk to until 2am.",
+      "traits": [
+        "grounded",
+        "thoughtful",
+        "outdoorsy"
+      ],
+      "image": null
+    },
+    {
+      "id": "sea-salt",
+      "name": "Sea Salt & Driftwood",
+      "emoji": "🌊",
+      "color": "#8fd3d8",
+      "tagline": "Breezy, unbothered and always half on holiday.",
+      "description": "You go with the tide and it usually takes you somewhere good. Plans are suggestions, sand gets everywhere and that's fine. Your easygoing attitude is a gift to anyone who's ever stressed about the little things.",
+      "traits": [
+        "free-spirited",
+        "relaxed",
+        "adventurous"
+      ],
+      "image": null
+    },
+    {
+      "id": "rose-peony",
+      "name": "Rose & Peony",
+      "emoji": "🌹",
+      "color": "#f2a0b5",
+      "tagline": "A soft heart with excellent taste.",
+      "description": "You notice the details everyone else misses: the handwritten note, the perfect flower, the song that fits the moment. You love big and you love well, and the people in your life never doubt how much they matter to you.",
+      "traits": [
+        "romantic",
+        "devoted",
+        "expressive"
+      ],
+      "image": null
+    }
+  ],
+  "questions": [
+    {
+      "text": "Pick a perfect Sunday.",
+      "answers": [
+        {
+          "text": "Baking all afternoon",
+          "scores": {
+            "vanilla-bean": 2
+          }
+        },
+        {
+          "text": "Running a 10k",
+          "scores": {
+            "citrus-grove": 2
+          }
+        },
+        {
+          "text": "Deep-cleaning the flat",
+          "scores": {
+            "fresh-linen": 2
+          }
+        },
+        {
+          "text": "Hiking in the hills",
+          "scores": {
+            "cedar-smoke": 2
+          }
+        },
+        {
+          "text": "Driving to the coast",
+          "scores": {
+            "sea-salt": 2
+          }
+        },
+        {
+          "text": "Writing letters",
+          "scores": {
+            "rose-peony": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Pick a holiday souvenir.",
+      "answers": [
+        {
+          "text": "A jar of local honey",
+          "scores": {
+            "vanilla-bean": 2
+          }
+        },
+        {
+          "text": "A bright woven tote",
+          "scores": {
+            "citrus-grove": 2
+          }
+        },
+        {
+          "text": "A set of embroidered napkins",
+          "scores": {
+            "fresh-linen": 2
+          }
+        },
+        {
+          "text": "A carved wooden spoon",
+          "scores": {
+            "cedar-smoke": 2
+          }
+        },
+        {
+          "text": "A jar of seashells",
+          "scores": {
+            "sea-salt": 2
+          }
+        },
+        {
+          "text": "A pressed flower",
+          "scores": {
+            "rose-peony": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Pick a fabric.",
+      "answers": [
+        {
+          "text": "Chunky wool",
+          "scores": {
+            "vanilla-bean": 2
+          }
+        },
+        {
+          "text": "Crisp cotton",
+          "scores": {
+            "fresh-linen": 2
+          }
+        },
+        {
+          "text": "Flannel",
+          "scores": {
+            "cedar-smoke": 2
+          }
+        },
+        {
+          "text": "Silk",
+          "scores": {
+            "rose-peony": 2
+          }
+        },
+        {
+          "text": "Faded denim",
+          "scores": {
+            "sea-salt": 2
+          }
+        },
+        {
+          "text": "Seersucker",
+          "scores": {
+            "citrus-grove": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "A friend calls you in tears. You…",
+      "answers": [
+        {
+          "text": "Turn up with a pot of soup",
+          "scores": {
+            "vanilla-bean": 2
+          }
+        },
+        {
+          "text": "Tidy their place while they talk",
+          "scores": {
+            "fresh-linen": 2
+          }
+        },
+        {
+          "text": "Take them for a long walk",
+          "scores": {
+            "cedar-smoke": 1,
+            "sea-salt": 1
+          }
+        },
+        {
+          "text": "Remind them how loved they are",
+          "scores": {
+            "rose-peony": 2
+          }
+        },
+        {
+          "text": "Make them laugh until they forget why",
+          "scores": {
+            "citrus-grove": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Pick a picnic spot.",
+      "answers": [
+        {
+          "text": "A pine forest clearing",
+          "scores": {
+            "cedar-smoke": 2
+          }
+        },
+        {
+          "text": "A sand dune",
+          "scores": {
+            "sea-salt": 2
+          }
+        },
+        {
+          "text": "A sunny orchard",
+          "scores": {
+            "citrus-grove": 2
+          }
+        },
+        {
+          "text": "A wildflower meadow",
+          "scores": {
+            "rose-peony": 2
+          }
+        },
+        {
+          "text": "A neatly mown park",
+          "scores": {
+            "fresh-linen": 2
+          }
+        },
+        {
+          "text": "Your own back garden",
+          "scores": {
+            "vanilla-bean": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Pick a party theme.",
+      "answers": [
+        {
+          "text": "Pyjamas and movies",
+          "scores": {
+            "vanilla-bean": 2
+          }
+        },
+        {
+          "text": "Disco",
+          "scores": {
+            "citrus-grove": 2,
+            "sea-salt": 1
+          }
+        },
+        {
+          "text": "All-white dinner",
+          "scores": {
+            "fresh-linen": 2
+          }
+        },
+        {
+          "text": "Bonfire night",
+          "scores": {
+            "cedar-smoke": 2
+          }
+        },
+        {
+          "text": "Beach barbecue",
+          "scores": {
+            "sea-salt": 2
+          }
+        },
+        {
+          "text": "Garden tea party",
+          "scores": {
+            "rose-peony": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "On a trip, are you a planner or a wanderer?",
+      "answers": [
+        {
+          "text": "Planner: every day is mapped out",
+          "scores": {
+            "fresh-linen": 2
+          }
+        },
+        {
+          "text": "Mostly planner, with room for surprises",
+          "scores": {
+            "vanilla-bean": 1,
+            "rose-peony": 1
+          }
+        },
+        {
+          "text": "Mostly wanderer, with one must-see",
+          "scores": {
+            "cedar-smoke": 1,
+            "citrus-grove": 1
+          }
+        },
+        {
+          "text": "Wanderer: I'll figure it out there",
+          "scores": {
+            "sea-salt": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Pick a colour for your bedroom walls.",
+      "answers": [
+        {
+          "text": "Honey",
+          "scores": {
+            "vanilla-bean": 2
+          }
+        },
+        {
+          "text": "Sunshine yellow",
+          "scores": {
+            "citrus-grove": 2
+          }
+        },
+        {
+          "text": "Pure white",
+          "scores": {
+            "fresh-linen": 2
+          }
+        },
+        {
+          "text": "Forest green",
+          "scores": {
+            "cedar-smoke": 2
+          }
+        },
+        {
+          "text": "Seafoam",
+          "scores": {
+            "sea-salt": 2
+          }
+        },
+        {
+          "text": "Blush pink",
+          "scores": {
+            "rose-peony": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Your friends would describe your texts as…",
+      "answers": [
+        {
+          "text": "Long and heartfelt",
+          "scores": {
+            "rose-peony": 2
+          }
+        },
+        {
+          "text": "Carefree and typo-filled",
+          "scores": {
+            "sea-salt": 2
+          }
+        },
+        {
+          "text": "Loud and excitable",
+          "scores": {
+            "citrus-grove": 2
+          }
+        },
+        {
+          "text": "Neat and to the point",
+          "scores": {
+            "fresh-linen": 2
+          }
+        },
+        {
+          "text": "Rare but worth the wait",
+          "scores": {
+            "cedar-smoke": 2
+          }
+        }
+      ]
+    }
+  ]
+}

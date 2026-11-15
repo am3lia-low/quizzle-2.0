@@ -1,0 +1,546 @@
+{
+  "week": "2026-W47",
+  "title": "Which moon phase are you?",
+  "topic": "Which moon phase are you",
+  "category": "nature",
+  "emoji": "🌙",
+  "intro": "Ten questions about evenings, habits and what you'd watch tonight. We'll check the sky and tell you which phase of the moon you are.",
+  "start_label": "Look up",
+  "result_label": "Tonight, you are the",
+  "scoring": "winner",
+  "theme": {
+    "bg": "#e9ecf3",
+    "fg": "#1c2238",
+    "card": "#fbfcff",
+    "accent": "#2b3566",
+    "accent_fg": "#ffffff"
+  },
+  "outcomes": [
+    {
+      "id": "new-moon",
+      "name": "New Moon",
+      "emoji": "🌑",
+      "color": "#3a3f5c",
+      "tagline": "Quiet, private and secretly full of plans.",
+      "description": "You do your best thinking where nobody's watching. People rarely see your ideas until they're ready, and then they're surprised how much was happening under the surface. You like fresh starts, clean slates and a little bit of mystery.",
+      "traits": [
+        "private",
+        "intentional",
+        "full of potential"
+      ],
+      "image": null
+    },
+    {
+      "id": "waxing-crescent",
+      "name": "Waxing Crescent",
+      "emoji": "🌒",
+      "color": "#3d6b8f",
+      "tagline": "The hopeful first sliver of something brand new.",
+      "description": "You're the friend who says \"what if we tried…\" and means it. New hobbies, new places, new people: you love the feeling of something just beginning. Your optimism is contagious, and it gets a lot of good things off the ground.",
+      "traits": [
+        "hopeful",
+        "curious",
+        "eager"
+      ],
+      "image": null
+    },
+    {
+      "id": "first-quarter",
+      "name": "First Quarter",
+      "emoji": "🌓",
+      "color": "#a24a2e",
+      "tagline": "Half lit, fully committed. Decisions are your thing.",
+      "description": "When things get stuck, you're the one who makes the call. You'd rather choose and adjust than wait around for the perfect moment. Obstacles feel like a challenge rather than a stop sign, and people trust you to keep things moving.",
+      "traits": [
+        "bold",
+        "decisive",
+        "determined"
+      ],
+      "image": null
+    },
+    {
+      "id": "waxing-gibbous",
+      "name": "Waxing Gibbous",
+      "emoji": "🌔",
+      "color": "#6a5a1e",
+      "tagline": "Almost there, and making sure it's perfect.",
+      "description": "You love the bit just before the big finish, when you can polish, tweak and refine. Details matter to you, and you notice the ones everyone else misses. Whatever you're working on, it's better for having passed through your hands.",
+      "traits": [
+        "meticulous",
+        "patient",
+        "devoted"
+      ],
+      "image": null
+    },
+    {
+      "id": "full-moon",
+      "name": "Full Moon",
+      "emoji": "🌕",
+      "color": "#9a6a00",
+      "tagline": "Bright, bold and impossible to miss.",
+      "description": "You light up a room without even trying. You feel things fully, say what you think and love a big night with your favourite people. Everyone looks up when you arrive, and you make sure they have a great time once you do.",
+      "traits": [
+        "radiant",
+        "expressive",
+        "magnetic"
+      ],
+      "image": null
+    },
+    {
+      "id": "waning-gibbous",
+      "name": "Waning Gibbous",
+      "emoji": "🌖",
+      "color": "#4f6b4a",
+      "tagline": "Generous with everything you've learned.",
+      "description": "You're the one people come to for advice, recipes, recommendations and a second opinion. You love passing on what you know, and you do it warmly. Your kitchen, your bookshelf and your time are all open to the people you care about.",
+      "traits": [
+        "generous",
+        "wise",
+        "nurturing"
+      ],
+      "image": null
+    },
+    {
+      "id": "last-quarter",
+      "name": "Last Quarter",
+      "emoji": "🌗",
+      "color": "#7a3f6e",
+      "tagline": "Honest, clear-headed and great at letting go.",
+      "description": "You know when something has run its course, and you're not afraid to say so. Clearing out, simplifying and moving on feel freeing to you, not sad. Friends love your honesty because it always comes with kindness and a clear way forward.",
+      "traits": [
+        "honest",
+        "clear-headed",
+        "unburdened"
+      ],
+      "image": null
+    },
+    {
+      "id": "waning-crescent",
+      "name": "Waning Crescent",
+      "emoji": "🌘",
+      "color": "#5b4a8a",
+      "tagline": "Soft, dreamy and expert at a proper rest.",
+      "description": "You know that rest is part of the cycle, not a break from it. Cosy evenings, long baths and early nights are your idea of a treat. You're gentle with yourself and others, and you come back from every pause with fresh ideas.",
+      "traits": [
+        "restful",
+        "reflective",
+        "gentle"
+      ],
+      "image": null
+    }
+  ],
+  "questions": [
+    {
+      "text": "A free evening with nothing planned. You…",
+      "answers": [
+        {
+          "text": "Start a new hobby from a tutorial",
+          "scores": {
+            "waxing-crescent": 2
+          }
+        },
+        {
+          "text": "Invite everyone round at short notice",
+          "scores": {
+            "full-moon": 2
+          }
+        },
+        {
+          "text": "Finally clear out the junk drawer",
+          "scores": {
+            "last-quarter": 2
+          }
+        },
+        {
+          "text": "Run a bath and go to bed early",
+          "scores": {
+            "waning-crescent": 2
+          }
+        },
+        {
+          "text": "Bake something for the neighbours",
+          "scores": {
+            "waning-gibbous": 2
+          }
+        },
+        {
+          "text": "Draw up a plan for the week ahead",
+          "scores": {
+            "first-quarter": 1,
+            "waxing-gibbous": 1
+          }
+        }
+      ]
+    },
+    {
+      "text": "Pick a notebook.",
+      "answers": [
+        {
+          "text": "A blank one, no lines at all",
+          "scores": {
+            "new-moon": 2
+          }
+        },
+        {
+          "text": "One with a colour-coded index",
+          "scores": {
+            "waxing-gibbous": 2
+          }
+        },
+        {
+          "text": "A well-worn one",
+          "scores": {
+            "waning-gibbous": 2
+          }
+        },
+        {
+          "text": "A pocket-sized one",
+          "scores": {
+            "first-quarter": 1,
+            "waxing-crescent": 1
+          }
+        },
+        {
+          "text": "One with a glittery cover",
+          "scores": {
+            "full-moon": 2
+          }
+        },
+        {
+          "text": "A soft, cloth-bound one",
+          "scores": {
+            "waning-crescent": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "A group project hits a wall. You…",
+      "answers": [
+        {
+          "text": "Make the call and get everyone moving",
+          "scores": {
+            "first-quarter": 2
+          }
+        },
+        {
+          "text": "Go over the details until they're right",
+          "scores": {
+            "waxing-gibbous": 2
+          }
+        },
+        {
+          "text": "Suggest cutting the part that isn't working",
+          "scores": {
+            "last-quarter": 2
+          }
+        },
+        {
+          "text": "Share what worked for you last time",
+          "scores": {
+            "waning-gibbous": 2
+          }
+        },
+        {
+          "text": "Pitch a completely fresh idea",
+          "scores": {
+            "waxing-crescent": 2
+          }
+        },
+        {
+          "text": "Step away and think it through alone",
+          "scores": {
+            "new-moon": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Pick a sound.",
+      "answers": [
+        {
+          "text": "Total silence",
+          "scores": {
+            "new-moon": 2
+          }
+        },
+        {
+          "text": "Rain on a window",
+          "scores": {
+            "waning-crescent": 2
+          }
+        },
+        {
+          "text": "A cheering crowd",
+          "scores": {
+            "full-moon": 2
+          }
+        },
+        {
+          "text": "A steady drumbeat",
+          "scores": {
+            "first-quarter": 2
+          }
+        },
+        {
+          "text": "A kettle about to boil",
+          "scores": {
+            "waxing-crescent": 1,
+            "waxing-gibbous": 1
+          }
+        },
+        {
+          "text": "Pages turning",
+          "scores": {
+            "waning-gibbous": 1,
+            "waxing-gibbous": 1
+          }
+        }
+      ]
+    },
+    {
+      "text": "Where are you at a party?",
+      "answers": [
+        {
+          "text": "On the dance floor",
+          "scores": {
+            "full-moon": 2
+          }
+        },
+        {
+          "text": "In the kitchen, deep in conversation",
+          "scores": {
+            "waning-gibbous": 2
+          }
+        },
+        {
+          "text": "By the speaker, perfecting the playlist",
+          "scores": {
+            "waxing-gibbous": 2
+          }
+        },
+        {
+          "text": "Out on the balcony, alone",
+          "scores": {
+            "new-moon": 2
+          }
+        },
+        {
+          "text": "By the door, meeting new people",
+          "scores": {
+            "waxing-crescent": 2
+          }
+        },
+        {
+          "text": "Already in a taxi home",
+          "scores": {
+            "waning-crescent": 2,
+            "last-quarter": 1
+          }
+        }
+      ]
+    },
+    {
+      "text": "Pick an hour.",
+      "answers": [
+        {
+          "text": "6 pm",
+          "scores": {
+            "waxing-crescent": 2
+          }
+        },
+        {
+          "text": "9 pm",
+          "scores": {
+            "first-quarter": 2
+          }
+        },
+        {
+          "text": "Midnight",
+          "scores": {
+            "full-moon": 2
+          }
+        },
+        {
+          "text": "3 am",
+          "scores": {
+            "waning-crescent": 2
+          }
+        },
+        {
+          "text": "6 am",
+          "scores": {
+            "last-quarter": 2
+          }
+        },
+        {
+          "text": "Noon",
+          "scores": {
+            "new-moon": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Someone gives you honest criticism. You…",
+      "answers": [
+        {
+          "text": "Thank them and fix it straight away",
+          "scores": {
+            "first-quarter": 2
+          }
+        },
+        {
+          "text": "Ask for every detail so you can get it right",
+          "scores": {
+            "waxing-gibbous": 2
+          }
+        },
+        {
+          "text": "Agree, and admit you'd sensed it too",
+          "scores": {
+            "last-quarter": 2
+          }
+        },
+        {
+          "text": "Quietly think it over for a day",
+          "scores": {
+            "new-moon": 2,
+            "waning-crescent": 1
+          }
+        },
+        {
+          "text": "Take it on board for next time",
+          "scores": {
+            "waning-gibbous": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Pick a gift to give.",
+      "answers": [
+        {
+          "text": "A cutting from your own houseplant",
+          "scores": {
+            "waning-gibbous": 2
+          }
+        },
+        {
+          "text": "Concert tickets for the two of you",
+          "scores": {
+            "full-moon": 2
+          }
+        },
+        {
+          "text": "A beginner's kit for a new hobby",
+          "scores": {
+            "waxing-crescent": 2
+          }
+        },
+        {
+          "text": "A really good pillow",
+          "scores": {
+            "waning-crescent": 2
+          }
+        },
+        {
+          "text": "A handwritten letter",
+          "scores": {
+            "waxing-gibbous": 2,
+            "new-moon": 1
+          }
+        },
+        {
+          "text": "A single, perfect candle",
+          "scores": {
+            "last-quarter": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Your wardrobe is mostly…",
+      "answers": [
+        {
+          "text": "Black, black and more black",
+          "scores": {
+            "new-moon": 2
+          }
+        },
+        {
+          "text": "Sequins and sparkle",
+          "scores": {
+            "full-moon": 2
+          }
+        },
+        {
+          "text": "Soft knits and comfy layers",
+          "scores": {
+            "waning-crescent": 2
+          }
+        },
+        {
+          "text": "Pieces you've had for years",
+          "scores": {
+            "waning-gibbous": 2
+          }
+        },
+        {
+          "text": "Simple, timeless basics",
+          "scores": {
+            "last-quarter": 2,
+            "waxing-gibbous": 1
+          }
+        },
+        {
+          "text": "Practical clothes you can move in",
+          "scores": {
+            "first-quarter": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "You're handed the TV remote. You put on…",
+      "answers": [
+        {
+          "text": "A documentary about the deep sea",
+          "scores": {
+            "new-moon": 2
+          }
+        },
+        {
+          "text": "A singing competition",
+          "scores": {
+            "full-moon": 2
+          }
+        },
+        {
+          "text": "A decluttering show",
+          "scores": {
+            "last-quarter": 2
+          }
+        },
+        {
+          "text": "A travel show",
+          "scores": {
+            "waxing-crescent": 2
+          }
+        },
+        {
+          "text": "A comfort sitcom you know by heart",
+          "scores": {
+            "waning-crescent": 2
+          }
+        },
+        {
+          "text": "A heist thriller",
+          "scores": {
+            "first-quarter": 2
+          }
+        }
+      ]
+    }
+  ]
+}

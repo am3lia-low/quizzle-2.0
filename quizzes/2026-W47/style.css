@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Karla:wght@400;600&display=swap");
+
+/* A lunar almanac: pale silver paper, ink-blue type, a soft moon rising in the corner */
+:root {
+  --muted: #535b78;
+  --border: #c9cfdf;
+  --radius: 22px;
+  --font-body: "Karla", system-ui, sans-serif;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --enter-distance: 18px;
+  --enter-duration: 420ms;
+}
+
+body.quiz-page {
+  background:
+    radial-gradient(circle at 88% 8%, #ffffff 0 70px, rgba(255,255,255,.55) 71px, transparent 140px),
+    radial-gradient(circle at 84% 6%, rgba(201,207,223,.5) 0 10px, transparent 11px),
+    radial-gradient(circle at 92% 11%, rgba(201,207,223,.45) 0 6px, transparent 7px),
+    radial-gradient(circle at 86% 13%, rgba(201,207,223,.4) 0 4px, transparent 5px),
+    radial-gradient(ellipse 120% 60% at 50% 110%, #d5dbea, transparent 70%),
+    var(--bg);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* A row of the eight phases, drawn with gradients, along the top of each card */
+.screen.intro,
+.result-card {
+  position: relative;
+}
+.screen.intro::before,
+.result-card::before {
+  content: "🌑 🌒 🌓 🌔 🌕 🌖 🌗 🌘";
+  display: block;
+  text-align: center;
+  letter-spacing: .35em;
+  font-size: .95rem;
+  opacity: .75;
+  margin-bottom: .6rem;
+}
+
+.quiz-title,
+.result-name,
+.question-text {
+  font-family: var(--font-display);
+  letter-spacing: .01em;
+}
+.quiz-title { font-size: 2.4rem; line-height: 1.1; }
+.question-text { font-size: 1.55rem; line-height: 1.25; }
+.result-name { font-size: 2.2rem; color: var(--outcome-color); }
+
+.quiz-emoji,
+.result-emoji {
+  display: inline-block;
+  filter: drop-shadow(0 0 18px rgba(43,53,102,.25));
+}
+
+/* Progress as the moon's path across the sky */
+.progress {
+  background: var(--border);
+  height: 6px;
+  border-radius: 99px;
+}
+.progress-bar {
+  background: linear-gradient(90deg, #1c2238, var(--accent) 60%, #8f9bc6);
+  border-radius: 99px;
+}
+
+/* Answers: silvered tiles with a small moon that fills when picked */
+.answer {
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 0 var(--border);
+  padding-left: 2.6rem;
+  position: relative;
+  transition: background .2s, border-color .2s, transform .2s;
+}
+.answer::before {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  margin-top: -7px;
+  border-radius: 50%;
+  border: 1.5px solid var(--accent);
+  background: linear-gradient(90deg, var(--accent) 0 0%, transparent 0%);
+  transition: background .3s;
+}
+.answer:hover { background: #f1f3fa; border-color: #a9b2cc; }
+.answer:hover::before { background: linear-gradient(90deg, var(--accent) 0 50%, transparent 50%); }
+.answer.is-picked { background: var(--accent); color: var(--accent-fg); border-color: var(--accent); }
+.answer.is-picked::before { background: #ffffff; border-color: #ffffff; box-shadow: 0 0 10px rgba(255,255,255,.8); }
+
+.btn.btn-primary {
+  border-radius: 99px;
+  letter-spacing: .04em;
+}
+
+.result-card {
+  border: 1px solid var(--border);
+  border-top: 6px solid var(--outcome-color);
+  box-shadow: 0 18px 40px -18px rgba(28,34,56,.4);
+}
+.result-traits li {
+  border: 1px solid var(--outcome-color);
+  color: var(--outcome-color);
+  background: transparent;
+}
+.blend-fill { background: var(--outcome-color, var(--accent)); }
+.outcome-mini.is-yours { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent); }
+
+@media (max-width: 420px) {
+  .quiz-title { font-size: 2rem; }
+  .question-text { font-size: 1.35rem; }
+  .screen.intro::before, .result-card::before { letter-spacing: .2em; font-size: .85rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .answer, .answer::before { transition: none; }
+}

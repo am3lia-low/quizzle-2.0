@@ -1,0 +1,448 @@
+{
+  "week": "2026-W48",
+  "title": "Which kind of holiday are you?",
+  "topic": "Which kind of holiday are you",
+  "category": "travel",
+  "emoji": "🧳",
+  "intro": "Nine questions about weekends, weather and what you pack. We'll stamp your passport with the getaway that suits you best.",
+  "start_label": "Pack my bags",
+  "result_label": "Your kind of holiday is",
+  "scoring": "winner",
+  "theme": {
+    "bg": "#f4ecdd",
+    "fg": "#1f2a33",
+    "card": "#fffaf0",
+    "accent": "#1d5c63",
+    "accent_fg": "#ffffff"
+  },
+  "outcomes": [
+    {
+      "id": "beach",
+      "name": "Beach Holiday",
+      "emoji": "🏖️",
+      "color": "#0f6e8c",
+      "tagline": "Sun on your face, sand in your bag, zero plans.",
+      "description": "You know that rest is a skill, and you're very good at it. Give you warm sand, a good book and a cold drink, and you'll recharge like nobody else. Friends envy how easily you switch off, and how relaxed you look when you come back.",
+      "traits": [
+        "laid-back",
+        "sunny",
+        "easygoing"
+      ]
+    },
+    {
+      "id": "city-break",
+      "name": "City Break",
+      "emoji": "🏙️",
+      "color": "#4a3f8f",
+      "tagline": "Three days, twelve galleries, one very good pair of shoes.",
+      "description": "You love a place with a pulse. Museums in the morning, a hidden bar at night and a walk through every neighbourhood in between. You plan well, you notice details, and you come home with a list of places everyone else wants to borrow.",
+      "traits": [
+        "curious",
+        "stylish",
+        "organised"
+      ]
+    },
+    {
+      "id": "adventure",
+      "name": "Mountain Trek",
+      "emoji": "🥾",
+      "color": "#2f6b3a",
+      "tagline": "If there's a peak, you're already lacing your boots.",
+      "description": "You like a holiday you can feel in your legs. Early starts, big views and the quiet pride of getting somewhere the hard way. You're steady, determined and great company on a long day, especially when you share the good snacks at the top.",
+      "traits": [
+        "determined",
+        "outdoorsy",
+        "resilient"
+      ]
+    },
+    {
+      "id": "road-trip",
+      "name": "Road Trip",
+      "emoji": "🚐",
+      "color": "#b3471d",
+      "tagline": "The destination is optional. The playlist is not.",
+      "description": "For you the fun is in the going. Detours, roadside diners and towns you'd never heard of until you were in them. You're spontaneous, flexible and the best storyteller in any group, mostly because things keep happening to you.",
+      "traits": [
+        "spontaneous",
+        "free-spirited",
+        "fun"
+      ]
+    },
+    {
+      "id": "cabin",
+      "name": "Cabin Retreat",
+      "emoji": "🌲",
+      "color": "#7a4b2a",
+      "tagline": "A fire, a blanket and absolutely no signal.",
+      "description": "Your ideal getaway is somewhere quiet enough to hear yourself think. Long walks, slow breakfasts and evenings by the stove with the people you love most. You're thoughtful and warm, and you make any place feel like home within an hour.",
+      "traits": [
+        "cosy",
+        "thoughtful",
+        "grounded"
+      ]
+    },
+    {
+      "id": "food-tour",
+      "name": "Food Tour",
+      "emoji": "🍜",
+      "color": "#a3243b",
+      "tagline": "You plan trips around dinner, and lunch, and snacks.",
+      "description": "You get to know a place through its kitchens. Night markets, family-run bakeries and the stall with the longest queue. You're open-minded, generous with recommendations and the person everyone texts when they need somewhere to eat.",
+      "traits": [
+        "adventurous",
+        "generous",
+        "open-minded"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "text": "Your ideal Saturday morning starts with…",
+      "answers": [
+        {
+          "text": "A lie-in until the sun is high",
+          "scores": {
+            "beach": 2
+          }
+        },
+        {
+          "text": "An early run before the streets fill up",
+          "scores": {
+            "adventure": 2
+          }
+        },
+        {
+          "text": "Coffee at a new café across town",
+          "scores": {
+            "food-tour": 2,
+            "city-break": 1
+          }
+        },
+        {
+          "text": "Pancakes cooked slowly at home",
+          "scores": {
+            "cabin": 2
+          }
+        },
+        {
+          "text": "A drive to nowhere in particular",
+          "scores": {
+            "road-trip": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Pick a sound to fall asleep to.",
+      "answers": [
+        {
+          "text": "Waves on the shore",
+          "scores": {
+            "beach": 2
+          }
+        },
+        {
+          "text": "Wind in the pines",
+          "scores": {
+            "cabin": 2
+          }
+        },
+        {
+          "text": "Traffic far below",
+          "scores": {
+            "city-break": 2
+          }
+        },
+        {
+          "text": "Rain on a tent",
+          "scores": {
+            "adventure": 2
+          }
+        },
+        {
+          "text": "Tyres on the highway",
+          "scores": {
+            "road-trip": 2
+          }
+        },
+        {
+          "text": "A night market winding down",
+          "scores": {
+            "food-tour": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "A friend cancels your plans at the last minute. You…",
+      "answers": [
+        {
+          "text": "Visit the exhibition you'd bookmarked",
+          "scores": {
+            "city-break": 2
+          }
+        },
+        {
+          "text": "Run a bath and open a book",
+          "scores": {
+            "cabin": 2
+          }
+        },
+        {
+          "text": "Book a table for one somewhere new",
+          "scores": {
+            "food-tour": 2
+          }
+        },
+        {
+          "text": "Spend the afternoon lying in the sun",
+          "scores": {
+            "beach": 2
+          }
+        },
+        {
+          "text": "Head out for a long hike",
+          "scores": {
+            "adventure": 2
+          }
+        },
+        {
+          "text": "Drive somewhere just to get out",
+          "scores": {
+            "road-trip": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Which bag do you pack?",
+      "answers": [
+        {
+          "text": "A tote with a towel and sunscreen",
+          "scores": {
+            "beach": 2
+          }
+        },
+        {
+          "text": "A huge rucksack with a sleeping mat",
+          "scores": {
+            "adventure": 2
+          }
+        },
+        {
+          "text": "A sleek carry-on with three outfits",
+          "scores": {
+            "city-break": 2
+          }
+        },
+        {
+          "text": "A battered old duffel bag",
+          "scores": {
+            "road-trip": 2
+          }
+        },
+        {
+          "text": "A suitcase full of chunky knitwear",
+          "scores": {
+            "cabin": 2
+          }
+        },
+        {
+          "text": "A half-empty suitcase",
+          "scores": {
+            "food-tour": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Pick a weather.",
+      "answers": [
+        {
+          "text": "Blazing sunshine",
+          "scores": {
+            "beach": 2
+          }
+        },
+        {
+          "text": "Crisp and clear",
+          "scores": {
+            "adventure": 2
+          }
+        },
+        {
+          "text": "Mild and overcast",
+          "scores": {
+            "city-break": 2
+          }
+        },
+        {
+          "text": "Sunshine and showers",
+          "scores": {
+            "road-trip": 2
+          }
+        },
+        {
+          "text": "Heavy snowfall",
+          "scores": {
+            "cabin": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Which photo becomes your lock screen?",
+      "answers": [
+        {
+          "text": "A sunset over still water",
+          "scores": {
+            "beach": 2
+          }
+        },
+        {
+          "text": "A view above the clouds",
+          "scores": {
+            "adventure": 2
+          }
+        },
+        {
+          "text": "A skyline lit up at night",
+          "scores": {
+            "city-break": 2
+          }
+        },
+        {
+          "text": "An empty road at dawn",
+          "scores": {
+            "road-trip": 2
+          }
+        },
+        {
+          "text": "A wood stove glowing orange",
+          "scores": {
+            "cabin": 2
+          }
+        },
+        {
+          "text": "A table crowded with dishes",
+          "scores": {
+            "food-tour": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "How do you feel about a strict itinerary?",
+      "answers": [
+        {
+          "text": "Love one. Every hour accounted for.",
+          "scores": {
+            "city-break": 2
+          }
+        },
+        {
+          "text": "A loose list of maybes is plenty.",
+          "scores": {
+            "road-trip": 2,
+            "food-tour": 1
+          }
+        },
+        {
+          "text": "Fine, as long as there's one big goal a day.",
+          "scores": {
+            "adventure": 2
+          }
+        },
+        {
+          "text": "Absolutely not. I'm off the clock.",
+          "scores": {
+            "beach": 2,
+            "cabin": 1
+          }
+        }
+      ]
+    },
+    {
+      "text": "At a dinner party, you're the one who…",
+      "answers": [
+        {
+          "text": "Tries every dish and asks for the recipe",
+          "scores": {
+            "food-tour": 2
+          }
+        },
+        {
+          "text": "Tells the wildest story of the night",
+          "scores": {
+            "road-trip": 2
+          }
+        },
+        {
+          "text": "Knows about the next gallery opening",
+          "scores": {
+            "city-break": 2
+          }
+        },
+        {
+          "text": "Helps in the kitchen, then washes up",
+          "scores": {
+            "cabin": 2
+          }
+        },
+        {
+          "text": "Leaves early for a sunrise start",
+          "scores": {
+            "adventure": 2
+          }
+        },
+        {
+          "text": "Is the most relaxed person there",
+          "scores": {
+            "beach": 2
+          }
+        }
+      ]
+    },
+    {
+      "text": "Pick a souvenir you'd actually keep.",
+      "answers": [
+        {
+          "text": "A jar of local spices",
+          "scores": {
+            "food-tour": 2
+          }
+        },
+        {
+          "text": "A smooth stone from the shore",
+          "scores": {
+            "beach": 2
+          }
+        },
+        {
+          "text": "A map covered in pen marks",
+          "scores": {
+            "road-trip": 2
+          }
+        },
+        {
+          "text": "A patch from a trail hut",
+          "scores": {
+            "adventure": 2
+          }
+        },
+        {
+          "text": "A print from a museum shop",
+          "scores": {
+            "city-break": 2
+          }
+        },
+        {
+          "text": "A pine-scented candle",
+          "scores": {
+            "cabin": 2
+          }
+        }
+      ]
+    }
+  ]
+}

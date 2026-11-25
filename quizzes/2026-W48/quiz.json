@@ -1,12 +1,12 @@
 {
   "week": "2026-W48",
-  "title": "Which kind of holiday are you?",
+  "title": "Which kind of vacation are you?",
   "topic": "Which kind of holiday are you",
   "category": "travel",
   "emoji": "🧳",
   "intro": "Nine questions about weekends, weather and what you pack. We'll stamp your passport with the getaway that suits you best.",
   "start_label": "Pack my bags",
-  "result_label": "Your kind of holiday is",
+  "result_label": "Your kind of vacation is",
   "scoring": "winner",
   "theme": {
     "bg": "#f4ecdd",
@@ -18,7 +18,7 @@
   "outcomes": [
     {
       "id": "beach",
-      "name": "Beach Holiday",
+      "name": "Beach Vacation",
       "emoji": "🏖️",
       "color": "#0f6e8c",
       "tagline": "Sun on your face, sand in your bag, zero plans.",
@@ -48,7 +48,7 @@
       "emoji": "🥾",
       "color": "#2f6b3a",
       "tagline": "If there's a peak, you're already lacing your boots.",
-      "description": "You like a holiday you can feel in your legs. Early starts, big views and the quiet pride of getting somewhere the hard way. You're steady, determined and great company on a long day, especially when you share the good snacks at the top.",
+      "description": "You like a vacation you can feel in your legs. Early starts, big views and the quiet pride of getting somewhere the hard way. You're steady, determined and great company on a long day, especially when you share the good snacks at the top.",
       "traits": [
         "determined",
         "outdoorsy",
